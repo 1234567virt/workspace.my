@@ -1,0 +1,306 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+html,body {
+	height:100%;
+}
+
+body{
+    background-color:#f8f8f8;
+ }
+
+ strong{
+     display:inline-block;
+     float:right;
+     padding-top:5px;
+     padding-right: 5px;
+     
+ }
+
+.container{
+    width: 100%;
+    margin:0 auto;
+    min-height: 100%;
+    position: relative;
+}
+
+.logo{
+    margin-left:5px;
+    margin-top:5px;
+}
+
+h2,h1{
+    text-align:center;
+}
+
+.header{
+    height: 147px;
+}
+
+.content .heads{
+    display: inline-block;
+    margin-left:25px;
+    margin-bottom: 10px;
+}
+
+.header ul{
+    list-style-type:none;  
+    display: table;
+    width: 100%;
+    height:50px;
+    table-layout: fixed;
+    text-align: center;
+    }
+
+.header li{
+    display:table-cell;
+    vertical-align: middle;
+    background:silver;
+    transition: 1s;
+    border-left:2px solid green; 
+    
+}
+
+.header li:first-child{
+    
+    border-left:1px solid transparent; 
+    
+}
+.header li:hover{
+    background:#707070;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-style:normal;
+}
+
+ul  a{
+    text-decoration: none;
+    color:red;
+    font-size:16pt;
+    font-style:italic; 
+    line-height: 18pt;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.header a:hover{
+    color:green;
+    font-size:18pt;
+    line-height: 18pt;
+    text-transform: uppercase;
+}
+
+h3.head{
+    color:black;
+    font-size:18px;
+    font-weight: 400px;
+    background: #eaeaea;
+    text-align:center;
+}
+
+span.head{
+    color:black;
+    font-size:18px;
+    font-weight: 400px;
+    background: #eaeaea;
+   display:inline-block;
+}
+.small_text:first-letter,.long_text:first-letter{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color:red;
+    padding-left:10px;
+}
+.small_text{
+    background-color:#707070;
+    font-size:14px;
+    line-height: 16px;
+    font-style:italic;
+}
+
+.long_text{
+    color:#484343;
+    font-size:16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align:left;
+}
+
+ul.xaracter{
+    font-family:'Times New Roman', Times, serif;
+    font-size:16px;
+    list-style-image: url('../img/favicon.ico');
+}
+
+img.portfolio{
+     width: 200px;
+     margin: auto;
+     border:1px solid red;
+}
+
+img:hover.portfolio{
+    border:1px solid transparent;
+}
+
+ img.catalog{
+     /*width: 20%;*/
+     border:1px solid green;
+     border-radius:12px;
+ 
+ }
+
+.content{
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.footer{
+     width:100%;
+     height:35px;
+     background:silver;
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+  }
+
+iframe{
+    width: 100%;
+    height: 374px;
+}
+
+#contact{
+    margin-left:150px;
+    width: 500px;
+    height: 500px;
+}
+
+#contact input[type='text']{
+    border-radius:5px;
+    height: 30px;
+    width: 600px;
+}
+
+input[type="text"]{
+    text-transform: capitalize;
+    width: 400px;
+    height: 15px;
+    color:grey;
+    font-size:14px;
+}
+
+#contact label{
+    font-size:16px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 5px;
+}
+
+#contact input[type='email']{
+    width: 600px;
+    }
+
+input[type="email"] {
+    font-weight: bold;
+    border-radius:5px;
+    height: 30px;
+}
+
+input[type="email"]:focus {
+    color: green;
+    
+}
+
+#contact textarea{
+    float:left;
+    margin-top:15px;
+    border:1px solid green;
+     border-radius:10px;
+    width: 800px;
+    height: 180px;
+    }
+
+textarea:focus{
+    text-transform: capitalize;
+}
+
+ #contact input[type="button"]{
+    width: 70px;
+    height: 23px;
+    border-radius: 5px;
+}
+
+input[type='submit']{
+    border:0 solid transparent;
+    border-radius:5px;
+    width: 140px;
+    height: 40px;
+    background: green;
+    color:white;
+    margin: 10px;
+    font-weight: 500;
+}
+
+input[type='submit']:hover{
+    background: gray;
+    font-weight: 700;
+}
+
+input[value="Купить"]{
+     border:0 solid transparent;
+     background:pink;
+     color:white;
+     font-weight: 500;
+     width: 130px;
+     height: 40px;
+}
+
+input[value="Купить"]:hover{
+    background:grey;
+  }
+
+input[type='reset']:hover{
+   background:red;
+   font-weight: 700;
+}
+
+input[type='reset']{
+    border:0 solid transparent;
+    border-radius:5px;
+    background:green;
+     width: 140px;
+    height: 40px;
+    color:white;
+
+ }
+ 
+ #otz textarea{
+     margin-top:15px;
+     border:1px solid green;
+     border-radius:10px;
+     margin-left:30px;
+     width: 407px;
+}
+
+.ime{
+     text-decoration: none;
+     color:blue;
+     border-radius: 5px;
+     border:1px solid blue;    
+}
+.ime:hover{
+    background:yellowgreen;
+    color:grey;
+    border:1px solid red;      
+}
+
+.content>ul li{
+    display: inline-block;
+    margin-left:5px;
+    padding-right: 3px;
+    border-right: 1px solid black;
+}
+     
+.content>ul a:hover{
+   color:grey;
+   
+   }
+     

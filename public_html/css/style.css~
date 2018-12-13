@@ -1,0 +1,75 @@
+body{
+    background-color:#f8f8f8;
+}
+
+h2,h1{
+    text-align:center;
+}
+
+ul{
+    list-style-type:none;  
+}
+
+ul a{
+    text-decoration: none;
+    color:red;
+    font-size:16pt;
+    font-style:italic; 
+    line-height: 18pt;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+h3.head{
+    color:black;
+    font-size:18px;
+    font-weight: 400px;
+    background: #eaeaea;
+    text-align:center;
+}
+
+.small_text{
+    background-color:707070;
+    font-size:14px;
+    line-height: 16px;
+    font-style:italic;
+}
+
+.long_text{
+    color:#484343;
+    font-size:16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align:left;
+}
+ 
+ul.xaracter{
+    font-family:'Times New Roman', Times, serif;
+    font-size:16px;
+    list-style-image: url('../img/favicon.ico');
+ }
+
+img.portfolio{
+     width: 200px;
+     display:block;
+     margin: auto;
+}
+ 
+ img.catalog{
+     width: 45px;
+     border:1px solid green;
+     border-radius:12px;
+     
+    }
+
+ input[type='text']{
+     width: 100px;
+     height: 12px;
+     color:grey;
+     font-size:14px;
+  }
+ 
+fieldset{
+    width: 300px;
+    height: 300px;
+    border:2px solid red;
+}
