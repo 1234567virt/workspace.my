@@ -14,10 +14,12 @@ if(isset($login) && isset($password)){
         if($user){
 
              if(password_verify($password,$user['user_password'])){
-                echo "ok";
+                
                $_SESSION['user_id']=$user['id_user'];
-                echo $_SESSION['user_id'];
-               
+               $_SESSION['success_message']='Успешная авторизация';
+                $_SESSION['user_id'];
+                echo  $_SESSION['success_message'];
+              // header('Location:/index.php');
              }
              else{
                $error="INVALID PASSWORD";

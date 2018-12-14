@@ -12,14 +12,25 @@ $result='';
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-   
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-       
+<div class="header">
+            <img src='./img/logo.jpeg' alt='SonyValio' class='logo'>
+            <ul>
+                  <?php
+                  require_once('../templates/menu.php');
+               
+                  ?>
+
+            </ul>
+            
+        
+        </div>
  
-  <form action="<?="calc.php";?>" method="post">
+  <form style ="margin-top:25px;" action="<?="calc.php";?>" method="post">
         <input type="number" placeholder="Значение 1" value="<?=$arg1;?>" name="numberOne" required>
-        <input type="text" placeholder="Значение 2" value="<?=$arg2;?>" name="numberTwo" required>
+        <input type="number" placeholder="Значение 2" value="<?=$arg2;?>" name="numberTwo" required>
     <p><select name="hero" required>
      <option disabled></option>
      <option value="+">+</option>

@@ -1,6 +1,8 @@
 <?php
-
-require_once('../engine/init.php');
+//require_once('../engine/requests.php');
+require_once('../engine/db_connect.php');
+require_once('../engine/funcs.php');
+//require_once('../engine/init.php');
 $login=isset($_POST['login'])?  $_POST['login'] : '';
 $password=isset($_POST['password'])?  $_POST['password'] : '';
 $name=isset($_POST['name'])?  $_POST['name'] : '';
