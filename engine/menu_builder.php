@@ -22,7 +22,7 @@ $menu= [
     "calc.php"=>'Калькулятор',
     "contact.php"=>'Контакты',
     "cms/cms.php"=>'cms',
-    "logout.php"=>'Регистрация',
-    "basket.php"=>'Корзина'
+    "logout.php"=>'Регистрация'
+    //"basket.php"=>'Корзина'
 ];
 ?>

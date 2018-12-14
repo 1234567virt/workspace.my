@@ -43,7 +43,7 @@ $year=date("Y");
       
         <li>
             <label >Количество:</label>
-            <input type="number" name="count" placeholder="количество"  value='<?= $count?>'required />
+            <input type="number" name="count" placeholder="количество" required />
        
         </li>
        
