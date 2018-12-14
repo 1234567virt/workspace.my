@@ -1,22 +1,29 @@
 <?php
 require_once '../engine/init.php';
-$login='';
-$password='';
-function registration($link,$login,$password){
-  if(isset($login) && isset($password)){
-    $login=clear($link,$login);
-    $password=clear($link,$password);
+// $login='';
+// $password='';
+// $error='';
 
-   
-    $row=mysqli_query($link ,"Select * from `user` where `user_login`='$user' and `user_password`='$password' ");
-        header("Location:../public_html/logout.php");
-    }
-    else{
-      echo "Ошибка пустые данные";
-    }
-    if(password_verify($password,$row['user_password'])){
+//   if(isset($login) && isset($password)){
+//     //$login=clear($link,$login);
+//    // $password=clear($link,$password);
+//         $login=$_post['login'];
+//         $password=$_POST['password'];
+//         $user=mysqli_query($link ,"select * from `user` where `user_login`='$login'");
+//         if($user){
 
-    }
-}
-  registration($link,$_POST['login'],$_POST['password']);
+//              if(password_verify($password,$user)){
+// echo "ok;";
+//              }
+//              else{
+//                  echo "fack";
+//              }
+//         }
+//     }
+//     else{
+//   $error='Неверный пользователь или пароль';
+//     }
+  
+
+
  ?>

@@ -25,7 +25,7 @@
         </li>
         <li>
             <label for="password">Password</label>
-            <input type="password"  placeholder="Пароль" required />
+            <input type="password"  name='password' placeholder="Пароль" required />
         </li>
       
         <li>
