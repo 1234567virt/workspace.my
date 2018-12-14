@@ -17,4 +17,4 @@ function registration($link,$login,$password,$name,$call){
     }
 }
   registration($link,$_POST['login'],$_POST['password'],$_POST['name'],$_POST['u_call']);
- 
+ ?>

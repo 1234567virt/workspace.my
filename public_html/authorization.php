@@ -19,24 +19,16 @@
              <h1><?=$h1?></h1>
         
         </li>
-        <label for="login">Login:</label>
+        <li>
+            <label >Логин:</label>
             <input type="email" name="login" placeholder="Логин" required />
         
         </li>
         <li>
-            <label for="password">Password</label>
-            <input type="password"  placeholder="Пароль" required />
-        </li>
-      
-        <li>
-            <label for="name">Имя:</label>
-            <input type="text" name="name" placeholder="Имя" required />
-       
+            <label >Пароль:</label>
+            <input type="password" name="password"   placeholder="Пароль" required />
         </li>
         <li>
-            <label for="call">Телефон:</label>
-            <input type="number" name="call" placeholder="Телефон" required />
-       <li>
              <button class="submit" type="submit" >Отправить</button>
         </li>
    
