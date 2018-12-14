@@ -11,6 +11,8 @@ require_once('../engine/requests.php');
 //require_once('../engine/authorization_function.php');
 $user=null;
 if(isset($_SESSION['user_id'])){
-$user= getUserEmail($link,$_SESSION['user_id']);
+    
+    $user=getUserId($link,$_SESSION['user_id']); 
+
 }
 ?>

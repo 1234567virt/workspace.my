@@ -5,10 +5,11 @@ require_once ('../engine/menu_builder.php');
                 foreach($menu as $url=>$key){
                    echo  "<li><a href='".$url."'>".$key."</a></li>";
 }
+
  if($user){
 echo "<a href='#'>".$user['user_name']."</a>";
-var_dump($name);
 echo "<a href='#'>Выйти</a>";
+//unset($user['user_name']);
 }
  else{
 echo "<a href='../public_html/authorization.php'>Войти</a>";
