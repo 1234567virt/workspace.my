@@ -21,7 +21,8 @@ $menu= [
     "catalog.php?id=3"=>'Товары',
     "calc.php"=>'Калькулятор',
     "contact.php"=>'Контакты',
-    "cms.php"=>'cms',
-    "logout.php"=>'Регистрация'
+    "cms/cms.php"=>'cms',
+    "logout.php"=>'Регистрация',
+    "authorization.php"=>'Войти'
 ];
 ?>

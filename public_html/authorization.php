@@ -13,7 +13,7 @@
 	<link rel="stylesheet" media="screen" href="./css/styles.css" >
 </head>
 <body>
-<form class="contact_form" action="../engine/registration.php" method="post" >
+<form class="contact_form" action="../engine/authorization_function.php" method="post" >
     <ul>
         <li>
              <h1><?=$h1?></h1>
@@ -21,7 +21,7 @@
         </li>
         <li>
             <label >Логин:</label>
-            <input type="email" name="login" placeholder="Логин" required />
+            <input type="email" name="login" value="<?=$email?>" placeholder="Email" required />
         
         </li>
         <li>

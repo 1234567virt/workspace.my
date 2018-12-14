@@ -25,4 +25,13 @@ function getRequestsOtziv($link,$marka){
     }
     return $answer;
 }
+function getUserEmail($link,$email){
+    $login=clear($link,$login);
+    $row=mysqli_query($link ,"Select * from `user` where `user_login`='$user'");
+   $hash=null;
+        while($row = mysqli_fetch_assoc($result)){
+            $hash=$row;
+        }
+       // header("Location:../public_html/logout.php");
+}
  ?>
