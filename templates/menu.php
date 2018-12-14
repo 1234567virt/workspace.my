@@ -7,12 +7,12 @@ require_once ('../engine/menu_builder.php');
 }
 
  if($user){
-echo "<a href='#'>".$user['user_name']."</a>";
-echo "<a href='exit.php'>Выйти</a>";
+echo "<a href='#' style='text-decaration:none;font-size:14px;color:blue'>".$user['user_name']."</a><br>";
+echo "<a href='exit.php' style='text-decaration:none;font-size:14px;color:blue'>Выйти</a>";
 //unset($user['user_name']);
 }
  else{
-echo "<a href='../public_html/authorization.php'>Войти</a>";
+echo "<a href='../public_html/authorization.php' style='text-decaration:none;font-size:14px;color:blue'>Войти</a>";
  }
 
  if(isset( $_SESSION['success_message'])){

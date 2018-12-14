@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
-$title="Вход";
-$h1="Вход";
+$title="Корзина";
+$h1="Корзина";
 $year=date("Y");
-
+require_once('../templates/basket.php');
 ?>
     <head>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>
         <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" media="screen" href="./css/styles.css" >
+        <!-- <link rel="stylesheet" media="screen" href="./css/styles.css" > -->
     </head>
     <body>
         <div class='container'>
@@ -19,9 +19,8 @@ $year=date("Y");
             <ul>
                   <?php
                   require_once('../templates/menu.php');
-               
+             
                   ?>
-
             </ul>
             <hr>
         
@@ -29,34 +28,25 @@ $year=date("Y");
        
         
         <div class='content'>
-        <form class="contact_form" action="./registration.php" method="post" >
-    <ul>
-        <li>
-             
-        
-        </li>
-        <label >Login:</label>
-            <input type="email" name="login" placeholder="Логин" required />
-        
-        </li>
-       
-      
-        <li>
+            <h1><?=$h1?></h1>
+        <form class="contact_form" action="./basket.php" method="post" >
+             <label >Товар:
+                <select name="product" placeholder="Продукты" required>
+                <?php
+                 foreach($product as $key=>$val){
+                     echo "<option>".$val['name']."</option>";
+                 }  
+              ?>
+            </label>
             <label >Количество:</label>
             <input type="number" name="count" placeholder="количество"  value='<?= $count?>'required />
-       
-        </li>
-       
-             <button class="submit" type="submit" >Купить</button>
-        </li>
-        <li>
-             <button class="submit" type="submit" >Удалить</button>
-        </li>
-    </ul>
-    </form>
-    </div>
-       
-        <div class='footer'> 
+      <span></span>
+            <button class="submit" type="submit" >Купить</button>
+       <button class="submit" type="submit" >Удалить</button>
+        </form>
+        <img src=''>
+        </div>
+    <div class='footer'> 
                 <hr>
                 <strong>
                    Все права защищены<sup>&copy;</sup> <?php echo $year; ?>
