@@ -29,32 +29,24 @@ $year=date("Y");
        
         
         <div class='content'>
-        <form class="contact_form" action="../engine/registration.php" method="post" >
+        <form class="contact_form" action="../engine/authorization_function.php" method="post" >
     <ul>
         <li>
              
         
         </li>
         <label >Login:</label>
-            <input type="email" name="login" placeholder="Логин" required />
+            <input type="email" name="log" placeholder="Логин" required />
         
         </li>
         <li>
             <label >Password</label>
-            <input type="password"  name='password' placeholder="Пароль" required />
-        </li>
-      
-        <li>
-            <label >Имя:</label>
-            <input type="text" name="name" placeholder="Имя" required />
-       
+            <input type="password"  name='pas' placeholder="Пароль" required />
         </li>
         <li>
-            <label >Телефон:</label>
-            <input type="number" name="call" placeholder="Телефон" required />
-       <li>
              <button class="submit" type="submit" >Отправить</button>
         </li>
+        
    
     </ul>
     </form>

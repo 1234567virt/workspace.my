@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('../engine/requests.php');
 require_once('../engine/db_connect.php');
 require_once('../engine/funcs.php');
@@ -17,9 +17,9 @@ if(isset($login) && isset($password)){
                 
                $_SESSION['user_id']=$user['id_user'];
                $_SESSION['success_message']='Успешная авторизация';
-                $_SESSION['user_id'];
-                echo  $_SESSION['success_message'];
-              // header('Location:/index.php');
+                
+              
+          
              }
              else{
                $error="INVALID PASSWORD";
@@ -30,5 +30,6 @@ if(isset($login) && isset($password)){
                  echo "Неверный пользователь или пароль!!!";
         }
 }
-      
+//echo $_SESSION['success_message'];
+header('Location:/index.php');
   ?>
