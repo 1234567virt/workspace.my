@@ -18,18 +18,11 @@ $result='';
 <div class="header">
             <img src='./img/logo.jpeg' alt='SonyValio' class='logo'>
             <ul>
-                  <?php
-                  require_once('../templates/menu.php');
-               
-                  ?>
-
+        <?php require_once('../templates/menu.php');?>
             </ul>
             
-        
         </div>
- 
-  
-<?php 
+ <?php 
 require_once('../templates/calc_form.php');
 if(isset($_POST['hero']) && isset($_POST['numberOne']) && isset($_POST['numberTwo'])){
     $arg1=(int)$_POST['numberOne'];

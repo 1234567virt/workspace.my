@@ -30,6 +30,6 @@ if(isset($login) && isset($password)){
                  echo "Неверный пользователь или пароль!!!";
         }
 }
-//echo $_SESSION['success_message'];
+
 header('Location:../public_html/basket.php');
   ?>

@@ -30,21 +30,15 @@
               <div class='container'>
                     <?php
                          require_once "../templates/gallery(unit5).php";
-                         require_once "../templates/otziv.php";
+                         require_once "../templates/comment_catalog.php";
                          
                     ?>
                     <hr>
                     <h2>Написать отзыв</h2>
             <?php 
-            require_once "../templates/form_rev.php";
+            require_once "../templates/form_catalog.php";
             ?>
      </div>
-            <div class='footer'> 
-                <hr>
-                <strong>
-                Все права защищены<sup>&copy;</sup> <?php echo $year; ?>
-                </strong>
-            </div>   
-        </div>
+     <?php require_once('../templates/footer.php');?>
     </body>
 </html>

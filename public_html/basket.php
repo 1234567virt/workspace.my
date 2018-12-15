@@ -60,10 +60,6 @@ if(isset($_POST['count']) && isset($_POST['id'])){
 //    }
       ?> -->
         </div>
-    <div class='footer'> 
-                <hr>
-     <strong>Все права защищены<sup>&copy;</sup> <?php echo $year; ?></strong>
-            </div>   
-        </div>
+        <?php require_once('../templates/footer.php');?>
     </body>
 </html>
