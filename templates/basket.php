@@ -9,7 +9,7 @@ $product= getRequestsProduct($link);
 //         $arg2=clear($link,$arg2);
 //       echo $arg2;
 //       echo '<input type="number" name="count" placeholder="количество"  value="'.$arg1.'" />';
-//       echo "  <p><input type='submit' value='Remove'></p>";
-//       echo "  <p><input type='submit' value='Ok'></p>";
+//       echo "  <p><input type='submit' value='Remove'>";
+//       echo "  <input type='submit' value='Ok'></p>";
 //    }
 ?>

@@ -7,9 +7,9 @@ require_once ('../engine/menu_builder.php');
 }
 
  if($user){
-echo "<a href='basket.php' style='text-decaration:none;font-size:14px;color:blue'>".$user['user_name']."</a><br>";
+echo "<a href='basket.php' style='text-decaration:none;font-size:14px;color:blue'>Личный кабинет</a><br>";
 echo "<a href='exit.php' style='text-decaration:none;font-size:14px;color:blue'>Выйти</a>";
-//unset($user['user_name']);
+
 }
  else{
 echo "<a href='../public_html/authorization.php' style='text-decaration:none;font-size:14px;color:blue'>Войти</a>";

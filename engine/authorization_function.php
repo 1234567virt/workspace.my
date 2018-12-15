@@ -31,5 +31,5 @@ if(isset($login) && isset($password)){
         }
 }
 //echo $_SESSION['success_message'];
-header('Location:/index.php');
+header('Location:../public_html/basket.php');
   ?>
