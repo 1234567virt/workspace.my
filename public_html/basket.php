@@ -24,13 +24,7 @@ if(isset($_POST['count']) && isset($_POST['id'])){
     </head>
     <body>
         <div class='container'>
-         <div class="header">
-            <img src='./img/logo.jpeg' alt='SonyValio' class='logo'>
-            <ul>
-                  <?php require_once('../templates/menu.php');?>
-            </ul>
-            <hr>
-         </div>
+        <?php require_once('../templates/header.php');?>
             <div class='content'>
             <h1 style='margin-top:30px'><?=$user['user_name']?> </span> <?=$h1?></h1>
             <span>Ваш логин:<?=$user['user_login']?></span>

@@ -14,13 +14,7 @@ $year=date("Y");
     </head>
     <body>
         <div class='container'>
-         <div class="header">
-            <img src='./img/logo.jpeg' alt='SonyValio' class='logo'>
-            <ul>
-                  <?php require_once('../templates/menu.php');?>
-            </ul>
-            <hr>
-         </div>
+        <?php require_once('../templates/header.php');?>
         <div class='content'>
         <form class="contact_form" action="../engine/authorization_function.php" method="post" >
     <ul>
