@@ -18,9 +18,7 @@ if(isset($login) && isset($password)){
                $_SESSION['user_id']=$user['id_user'];
                $_SESSION['success_message']='Успешная авторизация';
                 
-              
-          
-             }
+              }
              else{
                $error="INVALID PASSWORD";
             echo $error;

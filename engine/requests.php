@@ -14,7 +14,7 @@ $sql="SELECT * FROM `product`";
 }
 
 function getRequestsOtziv($link,$marka){
-    $sql="SELECT * FROM `otziv_nout` WHERE `marka`='$marka'";
+    $sql="SELECT * FROM `otziv_nout` WHERE `marka`='$marka'"or die("Ошибка " . mysqli_error($link));
     $result=mysqli_query($link,$sql);
     $num_rows = mysqli_num_rows( $result);
     $answer= [];
@@ -27,7 +27,7 @@ function getRequestsOtziv($link,$marka){
 }
 function getUserEmail($link,$login){
    // $login=clear($link,$email);
-    $result=mysqli_query($link ,"Select * from `user` where `user_login`='$login'");
+    $result=mysqli_query($link ,"Select * from `user` where `user_login`='$login'") or die("Ошибка " . mysqli_error($link));
    $hash=null;
         while($row = mysqli_fetch_assoc($result)){
             $hash=$row;
@@ -37,7 +37,7 @@ function getUserEmail($link,$login){
 }
 function getUserId($link,$login){
     // $login=clear($link,$email);
-     $result=mysqli_query($link ,"Select * from `user` where `id_user`='$login'");
+     $result=mysqli_query($link ,"Select * from `user` where `id_user`='$login'") or die("Ошибка " . mysqli_error($link)); 
     $hash=null;
          while($row = mysqli_fetch_assoc($result)){
              $hash=$row;

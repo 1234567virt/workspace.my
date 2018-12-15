@@ -39,20 +39,7 @@ if(isset($_POST['count']) && isset($_POST['id'])){
     </select>
     <input type="submit" value="Зарезирвировать"></p>
    </form>
-   <!-- <?php
-  
-//   if (isset($_POST['count']) && isset($_POST['product'])){
-//     $arg1=(int)$_POST['count'];
-//     $arg2=$_POST['product'];
-//       $arg1=clear($link,$arg1);
-//         $arg2=clear($link,$arg2);
-//       echo "<label> Название: ".$arg2."</label>";
-//       echo '<lable>:<input type="number" name="count" placeholder="количество"
-//        style="margin-left:117px;width:60px;height:30px" value="'.$arg1.'" />Количество</label>';
-//       echo "  <input type='submit' value='Удалить'>";
-//       echo "  <input type='submit' value='Купить'>";
-//    }
-      ?> -->
+
         </div>
         <?php require_once('../templates/footer.php');?>
     </body>
