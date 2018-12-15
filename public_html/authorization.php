@@ -17,23 +17,15 @@ $year=date("Y");
          <div class="header">
             <img src='./img/logo.jpeg' alt='SonyValio' class='logo'>
             <ul>
-                  <?php
-                  require_once('../templates/menu.php');
-               
-                  ?>
-
+                  <?php require_once('../templates/menu.php');?>
             </ul>
             <hr>
-        
-        </div>
-       
-        
+         </div>
         <div class='content'>
         <form class="contact_form" action="../engine/authorization_function.php" method="post" >
     <ul>
         <li>
              
-        
         </li>
         <label >Login:</label>
             <input type="email" name="log" placeholder="Логин" required />
@@ -46,13 +38,10 @@ $year=date("Y");
         <li>
              <button class="submit" type="submit" >Отправить</button>
         </li>
-        
-   
-    </ul>
+        </ul>
     </form>
     </div>
-       
-        <div class='footer'> 
+       <div class='footer'> 
                 <hr>
                 <strong>
                    Все права защищены<sup>&copy;</sup> <?php echo $year; ?>

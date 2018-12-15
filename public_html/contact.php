@@ -12,15 +12,12 @@ $year=date("Y");
     <title><?php echo $title ?></title>
 </head>
 <body>
- 
-        <div class='container'>
-    <div class="header">
+     <div class='container'>
+         <div class="header">
         <img src='./img/logo.jpeg' alt='SonyValio' class='logo'>
         <nav>
         <ul>
-    
-
-     <?php  require_once ('../templates/menu.php');?>     
+             <?php  require_once ('../templates/menu.php');?>     
          </ul>
          </nav>
          <hr>

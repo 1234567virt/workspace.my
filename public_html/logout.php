@@ -4,7 +4,6 @@
 $title="Вход";
 $h1="Вход";
 $year=date("Y");
-
 ?>
     <head>
         <meta charset="UTF-8">
@@ -21,37 +20,36 @@ $year=date("Y");
                   require_once('../templates/menu.php');
                
                   ?>
-
             </ul>
             <hr>
-        
         </div>
        
-        
-        <div class='content'>
+            <div class='content'>
+            <h1><?=$h1?></h1>
         <form class="contact_form" action="./registration.php" method="post" >
     <ul>
-        <li>
-             
-        
-        </li>
-        <label >Login:</label>
+ 
+    </li>
+        <label for="login">Login:</label>
             <input type="email" name="login" placeholder="Логин" required />
         
         </li>
-       
+        <li>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Пароль" required />
+        </li>
       
         <li>
-            <label >Количество:</label>
-            <input type="number" name="count" placeholder="количество" required />
+            <label for="name">Имя:</label>
+            <input type="text" name="name" placeholder="Имя" required />
        
-        </li>
-       
-             <button class="submit" type="submit" >Купить</button>
         </li>
         <li>
-             <button class="submit" type="submit" >Удалить</button>
-        </li>
+            <label for="call">Телефон:</label>
+            <input type="number" name="call" placeholder="Телефон" required />
+       <li>
+             <button class="submit" type="submit" >Отправить</button>
+</li>
     </ul>
     </form>
     </div>

@@ -12,7 +12,7 @@ function rewiev($link,$Aftor,$Message,$id){
       if(mysqli_error($link)){
          die(mysqli_error($link));
       }
-header("Location:catalog.php?id='$id'");
+header("Location:../public_html/catalog.php?id='$id'");
 }
 
 function review_nout($link,$Aftor,$Message,$id,$marka){
@@ -26,6 +26,6 @@ function review_nout($link,$Aftor,$Message,$id,$marka){
    if(mysqli_error($link)){
       die(mysqli_error($link));
 }
-header("Location:product.php?id='$id'");
+header("Location:../public_html/product.php?id='$id'");
 }
 ?>

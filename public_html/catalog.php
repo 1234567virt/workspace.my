@@ -23,10 +23,7 @@
             </div>
              
             <div class='content'>
-                       <ul>
-                            <li><a href="index.html">Главная</a></li>
-                            <li><a href="catalog.html">Каталог</a></li>
-                       </ul>
+            <?php  require_once('../templates/bread_crumb.php');?>  
                 <h1>
                 Каталог
                 </h1>

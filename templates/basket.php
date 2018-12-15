@@ -28,18 +28,26 @@ if (isset($_POST['count']) && isset($_POST['product'])){
         $arg2=clear($link,$arg2);
         $result=select_basket($link,$arg2,$arg1);
        $user_id= $_SESSION['user_id'];
-   // var_dump($result);
         echo count($result);
 if(count($result)==1){
         insert_basket($link,$_SESSION['user_id'],$arg2,$arg1);
-
-        echo "<form style ='margin-top:25px;'' action='../public_html/basket.php' method='post'>";
+?>
+        <!-- echo "<form style ='margin-top:25px;'' action='../public_html/basket.php' method='post'>";
         echo "<label> Название: ".$arg2."</label>";
         echo '<lable>:<input type="number" name="count" placeholder="количество"
         style="margin-left:117px;width:60px;height:30px" value="'.$arg1.'" />Количество</label>';
         echo "<input type='hidden' value='".$user_id."'>";
         echo "  <input type='submit' value='Удалить'>";
-        echo "  <input type='submit' value='Купить'>";
+        echo "  <input type='submit' value='Купить'>"; -->
+
+        <form style ='margin-top:25px;'' action='../public_html/basket.php' method='post'>
+       <label> Название:<?=$arg2?></label>
+        <label>:<input type="number" name="count" placeholder="количество"
+        style="margin-left:117px;width:60px;height:30px" value='<?=$arg1?>' />Количество</label>
+        <input type='hidden' value='".$user_id."'>
+         <input type='submit' value='Удалить'>
+        <input type='submit' value='Купить'>
+        <?php
  }
  else{
     echo "Нехватает продукции";

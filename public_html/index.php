@@ -36,8 +36,7 @@ $year=date("Y");
             <i>Черная пятница <?php echo $year; ?> года</i>
         </h4>
     </div>
-       
-        <div class='footer'> 
+       <div class='footer'> 
                 <hr>
                 <strong>
                    Все права защищены<sup>&copy;</sup> <?php echo $year; ?>
