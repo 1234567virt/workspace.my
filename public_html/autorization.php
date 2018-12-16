@@ -34,25 +34,41 @@ background: url(img/templatemo_menubar.png) no-repeat;
 background: url(img/templatemo_main_bg.png) repeat-y;
 }
 
- #formH input[type="number"] {
-    width: 90px;
-    height: 35px;
+.contact_form input[type="password"] {
+    margin-left:20px;
+    width: 300px;
+    height: 40px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px black, 0 0 1em red;
+    text-align: center;
+    
+}
+.contact_form{
+    margin:0 auto;
+    width: 500px;
+    height: 600px;
+}
+ul{
+    list-style-type:none;
+}
+.contact_form label {
+    font-size:15px;
+    color:white;
+    font-family:Arial;
+}
+.contact_form input[type="email"] {
+    margin-left:45px;
+    width: 300px;
+    height: 40px;
     background: #f8f8f8;
     border-radius: 10px;
     box-shadow: 1px 1px 2px black, 0 0 1em red;
     text-align: center;
 }
-#formH #select{
-    width: 35px;
-    height: 35px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px black, 0 0 1em red;
-    text-align: center;
-}
-
 .submit_call{
-   
+    margin-left:50px;
+   margin:0 auto;
     width: 150px;
     height: 50px;
     border-radius: 10px;
@@ -104,25 +120,28 @@ background: url(img/templatemo_main_bg.png) repeat-y;
                              </div>
 
     </div>
-    <center style="margin-top:5px;"><h1>Калькулятор</h1></center>
-   <div id="contact_form">
-      
-    <form method="post" id="formH" action="<?="calc.php";?>">
-  
-    <input type="number" placeholder="Значение 1" value="<?=$arg1;?>" name="numberOne" required class="required input_field" />
-
-   <select name="hero" id="select" >
-    <option disabled></option>
-     <option value="+">+</option>
-     <option  value="-">-</option>
-     <option  value="*">*</option>
-     <option  value="/">/</option>
-</select>
-    <input type="number" placeholder="Значение 2" value="<?=$arg1;?>" name="numberOne" required class="validate-email required input_field" />
-<br>
-   <input type="submit" class="submit_call" name="submit" value="Расчитать" />
+    <center style="margin-top:15px;"><h1>Авторизация</h1></center>
+    <form class="contact_form" action="../engine/authorization_function.php" method="post" >
+    <ul>
+        <li>
+             
+        </li>
+        <label >Login:</label>
+            <input type="email" name="log" placeholder="Логин" required />
+        
+        </li>
+        <li>
+            <label >Password</label>
+            <input type="password"  name='pas' placeholder="Пароль" style='margin-top:15px'required />
+        </li>
+        <li>
+             <button class="submit_call"  style="margin-left:170px" type="submit" >Отправить</button>
+        </li>
+        </ul>
+    </form>
 </div>
     </div>
 </body>
 </html>
+
 
