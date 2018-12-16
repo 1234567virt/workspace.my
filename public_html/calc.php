@@ -76,6 +76,9 @@ background: url(img/templatemo_main_bg.png) repeat-y;
    background:grey;
 
 }
+#contact_form{
+    margin-left:500px;
+}
     </style>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>

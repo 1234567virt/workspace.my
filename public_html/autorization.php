@@ -132,7 +132,7 @@ ul{
         </li>
         <li>
             <label >Password</label>
-            <input type="password"  name='pas' placeholder="Пароль" style='margin-top:15px'required />
+            <input type="password"  name='pas' placeholder="Пароль" style='margin-top:15px' required />
         </li>
         <li>
              <button class="submit_call"  style="margin-left:170px" type="submit" >Отправить</button>
