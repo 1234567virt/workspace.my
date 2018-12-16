@@ -8,51 +8,89 @@ $year=date("Y");
 ?>
     <head>
     <style>
-   #formH{
+ #formH{
     width: 700px;
     height: 70px;
     border:0px;
     margin: 100px auto;
 }
-   #templatemo_body{
-background: url(img/templatemo_body.jpg) repeat;
+#templatemo_body{
+    background: url(img/templatemo_body.jpg) repeat;
 }
 #templatemo_body_wrapper {
 
-background: url(img/templatemo_body_top.jpg) repeat-x top
+    background: url(img/templatemo_body_top.jpg) repeat-x top
 }
 #templatemo_header {
-background: url(img/templatemo_header_bg.png) no-repeat bottom; 
+    background: url(img/templatemo_header_bg.png) no-repeat bottom; 
 }
 
 #templatemo_menubar {
 
-background: url(img/templatemo_menubar.png) no-repeat;
+    background: url(img/templatemo_menubar.png) no-repeat;
 }
 
 #templatemo_main {
-background: url(img/templatemo_main_bg.png) repeat-y;
+    background: url(img/templatemo_main_bg.png) repeat-y;
 }
 
- #formH input[type="number"] {
-    width: 90px;
-    height: 35px;
+.contact_form input[type="password"] {
+    margin-top:10px;
+    margin-left:20px;
+    width: 300px;
+    height: 40px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px black, 0 0 1em red;
+    text-align: center;
+    
+}
+.contact_form{
+    margin:50px auto;
+    width: 500px;
+    height: 600px;
+}
+ul{
+    list-style-type:none;
+}
+.contact_form label {
+    font-size:15px;
+    color:white;
+    font-family:Arial;
+}
+.contact_form input[type="email"] {
+    margin-top:10px;
+    margin-left:45px;
+    width: 300px;
+    height: 40px;
     background: #f8f8f8;
     border-radius: 10px;
     box-shadow: 1px 1px 2px black, 0 0 1em red;
     text-align: center;
 }
-#formH #select{
-    width: 35px;
-    height: 35px;
+.contact_form input[type="number"] {
+    margin-top:10px;
+    margin-left:22px;
+    width: 300px;
+    height: 40px;
     background: #f8f8f8;
     border-radius: 10px;
     box-shadow: 1px 1px 2px black, 0 0 1em red;
     text-align: center;
 }
-
+.contact_form input[type="text"] {
+    margin-top:10px;
+    margin-left:55px;
+    width: 300px;
+    height: 40px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px black, 0 0 1em red;
+    text-align: center;
+}
 .submit_call{
-   
+    margin-left:80px;
+   margin:0 auto;
     width: 150px;
     height: 50px;
     border-radius: 10px;
@@ -111,25 +149,34 @@ background: url(img/templatemo_main_bg.png) repeat-y;
                                          </div>
 
                              </div>
-
-    </div>
-    <center style="margin-top:5px;"><h1>Калькулятор</h1></center>
-   <div id="contact_form">
+                             <center><h1><?=$h1?></h1></center>
+          <form class="contact_form" action="./registration.php" method="post" >
+    <ul>
+ 
+    </li>
+        <label for="login">Login:</label>
+            <input type="email" name="login" placeholder="Логин" required />
+        
+        </li>
+        <li>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Пароль" required />
+        </li>
       
-    <form method="post" id="formH" action="<?="calc.php";?>">
-  
-    <input type="number" placeholder="Значение 1" value="<?=$arg1;?>" name="numberOne" required class="required input_field" />
-
-   <select name="hero" id="select" >
-    <option disabled></option>
-     <option value="+">+</option>
-     <option  value="-">-</option>
-     <option  value="*">*</option>
-     <option  value="/">/</option>
-</select>
-    <input type="number" placeholder="Значение 2" value="<?=$arg1;?>" name="numberOne" required class="validate-email required input_field" />
-<br>
-   <input type="submit" class="submit_call" name="submit" value="Расчитать" />
+        <li>
+            <label for="name">Имя:</label>
+            <input type="text" name="name" placeholder="Имя" required />
+       
+        </li>
+        <li>
+            <label for="call">Телефон:</label>
+            <input type="number" name="call" placeholder="Телефон" required />
+       <li>
+             <button class="submit_call" type="submit" >Зарегестрироваться</button>
+</li>
+    </ul>
+    </form>v>
+   
 </div>
     </div>
 </body>
