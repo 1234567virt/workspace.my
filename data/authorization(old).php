@@ -1,41 +1,39 @@
 <!DOCTYPE html>
-<html>
-<head>
-
-    <meta charset="utf-8">
-    <?php
-   
-
-    $title="Регистрация";
-    $h1="Зарегистрироваться";
-    $year=date("Y");
-  
-   // require_once '../engine/init.php';
+<html lang="ru">
+<?php
+$title="Вход";
+$h1="Вход";
+$year=date("Y");
 ?>
-	<title><?=$title;?></title>
-	<link rel="stylesheet" media="screen" href="./css/styles.css" >
-</head>
-<body>
-<form class="contact_form" action="../engine/authorization_function.php" method="post" >
+<head>
+        <meta charset="UTF-8">
+        <title><?php echo $title ?></title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" media="screen" href="./css/styles.css" >
+    </head>
+    <body>
+        <div class='container'>
+        <?php require_once('../templates/header.php');?>
+        <div class='content'>
+        <form class="contact_form" action="../engine/authorization_function.php" method="post" >
     <ul>
         <li>
-             <h1><?=$h1?></h1>
-        
+             
         </li>
-     
-            <label >Логин:</label>
-            <input type="email" name="log" placeholder="login" required />
+        <label >Login:</label>
+            <input type="email" name="log" placeholder="Логин" required />
         
         </li>
         <li>
-            <label >Пароль:</label>
-            <input type="password" name="pas"   placeholder="Пароль" required />
+            <label >Password</label>
+            <input type="password"  name='pas' placeholder="Пароль" required />
         </li>
         <li>
              <button class="submit" type="submit" >Отправить</button>
         </li>
-   
-    </ul>
-</form>
-</body>
+        </ul>
+    </form>
+    </div>
+    <?php require_once('../templates/footer.php');?>
+    </body>
 </html>
