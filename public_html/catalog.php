@@ -179,7 +179,7 @@ textarea:focus{
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>
         <link rel="stylesheet" href="./css/menu.css">
-         <!-- <link rel="stylesheet" href="./css/style.css">  -->
+    
                   <link rel="stylesheet" href="./css/header.css"> 
     </head>
     <body id='templatemo_body' >
@@ -189,8 +189,7 @@ textarea:focus{
              <div id="templatemo_header">
                     <div id="site_title"><h1><a href="#"><?=$h1?></a></h1></div>
                         <div class="cleaner"></div>
-                 </div> <!-- END of templatemo_header -->
-
+                 </div> 
                              <div id="templatemo_menubar">
 
                                          <div id="top_nav" class="ddsmoothmenu">

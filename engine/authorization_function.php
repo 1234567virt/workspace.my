@@ -17,7 +17,7 @@ if(isset($login) && isset($password)){
                 
                $_SESSION['user_id']=$user['id_user'];
                $_SESSION['success_message']='Успешная авторизация';
-                
+               header('Location:../public_html/basket.php');
               }
              else{
                $error="INVALID PASSWORD";
@@ -29,5 +29,5 @@ if(isset($login) && isset($password)){
         }
 }
 
-header('Location:../public_html/basket.php');
+
   ?>
