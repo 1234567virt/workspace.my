@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
-$title="Главная";
-$h1="Санрайс";
-$year=date("Y");
+$title="Калькулятор";
+$h1="Калькулятор";
+$date=date("Y");
+
+require_once('../engine/init.php');
+$arg2=isset($_POST['numberTwo'])?  $_POST['numberTwo'] : '';
+$arg1=isset($_POST['numberOne'])? $_POST['numberOne'] : ''; 
+$result='';
 
 ?>
     <head>
@@ -91,7 +96,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
         <div id="templatemo_wrapper">
      
              <div id="templatemo_header">
-                    <div id="site_title"><h1><a href="#">Санрайс</a></h1></div>
+                    <div id="site_title"><h1><a href="#"><?php echo $h1 ?></a></h1></div>
                         <div class="cleaner"></div>
                  </div> <!-- END of templatemo_header -->
 
@@ -112,7 +117,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
       
     <form method="post" id="formH" action="<?="calc.php";?>">
   
-    <input type="number" placeholder="Значение 1" value="<?=$arg1;?>" name="numberOne" required class="required input_field" />
+    <input type="number" placeholder="Значение 1" value="<?=$arg1;?>" name="numberTwo" required class="required input_field" />
 
    <select name="hero" id="select" >
     <option disabled></option>
@@ -124,7 +129,17 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     <input type="number" placeholder="Значение 2" value="<?=$arg1;?>" name="numberOne" required class="validate-email required input_field" />
 <br>
    <input type="submit" class="submit_call" name="submit" value="Расчитать" />
-</div>
+<br>
+<?php
+if(isset($_POST['hero']) && isset($_POST['numberOne']) && isset($_POST['numberTwo'])){
+    $arg1=(int)$_POST['numberOne'];
+    $arg2=(int)$_POST['numberTwo'];
+    $hero=$_POST['hero'];
+        $result=mathOperation(clear($link,$arg1),clear($link,$arg2),clear($link,$hero));
+        echo "<span style='color:white;font-size:15px ;padding-left:100px'>Ответ:".$result."<span>";
+    }
+    ?>
+    </div>
     </div>
 </body>
 </html>
