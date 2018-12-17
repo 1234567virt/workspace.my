@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
-$title="Главная";
-$h1="Санрайс";
+$title="Регистрация";
+$h1="Зарегистрироваться";
 $year=date("Y");
 
 ?>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
-$title="Главная";
-$h1="Санрайс";
+$title="Контакты";
+$h1="Напишите нам";
 $year=date("Y");
 
 ?>
@@ -163,8 +163,8 @@ iframe{
                                             <br style="clear: left" />
                                          </div>
                                          </div>
-    </div>
-    <center><h1>Напишите нам</h1></center>
+   
+    <center><h1><?php echo $h1; ?></h1></center>
         <form action="" method="POST" class="contact_form" name='form'>
              <label>Тема:</label><input type="text" ><br>
              <label>Имя:</label><input type="text" ><br>
@@ -193,7 +193,7 @@ iframe{
 
     </div>
     
-
+    </div>
 </body>
 </html>
 

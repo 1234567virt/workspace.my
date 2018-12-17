@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
-$title="Главная";
-$h1="Санрайс";
+$title="Вход";
+$h1="Войти";
 $year=date("Y");
 
 ?>
@@ -104,7 +104,7 @@ ul{
         <div id="templatemo_wrapper">
      
              <div id="templatemo_header">
-                    <div id="site_title"><h1><a href="#">Санрайс</a></h1></div>
+                    <div id="site_title"><h1><a href="#"><?php echo $h1; ?></a></h1></div>
                         <div class="cleaner"></div>
                  </div> <!-- END of templatemo_header -->
 
@@ -120,7 +120,7 @@ ul{
                              </div>
 
     </div>
-    <center style="margin-top:15px;"><h1>Авторизация</h1></center>
+    <center style="margin-top:15px;"><h1><?php echo $h1 ?></h1></center>
     <form class="contact_form" action="../engine/authorization_function.php" method="post" >
     <ul>
         <li>
