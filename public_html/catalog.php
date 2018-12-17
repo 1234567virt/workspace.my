@@ -4,7 +4,7 @@
 $title="Каталог";
 $h1="Каталог";
 $year=date("Y");
-
+$h2="Написать отзыв";
 ?>
     <head>
     <style>
@@ -82,6 +82,99 @@ h4{
    background:white;
     box-shadow: 3px 5px 16px rgba(9,9,6,.5);
 }
+
+
+  #formH{
+    width: 700px;
+    height: 70px;
+    border:0px;
+    margin: 100px auto;
+}
+   #templatemo_body{
+background: url(img/templatemo_body.jpg) repeat;
+}
+#templatemo_body_wrapper {
+
+background: url(img/templatemo_body_top.jpg) repeat-x top
+}
+#templatemo_header {
+background: url(img/templatemo_header_bg.png) no-repeat bottom; 
+}
+
+#templatemo_menubar {
+
+background: url(img/templatemo_menubar.png) no-repeat;
+}
+
+#templatemo_main {
+background: url(img/templatemo_main_bg.png) repeat-y;
+}
+
+
+#contact{
+    margin:10px auto;
+    width: 900px;
+    height: 400px;
+}
+#contact label {
+    margin-left:10px;
+    margin-top:10px;
+    font-size:15px;
+    color:white;
+    font-family:Arial;
+}
+
+
+#contact input[type="text"] {
+    margin-top:10px;
+
+    width: 500px;
+    height: 40px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px black, 0 0 1em red;
+    text-align: center;
+}
+.submit_call{
+  
+   margin:0 auto;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 0px solid transparent;
+    margin-top: 10px;
+    margin-left: 45px;
+    border-color: aqua;
+    background: burlywood;
+
+}
+
+.submit_call:hover{
+    
+   width: 150px;
+   height: 50px;
+   border-radius: 10px;
+   border: 0px solid transparent;
+   margin-top: 10px;
+   margin-left: 40px;
+   border-color: black;
+   background:grey;
+
+}
+
+
+ textarea{
+   
+    margin-top:15px;
+    border:1px solid green;
+     border-radius:10px;
+    width: 800px;
+    height: 180px;
+    }
+
+textarea:focus{
+    text-transform: capitalize;
+}
     </style>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>
@@ -110,11 +203,16 @@ h4{
                              </div>
 
     </div>
-    <center style="margin-top:15px;"><h1><?=$h1?></h1></center>
+    <center><h1><?=$h2?></h1></center>
 <?php
          require_once "../templates/gallery(unit5).php";
          require_once "../templates/comment_catalog.php";
 ?>
+          <hr>
+                    <h2 style="margin:0 auto;"><?=$h2;?></h2>
+            <?php 
+            require_once "../templates/form_catalog.php";
+            ?>
 </div>
     </div>
 </body>
