@@ -14,8 +14,8 @@ $sql="SELECT * FROM `product`";
 }
 
 function getRequestsOtziv($link,$marka){
-    $sql="SELECT * FROM `otziv_nout` WHERE `marka`='$marka'"or die("Ошибка " . mysqli_error($link));
-    $result=mysqli_query($link,$sql);
+    $sql="SELECT * FROM `otziv_nout` WHERE `marka`='$marka'"; 
+    $result=mysqli_query($link,$sql) or die("Ошибка " . mysqli_error($link));
     $num_rows = mysqli_num_rows( $result);
     $answer= [];
     if($num_rows>0){

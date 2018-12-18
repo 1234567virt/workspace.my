@@ -7,7 +7,8 @@
       $year=date("Y");
       $id=$_GET['id'];
       $sql="SELECT * FROM `product` WHERE id=$id";
-      $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
+      echo $sql;
+      $result = mysqli_query($link, $sql); 
        ?>
         <meta charset="UTF-8">
         <title><?=$title;?></title>
@@ -21,7 +22,8 @@
     while ($row = mysqli_fetch_array($result))
   {
       ?>
-      <?php $marka=$row['name'];?>
+      <?php $marka=$row['name'];
+      ?>
             <img src='<?=$row['src']?>' width='600'  id='img'>
           <?php counts($row['count'],$id,$link,"product");?>
             <div id='title' ><?=$row['name']?></div>
@@ -31,16 +33,20 @@
             <h4><?=$row['count']?></h4>
             </center></div>
             <?php
-            echo $marka ;
+            //echo $marka ;
             }
+         
 ?>
+
     <div style="margin-top:100px">
-        <?php
+        
+       <?php
         require_once "../templates/comment_product.php";
         require_once "../templates/form_product.php";
         ?>
+  
     </div>
     <div>
-    <?php require_once('../templates/footer.php');?> 
+   
   </body>
   </html>
