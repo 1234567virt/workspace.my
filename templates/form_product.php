@@ -5,7 +5,7 @@
                <textarea name='Message' placeholder='Отзыв' rows="10" cols="45" required></textarea>
           </label><br>
           <input type="hidden" name='id' value='<?php echo $id ?>'>
-          <input type="hidden" name='marka' value='<?php echo $marka?>'>
+          <input type="hidden" name='marka' value='<?php echo $marka;?>'>
           <input type="submit" value="Отправить">
           <input type="reset" value="Сбросить">
 </form>

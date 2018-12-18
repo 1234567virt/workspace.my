@@ -31,6 +31,7 @@
             <h4><?=$row['count']?></h4>
             </center></div>
             <?php
+            echo $marka ;
             }
 ?>
     <div style="margin-top:100px">
