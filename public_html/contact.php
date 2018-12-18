@@ -8,12 +8,7 @@ $year=date("Y");
 ?>
     <head>
     <style>
-   #formH{
-    width: 700px;
-    height: 70px;
-    border:0px;
-    margin: 100px auto;
-}
+
    #templatemo_body{
 background: url(img/templatemo_body.jpg) repeat;
 }
@@ -34,115 +29,13 @@ background: url(img/templatemo_menubar.png) no-repeat;
 background: url(img/templatemo_main_bg.png) repeat-y;
 }
 
-.contact_form input[type="password"] {
-    margin-top:10px;
-    margin-left:20px;
-    width: 300px;
-    height: 40px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px black, 0 0 1em red;
-    text-align: center;
-    
-}
-.contact_form{
-    margin:50px auto;
-    width: 800px;
-    height: 800px;
-}
-ul{
-    list-style-type:none;
-}
-.contact_form label {
-    margin-left:-95px;
-    margin-top:50px;
-    font-size:15px;
-    color:white;
-    font-family:Arial;
-}
-.contact_form input[type="email"] {
-    margin-top:10px;
-    margin-left:50px;
-    width: 300px;
-    height: 40px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px black, 0 0 1em red;
-    text-align: center;
-}
-.contact_form input[type="number"] {
-    margin-top:10px;
-    margin-left:30px;
-    width: 300px;
-    height: 40px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px black, 0 0 1em red;
-    text-align: center;
-}
-.contact_form input[type="text"] {
-    margin-top:10px;
-    margin-left:60px;
-    width: 500px;
-    height: 40px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px black, 0 0 1em red;
-    text-align: center;
-}
-.submit_call{
-    margin-left:80px;
-   margin:0 auto;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    border: 0px solid transparent;
-    margin-top: 10px;
-    margin-left: 40px;
-    border-color: aqua;
-    background: burlywood;
 
-}
 
-.submit_call:hover{
-    
-   width: 150px;
-   height: 50px;
-   border-radius: 10px;
-   border: 0px solid transparent;
-   margin-top: 10px;
-   margin-left: 40px;
-   border-color: black;
-   background:grey;
-
-}
-input[type="email"]:focus {
-    color: green;
-    
-}
-
- textarea{
-   
-    margin-top:15px;
-    border:1px solid green;
-     border-radius:10px;
-    width: 800px;
-    height: 180px;
-    }
-
-textarea:focus{
-    text-transform: capitalize;
-}
-
-iframe{
-    width: 100%;
-    height: 374px;
-}
     </style>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>
-        <link rel="stylesheet" href="./css/menu.css">
-         <!-- <link rel="stylesheet" href="./css/style.css">  -->
+    <link rel="stylesheet" href="./css/menu.css"> 
+         <link rel="stylesheet" href="./css/contact.css"> 
                   <link rel="stylesheet" href="./css/header.css"> 
     </head>
     <body id='templatemo_body' >

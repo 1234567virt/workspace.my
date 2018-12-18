@@ -7,7 +7,7 @@
       $year=date("Y");
       $id=$_GET['id'];
       $sql="SELECT * FROM `product` WHERE id=$id";
-      echo $sql;
+     
       $result = mysqli_query($link, $sql); 
        ?>
         <meta charset="UTF-8">

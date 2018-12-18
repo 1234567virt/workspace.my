@@ -13,12 +13,7 @@ $result='';
 ?>
     <head>
     <style>
-   #formH{
-    width: 700px;
-    height: 70px;
-    border:0px;
-    margin: 100px auto;
-}
+
    #templatemo_body{
 background: url(img/templatemo_body.jpg) repeat;
 }
@@ -39,56 +34,12 @@ background: url(img/templatemo_menubar.png) no-repeat;
 background: url(img/templatemo_main_bg.png) repeat-y;
 }
 
- #formH input[type="number"] {
-    width: 90px;
-    height: 35px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px black, 0 0 1em red;
-    text-align: center;
-}
-#formH #select{
-    width: 35px;
-    height: 35px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px black, 0 0 1em red;
-    text-align: center;
-}
 
-.submit_call{
-   
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    border: 0px solid transparent;
-    margin-top: 10px;
-    margin-left: 40px;
-    border-color: aqua;
-    background: burlywood;
-
-}
-
-.submit_call:hover{
-   
-   width: 150px;
-   height: 50px;
-   border-radius: 10px;
-   border: 0px solid transparent;
-   margin-top: 10px;
-   margin-left: 40px;
-   border-color: black;
-   background:grey;
-
-}
-#contact_form{
-    margin-left:500px;
-}
     </style>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>
         <link rel="stylesheet" href="./css/menu.css">
-         <!-- <link rel="stylesheet" href="./css/style.css">  -->
+         <link rel="stylesheet" href="./css/calc.css"> 
                   <link rel="stylesheet" href="./css/header.css"> 
     </head>
     <body id='templatemo_body' >
