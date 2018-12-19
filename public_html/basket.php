@@ -18,7 +18,6 @@ if(isset($_POST['count']) && isset($_POST['id'])){
      $num_rows = mysqli_num_rows( $result);
     ?>
     <head>
-  
 
  
         <meta charset="UTF-8">
@@ -76,6 +75,9 @@ background: url(img/templatemo_main_bg.png) repeat-y;
  h1{
      margin:10px auto;
  }
+ a{
+    text-decoration:none;
+ }
     </style>
    
         <link rel="stylesheet" href="./css/menu.css">
@@ -104,6 +106,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
                        
               
              <center>  <h1>Корзина</h1></center>
+             <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
                <table width="680px" cellspacing="0" cellpadding="5">
                        	  <tr bgcolor="#ddd">
                         	<th width="220" align="left">Изображение</th> 
