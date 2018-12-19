@@ -40,7 +40,7 @@ if(count($result)==1){
         echo "  <input type='submit' value='Удалить'>";
         echo "  <input type='submit' value='Купить'>"; -->
 
-        <form style ='margin-top:25px;'' action='../public_html/basket.php' method='post'>
+        <form style ='margin-top:25px;' action='../public_html/basket.php' method='post'>
        <label> Название:<?=$arg2?></label>
         <label>:<input type="number" name="count" placeholder="количество"
         style="margin-left:117px;width:60px;height:30px" value='<?=$arg1?>' />Количество</label>
