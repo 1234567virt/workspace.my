@@ -14,9 +14,9 @@ return $product;
 
 
 
-if (isset($_POST['count']) && isset($_POST['product'])){
-        $arg1=(int)$_POST['count'];
-        $arg2=$_POST['product'];
+if (isset($_GET['count']) && isset($_GET['product'])){
+        $arg1=(int)$_GET['count'];
+        $arg2=$_GET['product'];
         $arg1=clear($link,$arg1);
         $arg2=clear($link,$arg2);
         $result=select_basket($link,$arg2,$arg1);
@@ -28,8 +28,7 @@ if(count($result)==1){
     
         <form style ='margin-top:25px;' action='../public_html/basket.php' method='post'>
        <label> Название:<?=$arg2?></label>
-        <label>:<input type="number" name="count" placeholder="количество"
-        style="margin-left:117px;width:60px;height:30px" value='<?=$arg1?>' />Количество</label>
+        <label>:<input type="number" name="count" placeholder="количество" style="margin-left:117px;width:60px;height:30px" value='<?=$arg1?>' />Количество</label>
         <input type='hidden' value='".$user_id."'>
          <input type='submit' value='Удалить'>
         <input type='submit' value='Купить'>

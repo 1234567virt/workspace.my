@@ -7,7 +7,7 @@ require_once('../engine/funcs.php');
 require_once('../engine/calc_function.php');
 require_once('../engine/comment.php');
 require_once('../engine/requests.php');
-//require_once('../engine/registration.php');
+require_once('../engine/basket_funcs.php');
 //require_once('../engine/authorization_function.php');
 $user=null;
 if(isset($_SESSION['user_id'])){

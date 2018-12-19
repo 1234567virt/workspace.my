@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
- 
-    require_once('/opt/lampp/htdocs/workspace.my/engine/db_connect.php');
+ require_once('/opt/lampp/htdocs/workspace.my/engine/db_connect.php');
     //$title="Личный кабинет";
 $h1="Купите у нас хоть что-нибудь!!!!";
 $year=date("Y");
 $title="Корзина";
-$arg1=isset($_POST['count'])?  $_POST['count'] : '';
-$arg2=isset($_POST['product'])? $_POST['product']: ''; 
+
+$arg1=isset($_GET['id'])? $_GET['id'] : '';
+$arg2=isset($_GET['count'])? $_GET['count'] : '';
 $error='';
-if(isset($_POST['count']) && isset($_POST['id'])){
-}
-     
+
+$arg2=0;
+//if(isset($_GET['count']) && isset($_GET['id'])){
+  
         $sql="SELECT * FROM `product`";
      $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
-     $num_rows = mysqli_num_rows( $result);
+   //  $num_rows = mysqli_num_rows( $result);
+//}
     ?>
     <head>
 
- 
+
+
         <meta charset="UTF-8">
        
 <script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>
@@ -27,14 +30,7 @@ if(isset($_POST['count']) && isset($_POST['id'])){
    
         <style>
 
-  #select{
-    width: 35px;
-    height: 35px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px black, 0 0 1em red;
-    text-align: center;
-}
+
 
    #templatemo_body{
     background: url(img/templatemo_body.jpg) repeat;
@@ -58,30 +54,12 @@ background: url(img/templatemo_menubar.png) no-repeat;
 background: url(img/templatemo_main_bg.png) repeat-y;
 }
 
- img{
-     border-radius:9px;
-     box-shadow: 1px 1px 2px black, 0 0 1em red;
- }
 
- .text{
-     font-size:16px;
-     font-family:Verdana;
- }
- table td{
-     border-bottom:1px solid red;
-     padding-top:10px;
- }
-
- h1{
-     margin:10px auto;
- }
- a{
-    text-decoration:none;
- }
     </style>
    
         <link rel="stylesheet" href="./css/menu.css">
-       <link rel="stylesheet" href="./css/header.css"> 
+        <link rel="stylesheet" href="./css/header.css"> 
+        <link rel="stylesheet" href="./css/basket.css"> 
     </head>
     <body id='templatemo_body' >
     <div id="templatemo_body_wrapper">
@@ -118,17 +96,23 @@ background: url(img/templatemo_main_bg.png) repeat-y;
                             
                       </tr>
                <?php
-   while ($row = mysqli_fetch_array($result))
-   {
+    while ($row = mysqli_fetch_array($result))
+    {
   ?>
+  <form action ='./shoppingcart.php'>
   <tr>
         <td><img src='<?=$row['src']?>' width="40%"/></td> 
         <td><?=$row['name']?></td> 
-        <td align="center"><input type="number" value="1" id='select'  /> </td>
+        <td align="center"><input type="number" name="count"  placeholder='0' id='select'  /> </td>
         <td align="right"><?=$row['price']?> $</td> 
+        <input type="hidden" name="id" value="<?=$row['id']?>" id='select'  />
         <td align="right"><?=$row['price']?>$ </td>
-        <td align="center"> <a href="#"><i class="fa fa-lg fa-shopping-basket"></i></a><a href="#" > <img src='img/rm.png' style='width:17px;height:17px'></a> </td>
-		</tr>
+       <td align="center">
+        <button type="submit"  name='save' value='save'> <img src='img/basket.png'></button>
+<button type="submit" name='delete' value='delete'><img src='img/rm.png'  style='width:17px;height:17px'></button>
+    </td>
+        </tr>
+   </form>
 <?php } ?>
 </table>		
                     	
