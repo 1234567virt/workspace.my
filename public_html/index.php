@@ -62,24 +62,19 @@ background: url(img/templatemo_main_bg.png) repeat-y;
                                          </div>
 
                              </div>
-                             <div id="slider-wrapper">
-                <div id="slider" class="nivoSlider">
-                    <img src="img/nout2.jpg" alt="" title="" />
-                    <a href="#"><img src="img/nout1.jpg" alt="" /></a>
-                    <img src="img/nout3.jpg" alt="" />
-                    <img src="img/nout4.jpg" alt="" title="#htmlcaption" />
-                </div>
-                <div id="htmlcaption" class="nivo-html-caption">
-                      
-                </div>
-            </div>
-            <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
-            <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
-            <script type="text/javascript">
-            $(window).load(function() {
-                $('#slider').nivoSlider();
-            });
-            </script>
+                             <h1 style='margin-top:30px'><?=$user['user_name']?> </span> <?=$h1?></h1>
+            <span>Ваш логин:<?=$user['user_login']?></span>
+       <form style ="margin-top:25px;" action="../templates/basket.php" method="post">
+            <label>Продукт: <select name="product" style="width:125px;height:40px"></label>
+     <option></option>
+   <?php foreach($product as $key=>$val){
+    echo "<option>".$val['name']."</option>";   
+   }
+  ?>
+    <label>Количество:<input type="number" placeholder="count" style="margin-left:100px;width:60px;height:30px" name="count" required></label>
+    </select>
+    <input type="submit" value="Зарезирвировать"></p>
+   </form>
     </div>
     </div>
 </body>
