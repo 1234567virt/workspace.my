@@ -3,7 +3,7 @@
 //$product= getRequestsProduct($link);
 
 function delet($link,$id){
-   mysqli_query($link,"DELETE FROM `product` where='$id'");
+   mysqli_query($link,"DELETE FROM `product` where  id='$id'");
 } 
 function insert($link,$src,$name,$text,$count){
    mysqli_query($link ,"INSERT INTO `product`( `src`, `name`, `text`, `count`) VALUES
@@ -14,22 +14,22 @@ function update($link,$src,$name,$text,$count){
    `name`='$name',`text`='$text',`count`='$count' where id=$id");
 }
 
-if (isset($_GET['id']) && isset($_GET['delete'])){
-                $id=$_GET['id'];
-                $arg1=clear($link,$id);
-                delet($link);
-                echo "1";
+   if (isset($_GET['delete'])){
+      $id=$_GET['id'];
+      $arg1=clear($link,$id);
+      delet($link,$id);
+      echo "1";
 }
 
-        elseif (isset($_GET['insert'])){
-                insert($link,$src,$name,$text,$count);
-                echo "2";
-}
+//    elseif (isset($_GET['insert'])){
+//       insert($link,$src,$name,$text,$count);
+//       echo "2";
+// }
 
-        elseif (isset($_GET['update'])){
-                update($link,$src,$name,$text,$count);
-                echo "3";
- }
+//    elseif (isset($_GET['update'])){
+//       update($link,$src,$name,$text,$count);
+//       echo "3";
+//  }
 
 
 ?>

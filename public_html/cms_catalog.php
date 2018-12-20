@@ -52,7 +52,7 @@ $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)
                             <div id="top_nav" class="ddsmoothmenu">
                                 <ul>
 <?php require_once('../templates/menu.php');?>
-                                /ul>
+                                </ul>
                                 <br style="clear: left" />
                             </div>
                         </div>
@@ -68,7 +68,7 @@ $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)
                         <th width="90"> </th>
                     </tr>
 <?php while ($row = mysqli_fetch_array($result)) { ?>
-                <form action ='./cms.php'>
+                <form action ='../templates/cms_obr.php' method="GET">
                      <tr>
                         <td><img src='<?=$row['src']?>' width="40%"/></td> 
                         <td><?=$row['name']?></td> 
