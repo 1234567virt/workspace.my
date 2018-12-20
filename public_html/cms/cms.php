@@ -19,7 +19,7 @@
       } 
       </script> -->
     <?php 
-    require_once('/opt/lampp/htdocs/workspace.my/engine/db_connect.php');
+    require_once('../../engine/db_connect.php');
         $title="CMS";
         $h1="CMS";
         $year=date("Y");
