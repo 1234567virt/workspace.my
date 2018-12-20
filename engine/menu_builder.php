@@ -5,7 +5,7 @@ $menu= [
     "catalog.php?id=3"=>'Товары',
     "calc.php"=>'Калькулятор',
     "contact.php"=>'Контакты',
-    "cms/cms.php"=>'cms',
+    "cms_catalog.php"=>'cms',
     "logout.php"=>'Регистрация'
 ]
 ?>
