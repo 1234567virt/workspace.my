@@ -1,8 +1,9 @@
 
+<?php  $product_select= getRequestsProduct($link); ?>
 <form style ="margin-top:25px;" action="../templates/basket_obr.php" method="post">
             <label>Продукт: <select name="product" style="width:125px;height:40px"></label>
             <option></option>
-            <?php foreach($product as $key=>$val){
+            <?php foreach($product_select as $key=>$val){
             echo "<option>".$val['name']."</option>";   
             }
          ?>

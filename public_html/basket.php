@@ -15,7 +15,7 @@ $arg2=0;
 //if(isset($_GET['count']) && isset($_GET['id'])){
   
         $sql="SELECT * FROM `product`";
-     $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
+        $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
    //  $num_rows = mysqli_num_rows( $result);
 //}
     ?>

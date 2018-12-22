@@ -134,7 +134,7 @@ a{
             </table>
 
             <span>Ваш логин:<?=$user['user_login']?></span>
-            <?php require_once "../templates/form_basket.php"; ?>
+            <?php require_once "../templates/basket_form.php"; ?>
    </div>
         </div>
     </div>
