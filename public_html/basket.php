@@ -78,12 +78,8 @@ background: url(img/templatemo_main_bg.png) repeat-y;
                                                 </ul>
                                             <br style="clear: left" />
                                          </div>
-
-                             </div>
-                         
-                       
-              
-             <center>  <h1>Корзина</h1></center>
+                                </div>
+                 <center>  <h1>Корзина</h1></center>
              <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
                <table width="680px" cellspacing="0" cellpadding="5">
                        	  <tr bgcolor="#ddd">
@@ -93,8 +89,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
                         	<th width="60" align="right">Цена </th> 
                         	<th width="60" align="right">Всего </th> 
                         	<th width="90"> </th>
-                            
-                      </tr>
+                        </tr>
                <?php
     while ($row = mysqli_fetch_array($result))
     {

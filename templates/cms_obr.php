@@ -1,8 +1,6 @@
 <?php
  require_once '../engine/init.php';
-function delet($link,$id){
-   mysqli_query($link,"DELETE FROM `product` where  id='$id'");
-} 
+
    if (isset($_GET['delete'])){
       $id=$_GET['id'];
       $arg1=clear($link,$id);

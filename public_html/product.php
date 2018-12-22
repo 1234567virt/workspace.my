@@ -7,8 +7,7 @@
       $year=date("Y");
       $id=$_GET['id'];
       $sql="SELECT * FROM `product` WHERE id=$id";
-     
-      $result = mysqli_query($link, $sql); 
+     $result = mysqli_query($link, $sql); 
        ?>
         <meta charset="UTF-8">
         <title><?=$title;?></title>
@@ -18,10 +17,7 @@
     <body>
     <div class='container'>
 
-       <?php
-    while ($row = mysqli_fetch_array($result))
-  {
-      ?>
+       <?php while ($row = mysqli_fetch_array($result)){?>
       <?php $marka=$row['name'];
       ?>
             <img src='<?=$row['src']?>' width='600'  id='img'>
@@ -32,21 +28,13 @@
             <center>
             <h4><?=$row['count']?></h4>
             </center></div>
-            <?php
-            //echo $marka ;
-            }
-         
-?>
-
-    <div style="margin-top:100px">
-        
-       <?php
+            <?php } ?>
+     <div style="margin-top:100px">
+    <?php
         require_once "../templates/comment_product.php";
         require_once "../templates/form_product.php";
-        ?>
-  
+    ?>
     </div>
     <div>
-   
-  </body>
+</body>
   </html>

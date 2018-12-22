@@ -9,7 +9,6 @@ require_once('../engine/init.php');
 $arg1=isset($_GET['id'])? $_GET['id'] : '';
 $arg2=isset($_GET['count'])? $_GET['count'] : '';
 $error='';
-
 if(isset($_GET['count']) && isset($_GET['id'])){
    $arg1=clear($link,$_GET['count']);
    $arg2=clear($link,$_GET['id']);
@@ -35,11 +34,9 @@ if(isset($_GET['count']) && isset($_GET['id'])){
         <title><?php echo $title ?></title>
         <link rel="stylesheet" href="./css/menu.css">
         <link rel="stylesheet" href="./css/header.css"> 
-        <<link rel="stylesheet" href="./css/basket.css"> 
-        <!-- <link rel="stylesheet" media="screen" href="./css/styles.css" > -->
-
-
-              <style>
+        <link rel="stylesheet" href="./css/basket.css"> 
+        
+       <style>
 
 
  #templatemo_body{
@@ -113,50 +110,43 @@ a{
   </style>
     </head>
     <body id='templatemo_body'>
-        
-        <?php require_once('../templates/header.php');?>
-    
-            <h1 style='margin-top:30px'><?=$user['user_name']?> </span> <?=$h1?></h1>
+         <?php require_once('../templates/header.php');?>
+         <h1 style='margin-top:30px'><?=$user['user_name']?> </span> <?=$h1?></h1>
            <table width="680px" cellspacing="0" cellpadding="5">
-                        <tr bgcolor="#ddd">
+                     <tr bgcolor="#ddd">
                            <th width="220" align="left">Изображение</th> 
                            <th width="180" align="left">Название </th> 
                             <th width="100" align="center">Количество </th> 
                            <th width="60" align="right">Цена </th> 
                            <th width="60" align="right">Всего </th> 
                            <th width="90"> </th>
-                       </tr>
-              <?php
-  while ($row = mysqli_fetch_array($result))
-  {
- ?>
- <tr>
-       <td><img src='<?=$row['src']?>' width="40%"/></td> 
-       <td><?=$row['name']?></td> 
-       <td align="center"><input type="number" value="<?=$arg1?>" id='select'  /> </td>
-       <td align="right"><?=$row['price']?> $</td> 
-       <td align="right"><?=$row['price']?>$ </td>
-       <td align="center"> <a href="#"><i class="fa fa-lg fa-shopping-basket"></i>
-    <<img src='img/rm.png' style='width:17px;height:17px'> </td>
-       </tr>
+                     </tr>
+              <?php while ($row = mysqli_fetch_array($result)){?>
+                  <tr>
+                           <td><img src='<?=$row['src']?>' width="40%"/></td> 
+                           <td><?=$row['name']?></td> 
+                           <td align="center"><input type="number" value="<?=$arg1?>" id='select'  /> </td>
+                           <td align="right"><?=$row['price']?> $</td> 
+                           <td align="right"><?=$row['price']?>$ </td>
+                           <td align="center"> <a href="#"><i class="fa fa-lg fa-shopping-basket"></i>
+                           <img src='img/rm.png' style='width:17px;height:17px'> </td>
+                  </tr>
 <?php } ?>
-</table>
+            </table>
 
             <span>Ваш логин:<?=$user['user_login']?></span>
         <form style ="margin-top:25px;" action="../templates/basket_obr.php" method="post">
-       
             <label>Продукт: <select name="product" style="width:125px;height:40px"></label>
-     <option></option>
-   <?php foreach($product as $key=>$val){
-   echo "<option>".$val['name']."</option>";   
-   }
-  ?>
-    <label>Количество:<input type="number" placeholder="Количество" id="select" style="margin-left:200px;width:85px" name="count" required></label>
-    </select>
-    <input type="submit" class='submit_call' value="Зарезирвировать"></p>
-   </form> 
-
-        </div>
+            <option></option>
+            <?php foreach($product as $key=>$val){
+            echo "<option>".$val['name']."</option>";   
+            }
+         ?>
+            <label>Количество:<input type="number" placeholder="Количество" id="select" style="margin-left:200px;width:85px" name="count" required></label>
+            </select>
+            <input type="submit" class='submit_call' value="Зарезирвировать"></p>
+         </form> 
+   </div>
         </div>
     </div>
     </div>

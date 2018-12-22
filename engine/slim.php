@@ -1,6 +1,5 @@
 
 
-
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" />

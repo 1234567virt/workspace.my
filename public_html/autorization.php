@@ -28,9 +28,7 @@ background: url(img/templatemo_menubar.png) no-repeat;
 #templatemo_main {
 background: url(img/templatemo_main_bg.png) repeat-y;
 }
-
-
-    </style>
+     </style>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>
         <link rel="stylesheet" href="./css/menu.css">
@@ -40,8 +38,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     <body id='templatemo_body' >
     <div id="templatemo_body_wrapper">
         <div id="templatemo_wrapper">
-     
-             <div id="templatemo_header">
+                <div id="templatemo_header">
                     <div id="site_title"><h1><a href="#"><?php echo $h1; ?></a></h1></div>
                         <div class="cleaner"></div>
                  </div> <!-- END of templatemo_header -->
@@ -54,10 +51,8 @@ background: url(img/templatemo_main_bg.png) repeat-y;
                                                 </ul>
                                             <br style="clear: left" />
                                          </div>
-
-                             </div>
-
-    </div>
+                              </div>
+        </div>
     <center style="margin-top:15px;"><h1><?php echo $h1 ?></h1></center>
     <form class="contact_form" action="../engine/authorization_function.php" method="post" >
     <ul>

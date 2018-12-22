@@ -1,7 +1,5 @@
 <?php 
-
 $id=$_GET['id'];
-
 $answer=getRequestsOtziv($link,$marka);
 echo "<br>";
       foreach($answer as $key=>$rower){
@@ -9,6 +7,4 @@ echo "<br>";
           echo "Автор:".$rower['Aftor']."<br>";
           echo "Текст:".$rower['text']."<br>";
     }
-    
-
- ?>
+?>

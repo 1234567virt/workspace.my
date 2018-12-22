@@ -5,6 +5,5 @@
       }
      else{
         rewiev($link,$_POST['Aftor'],$_POST['Message'],$_POST['id']);
-      
     }
    ?>

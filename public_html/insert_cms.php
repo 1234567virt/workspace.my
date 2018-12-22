@@ -3,21 +3,14 @@
 <?php
 $title="Создание";
 $date=date("Y");
-function insert($link,$src,$name,$text,$number,$price){
-    mysqli_query($link ,"INSERT INTO `product` (`src`, `name`, `text`, `count`, `number`, `price`)
-    VALUES ('1','$name','$text','0','$number','$price')");
-}
-function update($link,$id,$src,$name,$text,$number,$price){
-    mysqli_query($link ,"UPDATE `product` SET `src`='$src',
-    `name`='$name',`text`='$text',`number`='$number',`price`='$price' WHERE `id`=$id");
- }
+
 require_once('../engine/init.php');
     $name=isset($_GET['name'])?  $_GET['name'] : '';
     $price=isset($_GET['price'])? $_GET['price'] : ''; 
     $number=isset($_GET['number'])?  $_GET['number'] : '';
     $arg1=isset($_GET['text'])? $_GET['text'] : ''; 
     $id=isset($_GET['id'])? $_GET['id'] : ''; 
-   
+    $src=isset($_GET['src'])? $_GET['src'] : ''; 
         if(isset($_GET['ok'])){
             if(isset($_GET['id'])!=''){
                 echo 1;
@@ -26,7 +19,7 @@ require_once('../engine/init.php');
             }
                 else{
                  
-            insert($link,'1',$_GET['name'],$_GET['text'],$_GET['number'],$_GET['price']);
+            insert($link,$_GET['src'],$_GET['name'],$_GET['text'],$_GET['number'],$_GET['price']);
              header('Location:../public_html/cms_catalog.php');
             }
          }
@@ -41,6 +34,7 @@ require_once('../engine/init.php');
                         $price=$row['price'];
                         $number=$row['number'];
                         $text=$row['text'];
+                        $src=$row['src'];
                 }
                 $h1="Редактировать";
             }
@@ -101,7 +95,9 @@ require_once('../engine/init.php');
     
  <div id="contact_form">
        
-       <form method="get" class="contact_form" action="../public_html/insert_cms.php">
+       <form method="get" enctype="multipart/form-data" class="contact_form" action="../public_html/insert_cms.php">
+    
+
            <ul>
                 <li><label>Название</label></li>
                 <li>    <input type="text" placeholder="Название" value="<?=$name ?>" name="name" required /></li>
@@ -115,7 +111,8 @@ require_once('../engine/init.php');
                   </textarea>     
                 </li>
             </ul>
-            <input type="submit" class="submit_call" name="ok" value="Добавить" />
+            <input name="picture" type="file" value='<?=text?>'/>
+           
         </form>
 
             <br>
