@@ -4,14 +4,14 @@
 $title="Личный кабинет";
 $h1=" В вашей корзине !!!!";
 $year=date("Y");
-require_once('../templates/basket_obr.php');
+
 require_once('../engine/init.php');
 $arg1=isset($_GET['id'])? $_GET['id'] : '';
 $arg2=isset($_GET['count'])? $_GET['count'] : '';
 $error='';
 if(isset($_GET['count']) && isset($_GET['id'])){
-   $arg1=clear($link,$_GET['count']);
-   $arg2=clear($link,$_GET['id']);
+   $arg1=clear($link,$_GET['id']);
+   $arg2=clear($link,$_GET['count']);
 
    if (isset($_GET["save"])) {
       insert_basket($link,$user_id,$product_name,$_GET['count']);
@@ -21,8 +21,7 @@ if(isset($_GET['count']) && isset($_GET['id'])){
          delete_basket($link,$_GET['id']);
        }
       // else{
-           $sql="SELECT * FROM `product` where `id`='$arg2'";
-            $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
+         $result=getSelectProduct($link,$arg1);
       //   }
        
  //  }
@@ -135,17 +134,7 @@ a{
             </table>
 
             <span>Ваш логин:<?=$user['user_login']?></span>
-        <form style ="margin-top:25px;" action="../templates/basket_obr.php" method="post">
-            <label>Продукт: <select name="product" style="width:125px;height:40px"></label>
-            <option></option>
-            <?php foreach($product as $key=>$val){
-            echo "<option>".$val['name']."</option>";   
-            }
-         ?>
-            <label>Количество:<input type="number" placeholder="Количество" id="select" style="margin-left:200px;width:85px" name="count" required></label>
-            </select>
-            <input type="submit" class='submit_call' value="Зарезирвировать"></p>
-         </form> 
+            <?php require_once "../templates/form_basket.php"; ?>
    </div>
         </div>
     </div>

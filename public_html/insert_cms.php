@@ -111,8 +111,8 @@ require_once('../engine/init.php');
                   </textarea>     
                 </li>
             </ul>
-            <input name="picture" type="file" value='<?=text?>'/>
-           
+            <input name="picture" type="file" value='<?=$src?>'/>
+            <input name="ok" type="submit" value='Отправить' class='submit_call'/>
         </form>
 
             <br>

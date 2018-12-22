@@ -6,4 +6,8 @@
   function delete_basket($link,$id){
     mysqli_query($link,"DELETE FROM `basket` where='$id'" );
 } 
-?>
+function getSelectProduct($link,$id){
+ $result=mysqli_query($link,"SELECT * FROM `product` where `id`='$id'" ) or die("Ошибка " . mysqli_error($link)); ;
+  return $result;
+} 
+?>  
