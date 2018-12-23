@@ -12,12 +12,10 @@ $arg2=isset($_GET['count'])? $_GET['count'] : '';
 $error='';
 
 $arg2=0;
-//if(isset($_GET['count']) && isset($_GET['id'])){
-  
+
         $sql="SELECT * FROM `product`";
         $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
-   //  $num_rows = mysqli_num_rows( $result);
-//}
+   
     ?>
     <head>
 
@@ -101,6 +99,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
         <td align="center"><input type="number" name="count"  placeholder='0' id='select'  /> </td>
         <td align="right"><?=$row['price']?> $</td> 
         <input type="hidden" name="id" value="<?=$row['id']?>" id='select'  />
+        <input type="hidden" name="product" value="<?=$row['name']?>" id='select'  />
         <td align="right"><?=$row['price']?>$ </td>
        <td align="center">
         <button type="submit"  name='save' value='save'> <img src='img/basket.png'></button>

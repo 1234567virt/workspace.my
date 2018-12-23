@@ -14,14 +14,24 @@ if(isset($_GET['count']) && isset($_GET['id'])){
    $arg2=clear($link,$_GET['count']);
 
    if (isset($_GET["save"])) {
-      insert_basket($link,$user_id,$product_name,$_GET['count']);
-
-       }
-        elseif (isset($_GET["delete"])) {
+      $massiv=mysqli_query($link,"select * from `product` where `number`>='$arg2' and `id`='$arg1'");
+      $count_save=mysqli_num_rows($massiv);
+         if($count_save===0){
+            echo 'Нехватает продукции';
+          // die;
+          }
+          else{
+              
+                while ($one= mysqli_fetch_array($massiv)){
+                     insert_basket($link,$_SESSION['user_id'],$one['name'],$arg2);
+                     }
+            }
+    }
+      elseif (isset($_GET["delete"])) {
          delete_basket($link,$_GET['id']);
-       }
-      // else{
-         $result=getSelectProduct($link,$arg1);
+      }
+            // else{
+               $result=getSelectProduct($link,$arg1);
       //   }
        
  //  }
@@ -124,7 +134,7 @@ a{
                   <tr>
                            <td><img src='<?=$row['src']?>' width="40%"/></td> 
                            <td><?=$row['name']?></td> 
-                           <td align="center"><input type="number" value="<?=$arg1?>" id='select'  /> </td>
+                           <td align="center"><input type="number" value="<?=$arg2?>" id='select'  /> </td>
                            <td align="right"><?=$row['price']?> $</td> 
                            <td align="right"><?=$row['price']?>$ </td>
                            <td align="center"> <a href="#"><i class="fa fa-lg fa-shopping-basket"></i>
