@@ -5,7 +5,7 @@
     <?php
      $title="Каталог";
       $year=date("Y");
-      $id=$_GET['id'];
+      $id=clear($link,$_GET['id']);
       $sql="SELECT * FROM `product` WHERE id=$id";
      $result = mysqli_query($link, $sql); 
        ?>

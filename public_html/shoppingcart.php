@@ -3,8 +3,6 @@
 <?php
 $title="Личный кабинет";
 $h1=" В вашей корзине !!!!";
-$year=date("Y");
-
 require_once('../engine/init.php');
 $arg1=isset($_GET['id'])? $_GET['id'] : '';
 $arg2=isset($_GET['count'])? $_GET['count'] : '';
@@ -12,7 +10,6 @@ $error='';
 if(isset($_GET['count']) && isset($_GET['id'])){
    $arg1=clear($link,$_GET['id']);
    $arg2=clear($link,$_GET['count']);
-
    if (isset($_GET["save"])) {
       $massiv=mysqli_query($link,"select * from `product` where `number`>='$arg2' and `id`='$arg1'");
       $count_save=mysqli_num_rows($massiv);
@@ -44,11 +41,8 @@ if(isset($_GET['count']) && isset($_GET['id'])){
         <link rel="stylesheet" href="./css/menu.css">
         <link rel="stylesheet" href="./css/header.css"> 
         <link rel="stylesheet" href="./css/basket.css"> 
-        
-       <style>
-
-
- #templatemo_body{
+   <style>
+#templatemo_body{
   background: url(img/templatemo_body.jpg) repeat;
 }
 
@@ -130,17 +124,7 @@ a{
                            <th width="60" align="right">Всего </th> 
                            <th width="90"> </th>
                      </tr>
-              <?php while ($row = mysqli_fetch_array($result)){?>
-                  <tr>
-                           <td><img src='<?=$row['src']?>' width="40%"/></td> 
-                           <td><?=$row['name']?></td> 
-                           <td align="center"><input type="number" value="<?=$arg2?>" id='select'  /> </td>
-                           <td align="right"><?=$row['price']?> $</td> 
-                           <td align="right"><?=$row['price']?>$ </td>
-                           <td align="center"> <a href="#"><i class="fa fa-lg fa-shopping-basket"></i>
-                           <img src='img/rm.png' style='width:17px;height:17px'> </td>
-                  </tr>
-<?php } ?>
+              <?php require_once('../templates/basket_cart.php');?>
             </table>
 
             <span>Ваш логин:<?=$user['user_login']?></span>

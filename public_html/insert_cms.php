@@ -3,7 +3,6 @@
 <?php
 $title="Создание";
 $date=date("Y");
-
 require_once('../engine/init.php');
     $name=isset($_GET['name'])?  $_GET['name'] : '';
     $price=isset($_GET['price'])? $_GET['price'] : ''; 
@@ -24,9 +23,8 @@ require_once('../engine/init.php');
             }
          }
             if(isset($_GET['id'])){
-               
-                $id=$_GET['id'];
-                $sql="SELECT * FROM `product` WHERE `id`=$id";
+               $id=clear($link,$_GET['id']);
+               $sql="SELECT * FROM `product` WHERE `id`=$id";
                  $result = mysqli_query($link, $sql); 
                 while ($row = mysqli_fetch_array($result))
                 {
