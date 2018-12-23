@@ -2,35 +2,23 @@
 <html lang="ru">
 <?php
  require_once('/opt/lampp/htdocs/workspace.my/engine/db_connect.php');
-    //$title="Личный кабинет";
 $h1="Купите у нас хоть что-нибудь!!!!";
 $year=date("Y");
 $title="Корзина";
-
 $arg1=isset($_GET['id'])? $_GET['id'] : '';
 $arg2=isset($_GET['count'])? $_GET['count'] : '';
 $error='';
-
 $arg2=0;
-
-        $sql="SELECT * FROM `product`";
-        $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
-   
+    $sql="SELECT * FROM `product`";
+    $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
+    
     ?>
     <head>
-
-
-
         <meta charset="UTF-8">
-       
-<script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>
+        <script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>
         <title><?php echo $title ?></title>
-   
         <style>
-
-
-
-   #templatemo_body{
+#templatemo_body{
     background: url(img/templatemo_body.jpg) repeat;
 }
 
@@ -51,8 +39,6 @@ background: url(img/templatemo_menubar.png) no-repeat;
 #templatemo_main {
 background: url(img/templatemo_main_bg.png) repeat-y;
 }
-
-
     </style>
    
         <link rel="stylesheet" href="./css/menu.css">
@@ -77,7 +63,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
                                             <br style="clear: left" />
                                          </div>
                                 </div>
-                 <center>  <h1>Корзина</h1></center>
+                 <center>  <h1><?=$title?></h1></center>
              <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
                <table width="680px" cellspacing="0" cellpadding="5">
                        	  <tr bgcolor="#ddd">

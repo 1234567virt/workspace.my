@@ -42,6 +42,7 @@ require_once('../engine/init.php');
                 $price='';
                 $number='';
                 $text='';
+                $src='';
             }
 ?>
     <head>
@@ -104,12 +105,13 @@ require_once('../engine/init.php');
                 <li><label>Цена</label></li>
                 <li>   <input type="number" placeholder="Цена" value="<?=$price?>" name="price" required  />
                 <input type="hidden" value="<?=$id?>" name="id"/></li>
+                <input type="hidden" value="30000" name="MAX_FILE_SIZE" /></li>
                 <li><label>Описание</label></li>
-                <li>    <textarea  name="text" cols='40' rows='40' maxlength='1024'  placeholder="Описание" ><?=$text?>
+                <li>    <textarea  name="text" cols='40' rows='40'  placeholder="Описание" ><?=$text?>
                   </textarea>     
                 </li>
             </ul>
-            <input name="picture" type="file" value='<?=$src?>'/>
+            <input name="userfile" type="file" value='<?=$src?>'/>
             <input name="ok" type="submit" value='Отправить' class='submit_call'/>
         </form>
 
