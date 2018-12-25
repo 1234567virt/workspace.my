@@ -1,75 +1,14 @@
-body{
-    background-color:#f8f8f8;
-}
-
-h2,h1{
-    text-align:center;
-}
-
-ul{
-    list-style-type:none;  
-}
-
-ul a{
-    text-decoration: none;
-    color:red;
-    font-size:16pt;
-    font-style:italic; 
-    line-height: 18pt;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-h3.head{
-    color:black;
-    font-size:18px;
-    font-weight: 400px;
-    background: #eaeaea;
-    text-align:center;
-}
-
-.small_text{
-    background-color:707070;
-    font-size:14px;
-    line-height: 16px;
-    font-style:italic;
-}
-
-.long_text{
-    color:#484343;
-    font-size:16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align:left;
-}
- 
-ul.xaracter{
-    font-family:'Times New Roman', Times, serif;
-    font-size:16px;
-    list-style-image: url('../img/favicon.ico');
- }
-
-img.portfolio{
-     width: 200px;
-     display:block;
-     margin: auto;
-}
- 
- img.catalog{
-     width: 45px;
-     border:1px solid green;
-     border-radius:12px;
-     
-    }
-
- input[type='text']{
-     width: 100px;
-     height: 12px;
-     color:grey;
-     font-size:14px;
-  }
- 
-fieldset{
-    width: 300px;
-    height: 300px;
-    border:2px solid red;
-}
+  <div id="templatemo_body_wrapper">
+        <div id="templatemo_wrapper">
+            <div id="templatemo_header">
+                <div id="site_title"><h1><a href="#">Санрайс</a></h1></div>
+                    <div class="cleaner"></div>
+                 </div> <!-- END of templatemo_header -->
+                        <div id="templatemo_menubar">
+                            <div id="top_nav" class="ddsmoothmenu">
+                                <ul>
+<?php require_once('../templates/menu.php');?>
+                                </ul>
+                                <br style="clear: left" />
+                            </div>
+                        </div>

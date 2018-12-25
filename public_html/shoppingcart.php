@@ -13,7 +13,7 @@ if(isset($_GET['count']) && isset($_GET['id'])){
       $count_save=mysqli_num_rows($massiv);
          if($count_save===0){
             echo 'Нехватает продукции';
-          // die;
+        
           }
           else{
               

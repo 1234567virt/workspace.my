@@ -41,21 +41,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     <body id='templatemo_body' >
     <?php require_once('../templates/header.php');?>
     <center style="margin-top:5px;"><h1>Калькулятор</h1></center>
-   <div id="contact_form">
-      
-    <form method="post" id="formH" action="<?="calc.php";?>">
-        <input type="number" placeholder="Значение 1" value="<?=$arg1;?>" name="numberTwo" required class="required input_field" />
-            <select name="hero" id="select" >
-                <option disabled></option>
-                <option value="+">+</option>
-                <option  value="-">-</option>
-                <option  value="*">*</option>
-                <option  value="/">/</option>
-            </select>
-       <input type="number" placeholder="Значение 2" value="<?=$arg1;?>" name="numberOne" required class="validate-email required input_field" />
-<br>
-       <input type="submit" class="submit_call" name="submit" value="Расчитать" />
-<br>
+    <?php require_once('../templates/calculator/calc_form.php');?>
 <?php
 require_once('../templates/calculator/calc_result.php');
     ?>

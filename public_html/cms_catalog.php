@@ -9,8 +9,10 @@ $title="Корзина";
 require_once "../templates/dataNull.php"; 
 $error='';
 $arg2=0;
+//
 $sql="SELECT * FROM `product`";
 $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
+//
 ?>
 <head>
 <meta charset="UTF-8">
@@ -55,7 +57,7 @@ $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)
                         <th width="90"> </th>
                     </tr>
 <?php while ($row = mysqli_fetch_array($result)) { ?>
-                <form action ='../templates/cms_obr.php' method="GET">
+                <form action ='../templates/cms_controler.php' method="GET">
                      <tr>
                         <td><img src='<?=$row['src']?>' width="40%"/></td> 
                         <td><?=$row['name']?></td> 
