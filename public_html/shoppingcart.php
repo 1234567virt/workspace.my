@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
+require_once('../engine/init.php');
+if(isset($user['user_login'])){
 $title="Личный кабинет";
 $h1=" В вашей корзине !!!!";
-require_once('../engine/init.php');
+
 require_once("../templates/dataNull.php"); 
 $error='';
 if(isset($_GET['count']) && isset($_GET['id'])){
@@ -86,6 +88,12 @@ background: url(img/templatemo_main_bg.png) repeat-y;
             <?php require_once("../templates/basket/basket_form.php"); ?>
    </div>
         </div>
+<?php
+ }
+else {
+  header('Location:../public_html/autorization.php');
+}
+?>
     </div>
     </div>
     </body>
