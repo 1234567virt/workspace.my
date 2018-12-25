@@ -9,6 +9,7 @@ $error='';
 if(isset($_GET['count']) && isset($_GET['id'])){
    require_once("../templates/dataClear.php"); 
    if (isset($_GET["save"])) {
+     
       $massiv=mysqli_query($link,"select * from `product` where `number`>='$arg2' and `id`='$arg1'");
       $count_save=mysqli_num_rows($massiv);
          if($count_save===0){
@@ -27,11 +28,9 @@ if(isset($_GET['count']) && isset($_GET['id'])){
       elseif (isset($_GET["delete"])) {
          delete_basket($link,$_GET['id']);
       }
-            // else{
+            
                $result=getSelectProducts($link,$arg1);
-      //   }
-       
- //  }
+
 }
 ?>
     <head>

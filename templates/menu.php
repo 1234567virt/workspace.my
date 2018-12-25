@@ -18,7 +18,7 @@
 }
                   else{
                      ?>
-      <!-- <a href='../public_html/autorization.php' style='text-decaration:none;font-size:14px;color:blue'>Войти</a> -->
+     
                   <?php
  }
  if(isset( $_SESSION['success_message'])){

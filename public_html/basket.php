@@ -8,9 +8,10 @@ $title="Корзина";
 require_once "../templates/dataNull.php"; 
 $error='';
 $arg2=0;
+//
     $sql="SELECT * FROM `product`";
     $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
-    
+    //
     ?>
     <head>
         <meta charset="UTF-8">
