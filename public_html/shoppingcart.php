@@ -21,6 +21,8 @@ if(isset($_GET['count']) && isset($_GET['id'])){
               
                 while ($one= mysqli_fetch_array($massiv)){
                      insert_basket($link,$_SESSION['user_id'],$one['name'],$arg2);
+                     echo $arg1;
+                   
                      }
             }
     }
@@ -28,7 +30,7 @@ if(isset($_GET['count']) && isset($_GET['id'])){
          delete_basket($link,$_GET['id']);
       }
             // else{
-               $result=getSelectProduct($link,$arg1);
+               $result=getSelectProducts($link,$_SESSION['user_id']);
       //   }
        
  //  }
