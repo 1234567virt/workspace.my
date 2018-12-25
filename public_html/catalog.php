@@ -79,7 +79,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     </div>
     <center><h1><?=$h2?></h1></center>
 <?php
-         require_once "../templates/gallery(unit5).php";
+         require_once "../templates/catalog_basket.php";
          require_once "../templates/comment_catalog.php";
 ?>
           <hr>

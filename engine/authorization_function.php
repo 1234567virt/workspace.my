@@ -10,7 +10,7 @@ if(isset($login) && isset($password)){
         $login=$_POST['log'];
         $password=$_POST['pas'];
         $user=getUserEmail($link,$login);
-       // var_dump($user);
+      
         if($user){
 
              if(password_verify($password,$user['user_password'])){
