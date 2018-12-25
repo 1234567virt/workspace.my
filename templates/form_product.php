@@ -1,4 +1,4 @@
-<form action="../templates/post.php"  id="contact" method="post">
+<form action="../templates/post_controller.php"  id="contact" method="post">
      <p>
           <label>Автор:<input type="text" placeholder="Автор" name="Aftor" required></label><br>
           <label>Текст:
