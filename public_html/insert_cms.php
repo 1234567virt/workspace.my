@@ -1,91 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
-if(isset($_FILES['filename'])){
-    $path=__DIR__.'/'.'img'.'/'. $_FILES["filename"]["name"];
 
-    if(is_uploaded_file($_FILES["filename"]["tmp_name"])  )
-     {
- 
-         if($_FILES["filename"]["size"] > 1024*3*1024)
-          {
-             echo "Превышен размер файла";
-          }
- 
-         else
-         {
-             if($_FILES['filename']['type']=='image/jpeg')
-             {
-               //  $path=__DIR__.'/'.'img';
-                 move_uploaded_file( $_FILES["filename"]["tmp_name"],  $path);
-                 echo 'Успех';
-             }
- 
-             else
-              {
-                 echo 'Не правильный формат данных';
-             }
- 
-         } 
-     }
-     else
-     {
-         echo 'Ошибка';
-     }
-  
-}
 $title="Создание";
 require_once('../engine/init.php');
-//
-//var_dump($_FILES["filename"]);
-    $name=isset($_POST['name'])?  $_POST['name']: '';
-    $price=isset($_POST['price'])? $_POST['price']: ''; 
-    $number=isset($_POST['number'])?  $_POST['number'] : '';
-    $text=isset($_POST['text'])? $_POST['text'] : ''; 
-    $id=isset($_GET['id'])? $_GET['id'] : ''; 
-  
-
-
-
-        if(isset($_POST['ok'])){
-     
-            if(isset($_GET['id'])!=''){
-                echo $_GET['id']."!!!<br>";
-                echo $_POST['ok']."!!!<br>";
-                
-                update($link,$_POST['id'],$path,$_POST['name'],$_POST['text'],$_POST['number'],$_POST['price']);
-            header('Location:../public_html/cms_catalog.php');
-            }
-                else{
-                
-                 echo $path;
-            insert($link,$path,$_POST['name'],$_POST['text'],$_POST['number'],$_POST['price']);
-            // header('Location:../public_html/cms_catalog.php');
-                }
-         }
-            if(isset($_GET['id'])){
-               $id=$_GET['id'];
-               $sql="SELECT * FROM `product` WHERE `id`=$id";
-               echo $sql;
-                 $result = mysqli_query($link, $sql); 
-                while ($row = mysqli_fetch_array($result))
-                {
-                        $name=$row['name'];
-                        $price=$row['price'];
-                        $number=$row['number'];
-                        $text=$row['text'];
-                        $src=$row['src'];
-                }
-                $h1="Редактировать";
-            }
-            else{
-                $h1="Создание";
-                $name='';
-                $price='';
-                $number='';
-                $text='';
-                $src='';
-            }
+require_once('../engine/cms_autoload.php');
+require_once('../templates/cms/data.php');
+require_once('../templates/cms/controller.php');
+require_once('../templates/cms/selectProduct.php');
 ?>
     <head>
     <style>
