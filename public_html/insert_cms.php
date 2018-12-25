@@ -37,22 +37,7 @@ require_once('../templates/cms/selectProduct.php');
          <link rel="stylesheet" href="./css/insert_cms.css"> 
     </head>
     <body id='templatemo_body' >
-    <div id="templatemo_body_wrapper">
-        <div id="templatemo_wrapper">
-                <div id="templatemo_header">
-                    <div id="site_title"><h1><a href="#"><?php echo $h1 ?></a></h1></div>
-                        <div class="cleaner"></div>
-                 </div> <!-- END of templatemo_header -->
-
-                             <div id="templatemo_menubar">
-                                         <div id="top_nav" class="ddsmoothmenu">
-                                            <ul>
-                                            <?php require_once('../templates/menu.php');?>
-                                                </ul>
-                                            <br style="clear: left" />
-                                         </div>
-                            </div>
-
+    <?php require_once('../templates/header.php');?>
     </div>
     <center style="margin-top:5px;"><?php echo $h1 ?></center>
     
