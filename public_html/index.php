@@ -26,8 +26,8 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     </style>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>
-        <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" />
+        <link href="./css/templatemo_style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="./css/nivo-slider.css" type="text/css" media="screen" />
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/ddsmoothmenu.js">
         </script>
