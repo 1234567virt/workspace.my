@@ -6,7 +6,11 @@
 }
 
                   if($user){
+                     if($user['role']=='admin'){
+                        echo  "<li><a href='cms_catalog.php'>CMS</a></li>";
+                     }
    ?> 
+   
       <a href='basket.php' style='text-decaration:none;font-size:14px;color:blue'>Личный кабинет</a><br>
       <a href='exit.php' style='text-decaration:none;font-size:14px;color:blue'>Выйти</a>
                   
@@ -14,7 +18,7 @@
 }
                   else{
                      ?>
-      <a href='../public_html/autorization.php' style='text-decaration:none;font-size:14px;color:blue'>Войти</a>
+      <!-- <a href='../public_html/autorization.php' style='text-decaration:none;font-size:14px;color:blue'>Войти</a> -->
                   <?php
  }
  if(isset( $_SESSION['success_message'])){

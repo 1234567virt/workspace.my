@@ -2,6 +2,7 @@
 <html lang="ru">
 <?php
  require_once '../engine/init.php';
+ if($user['role']=='admin'){
 $h1="Купите у нас хоть что-нибудь!!!!";
 $year=date("Y");
 $title="Корзина";
@@ -85,7 +86,11 @@ $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)
                 </form>
 <?php } ?>
             </table>		
-                    	
+<?php } 
+else {
+    echo "Не хуй сюда лезть";
+}
+?>             	
          </div>
     </div>
     </div>
