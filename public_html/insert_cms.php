@@ -1,30 +1,72 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
+if(isset($_FILES['filename'])){
+    $path=__DIR__.'/'.'img'.'/'. $_FILES["filename"]["name"];
+
+    if(is_uploaded_file($_FILES["filename"]["tmp_name"])  )
+     {
+ 
+         if($_FILES["filename"]["size"] > 1024*3*1024)
+          {
+             echo "Превышен размер файла";
+          }
+ 
+         else
+         {
+             if($_FILES['filename']['type']=='image/jpeg')
+             {
+               //  $path=__DIR__.'/'.'img';
+                 move_uploaded_file( $_FILES["filename"]["tmp_name"],  $path);
+                 echo 'Успех';
+             }
+ 
+             else
+              {
+                 echo 'Не правильный формат данных';
+             }
+ 
+         } 
+     }
+     else
+     {
+         echo 'Ошибка';
+     }
+  
+}
 $title="Создание";
-$date=date("Y");
 require_once('../engine/init.php');
-    $name=isset($_GET['name'])?  $_GET['name'] : '';
-    $price=isset($_GET['price'])? $_GET['price'] : ''; 
-    $number=isset($_GET['number'])?  $_GET['number'] : '';
-    $arg1=isset($_GET['text'])? $_GET['text'] : ''; 
+//
+//var_dump($_FILES["filename"]);
+    $name=isset($_POST['name'])?  $_POST['name']: '';
+    $price=isset($_POST['price'])? $_POST['price']: ''; 
+    $number=isset($_POST['number'])?  $_POST['number'] : '';
+    $text=isset($_POST['text'])? $_POST['text'] : ''; 
     $id=isset($_GET['id'])? $_GET['id'] : ''; 
-    $src=isset($_GET['src'])? $_GET['src'] : ''; 
-        if(isset($_GET['ok'])){
+  
+
+
+
+        if(isset($_POST['ok'])){
+     
             if(isset($_GET['id'])!=''){
-                echo 1;
-                update($link,$_GET['id'],'/public_html/img/nout3.jpg ',$_GET['name'],$_GET['text'],$_GET['number'],$_GET['price']);
-                header('Location:../public_html/cms_catalog.php');
+                echo $_GET['id']."!!!<br>";
+                echo $_POST['ok']."!!!<br>";
+                
+                update($link,$_POST['id'],$path,$_POST['name'],$_POST['text'],$_POST['number'],$_POST['price']);
+            header('Location:../public_html/cms_catalog.php');
             }
                 else{
-                 
-            insert($link,$_GET['src'],$_GET['name'],$_GET['text'],$_GET['number'],$_GET['price']);
-             header('Location:../public_html/cms_catalog.php');
-            }
+                
+                 echo $path;
+            insert($link,$path,$_POST['name'],$_POST['text'],$_POST['number'],$_POST['price']);
+            // header('Location:../public_html/cms_catalog.php');
+                }
          }
             if(isset($_GET['id'])){
-               $id=clear($link,$_GET['id']);
+               $id=$_GET['id'];
                $sql="SELECT * FROM `product` WHERE `id`=$id";
+               echo $sql;
                  $result = mysqli_query($link, $sql); 
                 while ($row = mysqli_fetch_array($result))
                 {
@@ -94,7 +136,7 @@ require_once('../engine/init.php');
     
  <div id="contact_form">
        
-       <form method="get" enctype="multipart/form-data" class="contact_form" action="../public_html/insert_cms.php">
+       <form method="post" enctype="multipart/form-data" class="contact_form" action="../public_html/insert_cms.php">
     
 
            <ul>
@@ -105,16 +147,16 @@ require_once('../engine/init.php');
                 <li><label>Цена</label></li>
                 <li>   <input type="number" placeholder="Цена" value="<?=$price?>" name="price" required  />
                 <input type="hidden" value="<?=$id?>" name="id"/></li>
-                <input type="hidden" value="30000" name="MAX_FILE_SIZE" /></li>
+                <input type="hidden" value="300000" name="MAX_FILE_SIZE" /></li>
                 <li><label>Описание</label></li>
                 <li>    <textarea  name="text" cols='40' rows='40'  placeholder="Описание" ><?=$text?>
                   </textarea>     
                 </li>
             </ul>
-            <input name="userfile" type="file" value='<?=$src?>'/>
+            <input name="filename" type="file"/>
             <input name="ok" type="submit" value='Отправить' class='submit_call'/>
         </form>
-
+<?php //} ?>
             <br>
     </div>
     </div>

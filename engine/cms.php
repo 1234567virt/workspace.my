@@ -1,7 +1,7 @@
 <?php 
 function insert($link,$src,$name,$text,$number,$price){
 mysqli_query($link ,"INSERT INTO `product` (`src`, `name`, `text`, `count`, `number`, `price`)
-    VALUES ('1','$name','$text','0','$number','$price')");
+    VALUES ('$src','$name','$text','0','$number','$price')");
 }
 
 function update($link,$id,$src,$name,$text,$number,$price){
@@ -13,7 +13,7 @@ function delet($link,$id){
     mysqli_query($link,"DELETE FROM `product` where  id='$id'");
  } 
   
- function CMSsrcDownload($src)
+ function CMSsrcDownload($filename,$src)
  {
      if(is_uploaded_file($_FILES["filename"]["tmp_name"])  )
      {
@@ -43,5 +43,6 @@ function delet($link,$id){
      {
          echo 'Ошибка';
      }
+  
  }   
 ?>
