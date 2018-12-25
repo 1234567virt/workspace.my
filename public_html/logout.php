@@ -8,12 +8,7 @@ $year=date("Y");
 ?>
     <head>
     <style>
- #formH{
-    width: 700px;
-    height: 70px;
-    border:0px;
-    margin: 100px auto;
-}
+
 #templatemo_body{
     background: url(img/templatemo_body.jpg) repeat;
 }
