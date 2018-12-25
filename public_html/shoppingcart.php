@@ -4,11 +4,10 @@
 $title="Личный кабинет";
 $h1=" В вашей корзине !!!!";
 require_once('../engine/init.php');
-require_once "../templates/dataNull.php"; 
+require_once("../templates/dataNull.php"); 
 $error='';
 if(isset($_GET['count']) && isset($_GET['id'])){
-   $arg1=clear($link,$_GET['id']);
-   $arg2=clear($link,$_GET['count']);
+   require_once("../templates/dataClear.php"); 
    if (isset($_GET["save"])) {
       $massiv=mysqli_query($link,"select * from `product` where `number`>='$arg2' and `id`='$arg1'");
       $count_save=mysqli_num_rows($massiv);
@@ -29,7 +28,7 @@ if(isset($_GET['count']) && isset($_GET['id'])){
          delete_basket($link,$_GET['id']);
       }
             // else{
-               $result=getSelectProducts($link,$_SESSION['user_id']);
+               $result=getSelectProducts($link,$arg1);
       //   }
        
  //  }
@@ -42,6 +41,7 @@ if(isset($_GET['count']) && isset($_GET['id'])){
         <link rel="stylesheet" href="./css/menu.css">
         <link rel="stylesheet" href="./css/header.css"> 
         <link rel="stylesheet" href="./css/basket.css"> 
+        <link rel="stylesheet" href="./css/shoppingcart.css"> 
    <style>
 #templatemo_body{
   background: url(img/templatemo_body.jpg) repeat;
@@ -65,52 +65,7 @@ background: url(img/templatemo_menubar.png) no-repeat;
 background: url(img/templatemo_main_bg.png) repeat-y;
 }
 
-img{
-   border-radius:9px;
-   box-shadow: 1px 1px 2px black, 0 0 1em red;
-}
 
-.text{
-   font-size:16px;
-   font-family:Verdana;
-}
-table td{
-   border-bottom:1px solid red;
-   padding-top:10px;
-}
-
-h1{
-   margin:10px auto;
-}
-a{
-  text-decoration:none;
-}
-.submit_call{
-    margin-left:50px;
-   margin:0 auto;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    border: 0px solid transparent;
-    margin-top: 10px;
-    margin-left: 40px;
-    border-color: aqua;
-    background: burlywood;
-
-}
-
-.submit_call:hover{
-   
-   width: 150px;
-   height: 50px;
-   border-radius: 10px;
-   border: 0px solid transparent;
-   margin-top: 10px;
-   margin-left: 40px;
-   border-color: black;
-   background:grey;
-
-}
   </style>
     </head>
     <body id='templatemo_body'>
@@ -125,11 +80,11 @@ a{
                            <th width="60" align="right">Всего </th> 
                            <th width="90"> </th>
                      </tr>
-              <?php require_once('../templates/basket_cart.php');?>
+              <?php require_once('../templates/basket/basket_cart.php');?>
             </table>
 
             <span>Ваш логин:<?=$user['user_login']?></span>
-            <?php require_once "../templates/basket_form.php"; ?>
+            <?php require_once("../templates/basket/basket_form.php"); ?>
    </div>
         </div>
     </div>

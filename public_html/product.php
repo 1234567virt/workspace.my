@@ -5,7 +5,8 @@
     <?php
      $title="Каталог";
       $year=date("Y");
-      $id=clear($link,$_GET['id']);
+      //$id=clear($link,$_GET['id']);
+      $id=$_GET['id'];
       $sql="SELECT * FROM `product` WHERE id=$id";
      $result = mysqli_query($link, $sql); 
        ?>
@@ -31,8 +32,8 @@
             <?php } ?>
      <div style="margin-top:100px">
     <?php
-        require_once "../templates/comment_product.php";
-        require_once "../templates/form_product.php";
+        require_once "../templates/product/comment_product.php";
+        require_once "../templates/product/form_product.php";
     ?>
     </div>
     <div>

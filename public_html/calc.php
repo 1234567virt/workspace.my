@@ -74,7 +74,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
        <input type="submit" class="submit_call" name="submit" value="Расчитать" />
 <br>
 <?php
-require_once('../templates/calc_result.php');
+require_once('../templates/calculator/calc_result.php');
     ?>
     </div>
     </div>
