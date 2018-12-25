@@ -6,8 +6,7 @@
 $h1="Купите у нас хоть что-нибудь!!!!";
 $year=date("Y");
 $title="Корзина";
-$arg1=isset($_GET['id'])? $_GET['id'] : '';
-$arg2=isset($_GET['count'])? $_GET['count'] : '';
+require_once "../templates/dataNull.php"; 
 $error='';
 $arg2=0;
 $sql="SELECT * FROM `product`";

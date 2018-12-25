@@ -4,8 +4,7 @@
 $title="Личный кабинет";
 $h1=" В вашей корзине !!!!";
 require_once('../engine/init.php');
-$arg1=isset($_GET['id'])? $_GET['id'] : '';
-$arg2=isset($_GET['count'])? $_GET['count'] : '';
+require_once "../templates/dataNull.php"; 
 $error='';
 if(isset($_GET['count']) && isset($_GET['id'])){
    $arg1=clear($link,$_GET['id']);
