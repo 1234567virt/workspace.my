@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
- require_once('/opt/lampp/htdocs/workspace.my/engine/db_connect.php');
+require_once '../engine/init.php';
+ if(isset($_SESSION['user_id'])){
 $h1="Купите у нас хоть что-нибудь!!!!";
 $year=date("Y");
 $title="Корзина";
 require_once "../templates/dataNull.php"; 
 $error='';
 $arg2=0;
-//
-    $sql="SELECT * FROM `product`";
-    $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
-    //
+
+/////////////////////
+if(isset($_GET['count']) && isset($_GET['id'])){
+    require_once("../templates/dataClear.php"); 
+  
+        $massiv=mysqli_query($link,"select * from `product` where `number`>='$arg2' and `id`='$arg1'");
+     
+        $count_save=mysqli_num_rows($massiv);
+        if($count_save===0){
+           echo 'Нехватает продукции';
+       
+         }
+         else{
+                  while ($one= mysqli_fetch_array($massiv)){
+ 
+                    insert_basket($link,$_SESSION['user_id'],$one['src'],$one['name'],$one['price'],$arg2);
+                 
+                     
+                      }
+                      header('Location:../public_html/catalog.php?id=3');
+                    
+                    }       
+     }
+   
+             
+    
+
+//////////////////
+    $sql1="SELECT * FROM `basket`";
+    $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
     ?>
     <head>
         <meta charset="UTF-8">
@@ -62,14 +89,14 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     while ($row = mysqli_fetch_array($result))
     {
   ?>
-  <form action ='./shoppingcart.php'>
+  <form action =''>
   <tr>
         <td><img src='<?=$row['src']?>' width="40%"/></td> 
         <td><?=$row['name']?></td> 
-        <td align="center"><input type="number" name="count"  placeholder='0' id='select'  /> </td>
+        <td align="center"><input type="number" name="count" value='<?=$row['count']?>'  placeholder='0' id='select'  /> </td>
         <td align="right"><?=$row['price']?> $</td> 
-        <input type="hidden" name="id" value="<?=$row['id']?>" id='select'  />
-        <input type="hidden" name="product" value="<?=$row['name']?>" id='select'  />
+        
+     
         <td align="right"><?=$row['price']?>$ </td>
        <td align="center">
         <button type="submit"  name='save' value='save'> <img src='img/basket.png'></button>
@@ -77,7 +104,12 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     </td>
         </tr>
    </form>
-<?php } ?>
+<?php } 
+ }
+ else {
+    header('Location:../public_html/autorization.php');
+  }
+?>
 </table>		
                     	
          </div>
