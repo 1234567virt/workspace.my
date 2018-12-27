@@ -6,9 +6,37 @@ require_once '../engine/init.php';
 $h1="Купите у нас хоть что-нибудь!!!!";
 $year=date("Y");
 $title="Корзина";
-
+require_once "../templates/dataNull.php"; 
+$error='';
 $arg2=0;
 
+/////////////////////
+if(isset($_GET['count']) && isset($_GET['id'])){
+    require_once("../templates/dataClear.php"); 
+  
+        $massiv=mysqli_query($link,"select * from `product` where `number`>='$arg2' and `id`='$arg1'");
+     
+        $count_save=mysqli_num_rows($massiv);
+        if($count_save===0){
+           echo 'Нехватает продукции';
+       
+         }
+         else{
+                  while ($one= mysqli_fetch_array($massiv)){
+ 
+                    insert_basket($link,$_SESSION['user_id'],$one['src'],$one['name'],$one['price'],$arg2);
+                 
+                     
+                      }
+                      header('Location:../public_html/catalog.php?id=3');
+                    
+                    }       
+     }
+   
+             
+    
+
+//////////////////
     $sql1="SELECT * FROM `basket`";
     $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
     ?>
@@ -61,13 +89,11 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     while ($row = mysqli_fetch_array($result))
     {
   ?>
-  <form action ='./basket_cantroler.php'>
+  <form action ='./basket_controler.php'>
   <tr>
         <td><img src='<?=$row['src']?>' width="40%"/></td> 
         <td><?=$row['name']?></td> 
         <td align="center"><input type="number" name="count" value='<?=$row['count']?>'  placeholder='0' id='select'  /> </td>
-        <input type="hidden" name="id" value='<?=$row['id_product']?>'  placeholder='0' id='select'  />
-        <input type="hidden" name="name" value='<?=$row['name']?>'  placeholder='0' id='select'  />
         <td align="right"><?=$row['price']?> $</td> 
         
      

@@ -10,7 +10,7 @@ require_once("../templates/dataNull.php");
 $error='';
 if(isset($_GET['count']) && isset($_GET['id'])){
    require_once("../templates/dataClear.php"); 
-   if (isset($_GET["save"])) {
+   
      
       $massiv=mysqli_query($link,"select * from `product` where `number`>='$arg2' and `id`='$arg1'");
       $count_save=mysqli_num_rows($massiv);
@@ -21,19 +21,18 @@ if(isset($_GET['count']) && isset($_GET['id'])){
           else{
               
                 while ($one= mysqli_fetch_array($massiv)){
-                     insert_basket($link,$_SESSION['user_id'],$one['name'],$arg2);
+                    // insert_basket($link,$_SESSION['user_id'],$one['name'],$arg2);
                      echo $arg1;
+                     insert_basket($link,$_SESSION['user_id'],$src,$one['name'],$one['price'],$arg2);
                    
                      }
             }
     }
-      elseif (isset($_GET["delete"])) {
-         delete_basket($link,$_GET['id']);
-      }
+   
             
                $result=getSelectProducts($link,$arg1);
 
-}
+
 ?>
     <head>
     <script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>
