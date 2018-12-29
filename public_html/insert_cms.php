@@ -63,7 +63,7 @@ require_once('../templates/cms/selectProduct.php');
             <input name="filename" type="file"/>
             <input name="ok" type="submit" value='Отправить' class='submit_call'/>
         </form>
-<?php //} ?>
+
             <br>
     </div>
     </div>

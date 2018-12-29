@@ -1,15 +1,18 @@
 
-<?php  $product_select= getRequestsProduct($link); ?>
-<form style ="margin-top:25px;" action="../public_html/shoppingcart.php" method="get">
-            <label>Продукт:</label> <select name="id" style="width:125px;height:40px">
-            <option></option>
-            <?php foreach($product_select as $key=>$val){
-            echo "<option value=".$val['id'].">".$val['name']."</option>";
-       
-            }
-         ?>
-           </select>
-            <label>Количество:<input type="number" placeholder="Количество" id="select" style="margin-left:200px;width:85px" name="count" required></label>
-          
-            <input type="submit" class='submit_call' value="Зарезирвировать"></p>
-         </form> 
+ <form action ='./basket_cantroler.php'>
+  <tr>
+        <td><img src='<?=$row['src']?>' width="40%"/></td> 
+        <td><?=$row['name']?></td> 
+        <td align="center"><input type="number" name="count" value='<?=$row['count']?>'  placeholder='0' id='select'  /> </td>
+        <input type="hidden" name="id" value='<?=$row['id_product']?>'  placeholder='0' id='select'  />
+        <input type="hidden" name="name" value='<?=$row['name']?>'  placeholder='0' id='select'  />
+        <td align="right"><?=$row['price']?> $</td> 
+        
+     
+        <td align="right"><?=$row['price']?>$ </td>
+       <td align="center">
+        <button type="submit"  name='save' value='save'> <img src='img/basket.png'></button>
+<button type="submit" name='delete' value='delete'><img src='img/rm.png'  style='width:17px;height:17px'></button>
+    </td>
+        </tr>
+   </form>

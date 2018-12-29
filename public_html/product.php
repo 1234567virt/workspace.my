@@ -22,16 +22,9 @@
 
        <?php while ($row = mysqli_fetch_array($result)){?>
       <?php $marka=$row['name'];
-      ?>
-            <img src='<?=$row['src']?>' width='600'  id='img'>
-          <?php counts($row['count'],$id,$link,"product");?>
-            <div id='title' ><?=$row['name']?></div>
-            <div id='long_text' id=''><span id='title_text'> Описание:</span>:<?=$row['text']?></div>
-            <div id='count'>
-            <center>
-            <h4><?=$row['count']?></h4>
-            </center></div>
-            <?php } ?>
+      
+         require_once "../templates/product/product_detal.php";
+            } ?>
      <div style="margin-top:100px">
     <?php
         require_once "../templates/product/comment_product.php";
