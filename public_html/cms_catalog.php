@@ -4,7 +4,7 @@
  require_once '../engine/init.php';
  if($user['role']=='admin'){
 $h1="Купите у нас хоть что-нибудь!!!!";
-$year=date("Y");
+
 $title="Корзина";
 require_once "../templates/dataNull.php"; 
 $error='';

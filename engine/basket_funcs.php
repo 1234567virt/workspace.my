@@ -8,7 +8,10 @@
     mysqli_query($link,"DELETE FROM `basket` where `id`='$id'" );
 } 
 function getSelectProducts($link,$id){
- $result=mysqli_query($link,"SELECT * FROM `product` where `id`='$id'" ) or die("Ошибка " . mysqli_error($link)); 
+ $result=mysqli_query($link,"SELECT * FROM `product` where `id`=$id" ) or die("Ошибка " . mysqli_error($link)); 
   return $result;
 } 
+
+
+
 ?>  

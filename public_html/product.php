@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<?php require_once('../engine/init.php'); ?>
+<?php require_once('../engine/init.php');
+require_once('../engine/basket_funcs.php');
+?>
 <html lang="ru">
     <head>
     <?php
      $title="Каталог";
       $year=date("Y");
-      //$id=clear($link,$_GET['id']);
+      $id=clear($link,$_GET['id']);
       $id=$_GET['id'];
-      ///
-      $sql="SELECT * FROM `product` WHERE id=$id";
-     $result = mysqli_query($link, $sql);
-     // 
+      
+  
+    $result= getSelectProducts($link,$id);
        ?>
         <meta charset="UTF-8">
         <title><?=$title;?></title>
