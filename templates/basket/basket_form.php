@@ -9,7 +9,7 @@
         <td align="right"><?=$row['price']?> $</td> 
         
      
-        <td align="right"><?=$row['price']?>$ </td>
+        <td align="right"><?=$row['price'] * $row['count']?>$ </td>
        <td align="center">
         <button type="submit"  name='save' value='save'> <img src='img/basket.png'></button>
 <button type="submit" name='delete' value='delete'><img src='img/rm.png'  style='width:17px;height:17px'></button>

@@ -2,13 +2,10 @@
 <html lang="ru">
 <?php
 require_once '../engine/init.php';
- if(isset($_SESSION['user_id'])){
-$h1="Купите у нас хоть что-нибудь!!!!";
+
+$h1="Купить!!!!";
 $year=date("Y");
-$title="Корзина";
-
-$arg2=0;
-
+$title="Распечатать";
     $sql1="SELECT * FROM `basket`";
     $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
     ?>
@@ -22,23 +19,6 @@ $arg2=0;
     background: url(img/templatemo_body.jpg) repeat;
 }
 
-#templatemo_body_wrapper {
-
-background: url(img/templatemo_body_top.jpg) repeat-x top
-}
-
-#templatemo_header {
-background: url(img/templatemo_header_bg.png) no-repeat bottom; 
-}
-
-#templatemo_menubar {
-
-background: url(img/templatemo_menubar.png) no-repeat;
-}
-
-#templatemo_main {
-background: url(img/templatemo_main_bg.png) repeat-y;
-}
     </style>
    
         <link rel="stylesheet" href="./css/menu.css" media="screen">
@@ -46,40 +26,34 @@ background: url(img/templatemo_main_bg.png) repeat-y;
         <link rel="stylesheet" href="./css/basket.css" media="screen"> 
         <link rel="stylesheet" href="./css/print.css" media="print" > 
     </head>
-    <body id='templatemo_body' >
-    <?php require_once('../templates/header.php');?>
+    <body id='templatemo_body'>
+  
                  <center>  <h1><?=$title?></h1></center>
              <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
-               <table width="680px" cellspacing="0" cellpadding="5">
+               <table width="680px" style="margin:auto;color:white" cellspacing="0" cellpadding="5">
                        	  <tr bgcolor="#ddd">
                         	<th width="220" align="left">Изображение</th> 
                         	<th width="180" align="left">Название </th> 
                        	  	<th width="100" align="center">Количество </th> 
-                        	<th width="60" align="right">Цена </th> 
+                        	 
                         	<th width="60" align="right">Всего </th> 
                         	<th width="90"> </th>
                         </tr>
                <?php
     while ($row = mysqli_fetch_array($result))
     {
-    require_once('../templates/basket/basket_form.php');
+    require_once('../templates/basket/basket_print.php');
   ?>
-  <br>
 
-<?php } 
+<?php } ?>
 
- }
- 
- else {
-    header('Location:../public_html/autorization.php');
-  }
-?>
 </table>		
                     	
          </div>
-         <a href="print.php" style=" margin-top:15px; display:inline-block; margin-left:150px;width:250px;height:30px;font-weight:bold;color:white;background:red;border-radius:7px;border:0px solid transparent;padding-top:10px; text-align:center">Нажми меня,я хочу тебя</a>
+         <a href="#"  onclick="window.print()"><i style="display:block;margin-left:50%;margin-top:1%" class="fa fa-3x fa-shopping-basket"></i></a>
     </div>
-
+    <br>
+    <center><?=$year?> г.</center>
   </div>
 </body>
 </html>
