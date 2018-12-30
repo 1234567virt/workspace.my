@@ -42,7 +42,8 @@ if(isset($user['user_login'])){
                         }
                         else
                         {
-                            mysqli_query($link ,"UPDATE `basket` SET  `count`='$arg2' where `name`='$name'");
+                            $price_basket=$one["price"] * $arg2;
+                            mysqli_query($link ,"UPDATE `basket` SET  `price`= '$price_basket' , `count`='$arg2' where `name`='$name'");
                         echo 2;
                         }
                     }

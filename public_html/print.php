@@ -7,8 +7,14 @@ $h1="Купить!!!!";
 $year=date("Y");
 $title="Распечатать";
     $sql1="SELECT * FROM `basket`";
+   // $sql1=";
     $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
-    ?>
+  //  $headers='From:vitte@gmail.ru'."\r\n".
+    'Replay-To:vitte@bk.com'."\r\n".
+    'X-Mailer:PHP/'.phpversion();
+  //  $message="Номер вашего заказа ";
+   // mail($login,"Ваш заказ ",$message);
+  ?>
     <head>
         <meta charset="UTF-8">
         <script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>
