@@ -9,8 +9,8 @@ require_once('../engine/comment.php');
 require_once('../engine/requests.php');
 require_once('../engine/basket_funcs.php');
 require_once('../engine/cms.php');
-//require_once('../engine/cms.php');
-require_once('../PHPMailer/PHPMailerAutoload.php');
+
+
 $user=null;
 if(isset($_SESSION['user_id'])){
     

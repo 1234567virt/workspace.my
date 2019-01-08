@@ -1,7 +1,7 @@
 <?php
 require_once('../engine/db_connect.php');
 require_once('../engine/funcs.php');
-require_once('../PHPMailer/.php');
+require_once('../engine/sendmail.php');
 session_start();
 if($_POST['ok']){
     if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['name']) && isset($_POST['call'])){
@@ -10,36 +10,21 @@ if($_POST['ok']){
         $name=clear($link,$_POST['name']);
         $call=clear($link,$_POST['call']);
         registration($link,$login,$password,$name,$call);
-        $mail = new PHPMailer;
-$mail->CharSet = 'UTF-8';
-
-// Настройки SMTP
-$mail->isSMTP();
-$mail->SMTPAuth = true;
-$mail->SMTPDebug = 0;
-
-$mail->Host = "ssl://smtp.mail.ru";
-$mail->Port = 465;
-$mail->Username = "vitte@bk.ru";
-$mail->Password = "20xmaxW95";
-
-// От кого
-$mail->setFrom('admin@workspace.ru', 'workspace.ru');        
-
-// Кому
-$mail->addAddress($login, $name);
-
-// Тема письма
-$mail->Subject = $subject;
-
-// Тело письма
-$body = '<p><strong>Ваш логин'.$login.'</strong></p>';
-$mail->msgHTML($body);
+        $mail->isHTML(true); 
+        $mail->addAddress($login);
+        $mail->Subject = "Регистрация"; // Заголовок письма
+        $mail->Body = "Имя $name . Телефон $ncall . Почта $login"; // Текст письма
+        // Результат
+        if(!$mail->send()) {
+         echo 'Message could not be sent.';
+         echo 'Mailer Error: ' . $mail->ErrorInfo;
+        } else {
+         echo 'ok';
+        }
     }
     else{
         header('Location:../public_html/logout.php');
     }
-
 }
 else
 {
