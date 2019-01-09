@@ -69,7 +69,8 @@ background: url(img/templatemo_main_bg.png) repeat-y;
   <tr>
         <td><img src='<?=$row['src']?>' width="40%"/></td> 
         <td><?=$row['name']?></td> 
-        <td align="center"><input type="number" name="count" value='<?=$row['count']?>'  placeholder='0' id='select'  /> </td>
+        <td align="center"><input type="number" name="count" value='<?=$row['count']?>'  min='0' max='15'
+placeholder='0' id='select'  /> </td>
         <input type="hidden" name="id" value='<?=$row['id_product']?>'  placeholder='0' id='select'  />
         <input type="hidden" name="name" value='<?=$row['name']?>'  placeholder='0' id='select'  />
         <td align="right"><?=$row['price']/$row['count']?> $</td> 

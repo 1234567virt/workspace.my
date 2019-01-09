@@ -42,21 +42,21 @@ $year=date("Y");
                  <ul>
                         </li>
                             <label for="login">Login:</label>
-                            <input type="email" name="login" placeholder="Логин" required />
+                            <input type="email" max='30' name="login" placeholder="Логин" required />
                         
                         </li>
                         <li>
                             <label for="password">Password</label>
-                            <input type="password" name="password" placeholder="Пароль" required />
+                            <input type="password" min='6' name="password" placeholder="Пароль" required />
                         </li>
                     
                         <li>
                             <label for="name">Имя:</label>
-                            <input type="text" name="name" placeholder="Имя" required />
+                            <input type="text" name="name" min='5' placeholder="Имя" required />
                         </li>
                         <li>
                             <label for="call">Телефон:</label>
-                            <input type="number" name="call" placeholder="Телефон" required />
+                            <input type="number" name="call" min='10' max='18' placeholder="Телефон" required />
                          <li>
                 <button class="submit_call" type="submit"  name='ok'>Зарегестрироваться</button>
                         </li>

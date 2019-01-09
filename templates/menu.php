@@ -8,11 +8,14 @@
 
                   if($user){
                      ?>
-                     <style>
-                 #top-nav  li:nth-child('5'){
-                        display:hidden;
-                     }
-                     </style>
+              <style>
+              .ddsmoothmenu ul li:nth-child(5){
+                  display:none;
+              }
+              .ddsmoothmenu ul li:nth-child(6){
+                  display:none;
+              }
+              </style>
                      <?php
                      if($user['role']=='admin'){
                         echo  "<li><a href='cms_catalog.php'>CMS</a></li>";
@@ -31,7 +34,7 @@
                   <?php
  }
  if(isset( $_SESSION['success_message'])){
- echo $_SESSION['success_message'];
+ echo "<li>".$_SESSION['success_message']."</li>";
  unset($_SESSION['success_message']);
  }
 ?>
