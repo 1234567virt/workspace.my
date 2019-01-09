@@ -7,7 +7,7 @@ require_once('../engine/class.smtp.php');
 // Настройки
 $mail = new PHPMailer;
 $mail->isSMTP(); 
-$mail->Host = "smtp.yandex.ru"; 
+$mail->Host = "ssl://smtp.yandex.ru"; 
 $mail->SMTPAuth = true; 
 $mail->Username = "q1Wsg"; // Ваш логин в Яндексе. Именно логин, без @yandex.ru
 $mail->Password ="22121987"; // Ваш пароль
