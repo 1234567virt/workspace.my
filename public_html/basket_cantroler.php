@@ -6,7 +6,7 @@ if(isset($user['user_login'])){
     require_once("../templates/dataNull.php"); 
     if(isset($_GET['delete']) && isset($_GET['id'])){
         mysqli_query($link,"DELETE FROM `basket` where `id_product`=$arg1" );
-       echo $arg1;
+      // echo $arg1;
        header('Location:../public_html/basket.php');
     }
     else
