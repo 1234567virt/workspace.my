@@ -1,5 +1,5 @@
 <?php 
-     $sql="SELECT * FROM `otziv` WHERE id_galerey=$id";
+     $sql="SELECT * FROM `otziv`";
     $massiv=mysqli_query($link,$sql);
     echo "<br>";
    while($rower = mysqli_fetch_array($massiv)){

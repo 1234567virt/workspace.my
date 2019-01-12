@@ -1,6 +1,6 @@
 <?php
  require_once '../engine/init.php';
- $id=(int)$_GET['id'];
+ //$id=(int)$_GET['id'];
    $product= getRequestsProduct($link);
    ?>
    <div style="margin-left:100px">

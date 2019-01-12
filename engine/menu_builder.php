@@ -2,7 +2,7 @@
 
 $menu= [
     "index.php"=>'Главная',
-    "catalog.php?id=3"=>'Товары',
+    "catalog.php"=>'Товары',
     "calc.php"=>'Калькулятор',
     "contact.php"=>'Контакты',
    "autorization.php"=>'Войти',
