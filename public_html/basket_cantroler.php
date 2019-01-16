@@ -34,16 +34,16 @@ if(isset($user['user_login'])){
                         {
                           
                            $user_id=$_SESSION["user_id"];
-                           $src=$one["src"];
+                           
                            $name=$one["name"];
-                           $price=$one["price"];
-                           insert_basket($link,$_SESSION['user_id'],$one['src'],$one['name'],$one['price'],$arg2,$arg1);
+                           
+                           insert_basket($link,$_SESSION['user_id'],$one['name'],$arg2,$arg1);
                         
                         }
                         else
                         {
-                            $price_basket=$one["price"] * $arg2;
-                            mysqli_query($link ,"UPDATE `basket` SET  `price`= '$price_basket' , `count`='$arg2' where `name`='$name'");
+                            //$price_basket=$one["price"] * $arg2;
+                            mysqli_query($link ,"UPDATE `basket` SET  `count`='$arg2' where `name`='$name'");
                         echo 2;
                         }
                     }

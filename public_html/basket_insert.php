@@ -13,7 +13,7 @@ if(isset($user['user_login'])){
       }
       else{
          while ($one= mysqli_fetch_array($massiv)){
-            insert_basket($link,$arg,$_SESSION['user_id'],$one['src'],$one['name'],$one['price'],$arg2);
+            insert_basket($link,$arg,$_SESSION['user_id'],$one['name'],$arg2);
          }
           echo 'Вставить';
           header('Location:../public_html/basket.php');
