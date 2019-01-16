@@ -56,7 +56,7 @@ $year=date("Y");
                         </li>
                         <li>
                             <label for="call">Телефон:</label>
-                            <input type="number" name="call" min='10' max='18' placeholder="Телефон" required />
+                            <input type="number" name="call" min='10'  placeholder="Телефон" required />
                          <li>
                 <button class="submit_call" type="submit"  name='ok'>Зарегестрироваться</button>
                         </li>

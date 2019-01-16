@@ -1,34 +1,49 @@
-<?php 
+<?php
 
-// $headers='From:vitte@gmail.ru'."\r\n".
-// 'Replay-To:vitte@bk.com'."\r\n".
-// 'X-Mailer:PHP/'.phpversion();
-// $message='Поздравляю вас с получением учетной записи на нашем сайте ваш логин ';
-// echo mail('krupenkosm@bk.ru','Ваш логин и пароль',$message);
-// echo $message;
+date_default_timezone_set('Etc/UTC');
 
-?>
-<script>
-function form_val(){
-    cls=document.forms[0].elements;
-    for(var i=0;i<class.length;i++){
-        if(cls[i].type==='text' || cls[i].type==='number'|| cls[i].type==='email'){
-            var count=cls[i].value;
-            if(cls[i].type==='text' && count.length<10){
-              result='Вы мало написали';
-            }
+require '../engine/PHPMailerAutoload.php';
 
-            elseif (cls[i].type==='number' && count.length>11){
-                result='Вы вели неправильный телефон';
-            }
+//Create a new PHPMailer instance
+$mail = new PHPMailer;
+//Tell PHPMailer to use SMTP
+$mail->isSMTP();
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+$mail->SMTPDebug = 2;
+//Ask for HTML-friendly debug output
+$mail->Debugoutput = 'html';
+//Set the hostname of the mail server
+$mail->Host = "smtp.yandex.ru";
+//Set the SMTP port number - likely to be 25, 465 or 587
+$mail->Port = 587;
+//Whether to use SMTP authentication
+$mail->SMTPAuth = true;
+//Username to use for SMTP authentication
+$mail->Username = "derfdcvfg@yandex.ru";
+//Password to use for SMTP authentication
+$mail->Password = "22121987";
+//Set who the message is to be sent from
+$mail->setFrom('derfdcvfg@yandex.ru', 'First Last');
+//Set an alternative reply-to address
+$mail->addReplyTo('replyto@example.com', 'First Last');
+//Set who the message is to be sent to
+$mail->addAddress('vitte@bk.ru', 'John Doe');
+//Set the subject line
+$mail->Subject = 'PHPMailer SMTP test';
+//Read an HTML message body from an external file, convert referenced images to embedded,
+//convert HTML into a basic plain-text alternative body
+$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+//Replace the plain text body with one created manually
+$mail->AltBody = 'This is a plain-text message body';
+//Attach an image file
+//$mail->addAttachment('images/phpmailer_mini.png');
 
-            elseif(cls[i].type=='email' && count.length<6){
-                result="странное мыло";
-            }
-        }
-
-    }
-    return result;
+//send the message, check for errors
+if (!$mail->send()) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+} else {
+    echo "Message sent!";
 }
-
-</script>
