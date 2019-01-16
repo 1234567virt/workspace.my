@@ -9,7 +9,9 @@ $title="Корзина";
 
 $arg2=0;
 
-    $sql1="SELECT * FROM `basket`";
+$sql1="select product.src as `src`,basket.* 
+,product.price as `price`,product.text as `text`, `basket`.count * `product`.price as `result` from `basket` left join `product` on `basket`.id_product=`product`.id";
+
     $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
     ?>
     <head>
@@ -73,10 +75,10 @@ background: url(img/templatemo_main_bg.png) repeat-y;
 placeholder='0' id='select'  /> </td>
         <input type="hidden" name="id" value='<?=$row['id_product']?>'  placeholder='0' id='select'  />
         <input type="hidden" name="name" value='<?=$row['name']?>'  placeholder='0' id='select'  />
-        <td align="right"><?=$row['price']/$row['count']?> $</td> 
+        <td align="right"><?=$row['price']?> $</td> 
         
      
-        <td align="right"><?=$row['price']?>$ </td>
+        <td align="right"><?=$row['result']?>$ </td>
        <td align="center">
         <button type="submit"  name='save' value='save'> <img src='img/basket.png'></button>
 <button type="submit" name='delete' value='delete'><img src='img/rm.png'  style='width:17px;height:17px'></button>

@@ -6,7 +6,8 @@ require_once '../engine/init.php';
 $h1="Купить!!!!";
 $year=date("Y");
 $title="Распечатать";
-    $sql1="SELECT * FROM `basket`";
+    $sql1="select product.src as `src`,basket.* 
+    ,product.price as `price`,product.text as `text`, `basket`.count * `product`.price as `result` from `basket` left join `product` on `basket`.id_product=`product`.id";
    // $sql1=";
     $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
   //  $headers='From:vitte@gmail.ru'."\r\n".
