@@ -10,11 +10,12 @@ $title="Распечатать";
     ,product.price as `price`,product.text as `text`, `basket`.count * `product`.price as `result` from `basket` left join `product` on `basket`.id_product=`product`.id";
    // $sql1=";
     $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
-   $headers='From:vitte@gmail.ru'."\r\n".
-    'Replay-To:vitte@bk.com'."\r\n".
-    'X-Mailer:PHP/'.phpversion();
-  $message="Номер вашего заказа ";
-    mail($login,"Ваш заказ ",$message);
+  //  $headers='From:vitte@gmail.ru'."\r\n".
+  //   'Replay-To:vitte@bk.com'."\r\n".
+  //   'X-Mailer:PHP/'.phpversion();
+  // $message="Номер вашего заказа ";
+  //   mail($login,"Ваш заказ ",$message);
+  
   ?>
     <head>
         <meta charset="UTF-8">

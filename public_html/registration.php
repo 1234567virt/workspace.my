@@ -11,12 +11,14 @@ if(isset($_POST['ok'])){
         $name=clear($link,$_POST['name']);
         $call=clear($link,$_POST['call']);
         registration($link,$login,$password,$name,$call);
-        $headers='From:vitte@gmail.ru'."\r\n".
-        'Replay-To:vitte@bk.com'."\r\n".
-        'X-Mailer:PHP/';
-      $message="Номер вашего заказа ";
-        mail('vitte@bk.ru',"Ваш заказ ",$message);
-        header('Location:../public_html/logout.php');
+    //     $headers='From:vitte@gmail.ru'."\r\n".
+    //     'Replay-To:vitte@bk.com'."\r\n".
+    //     'X-Mailer:PHP/';
+    //   $message="Номер вашего заказа ";
+       // mail('vitte@bk.ru',"Ваш заказ ",$message);
+      // $mail->send();
+        ///header('Location:../public_html/logout.php');
+    
     }
     else{
         echo "ошибка в данных";

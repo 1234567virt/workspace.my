@@ -2,7 +2,7 @@
 
 date_default_timezone_set('Etc/UTC');
 
-require '../engine/PHPMailerAutoload.php';
+require '../engine/PHPMailer/PHPMailerAutoload.php';
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
