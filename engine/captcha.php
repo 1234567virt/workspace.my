@@ -1,10 +1,11 @@
 <?php 
+session_start();
+
 $width = 150;        // Ширина изображения
 $height = 50;        // Высота изображения
 $sign = 5;            // Длина кода
 $img_code = '';
 
-// session_start();
 
 // Символы, которые будут использованы в защитном коде
 $letters = array('A','B','C','D','E','F','G','H','J','K','M','N',
@@ -55,7 +56,7 @@ for($i=0; $i<$sign; $i++) {                        // Накладываем з�
    // Выводим сгенерированный символ на изображение
    imagettftext($img, $size, $angle, $x, $y, $color, "../public_html/fonts/liber-mono.ttf", $letter);
 }
-// $_SESSION["img_code"] = $img_code;
+ $_SESSION["img_code"] = $img_code;
 
 header("Content-type: image/jpeg");
 imagejpeg($img);
