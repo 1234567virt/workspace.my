@@ -1,4 +1,4 @@
-<form action="../templates/post_controller.php"  id="contact" method="post">
+<form  id="contact" method="post">
      <p>
           <label>Автор:<input type="text" placeholder="Автор" max='20' name="Aftor" required></label><br>
           <label>Текст:
@@ -6,6 +6,6 @@
           </label><br>
           <input type="hidden" name='id' value='<?php echo $id;?>'>
           <input type="hidden" name='marka' value='<?php echo $marka;?>'>
-          <input type="submit" value="Отправить">
+          <input type="button" id='send' value="Отправить">
           <input type="reset" value="Сбросить">
 </form>

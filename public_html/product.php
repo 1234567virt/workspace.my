@@ -13,6 +13,25 @@ require_once('../engine/basket_funcs.php');
   
     $result= getSelectProducts($link,$id);
        ?>
+       <script type="text/javascript" src="js/jquery.min.js"></script>
+       <script type="text/javascript">
+$("document").ready(function(){
+
+$("#send").click(function(){
+  var dannie=$("form").serialize();
+
+  $.ajax({
+      url:'test.php',
+      type:'POST',
+      data:dannie,
+      success:function(data){
+        alert(data);
+      }
+  });
+});
+});
+
+       </script>
         <meta charset="UTF-8">
         <title><?=$title;?></title>
         <link rel="stylesheet" href="./css/style.css">

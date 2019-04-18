@@ -1,9 +1,9 @@
-<form action="../templates/post_controller.php"  id="contact" method="post">
+<form   id="contact" method="post">
      <p>
-        <label>Автор:<input type="text" placeholder="Автор" max='20' name="Aftor" required></label><br>
-        <label>Текст:<textarea name='Message' placeholder='Отзыв' rows="7" cols="40" required></textarea>
+        <label>Автор:<input type="text" placeholder="Автор" max='20' id='aft' name="Aftor" required></label><br>
+        <label>Текст:<textarea name='Message' placeholder='Отзыв' rows="7" id='txt' cols="40" required></textarea>
        </label><br>
         
-        <input type="submit" value="Отправить" class='submit_call'>
+        <input type="button" value="Отправить" id="send" class='submit_call'>
         <input type="reset" value="Сбросить" class="submit_call">
 </form>

@@ -5,9 +5,9 @@ function rewiev($link,$Aftor,$Message){
          $Aftor=clear($link,$Aftor);
          $message =clear($link,$Message);
        
-         $date=date('Y-m-d',time());
-         $sql="INSERT INTO  `otziv` (`Aftor`, `text`, `date`) VALUES ('$Aftor','$message','$date')";
-         mysqli_query($link,$sql);
+       //  $date=date('Y-m-d',time());
+         $sql="INSERT INTO  `otziv` (`Aftor`, `text`, `date`) VALUES ('$Aftor','$message','2018-04-19')";
+        mysqli_query($link,$sql);
       }
       if(mysqli_error($link)){
          die(mysqli_error($link));
@@ -20,14 +20,13 @@ function review_nout($link,$Aftor,$Message,$id,$marka){
       $Aftor=clear($link,$Aftor);
       $message =clear($link,$Message);
      $marka=clear($link,$marka);
-      $sql="INSERT INTO  `otziv_nout` (`id`,`marka`, `Aftor`, `text`) 
-      VALUES ('$id','$marka','$Aftor','$message')";
+    //  $sql="INSERT INTO  `otziv_nout` (`id`,`name`, `Aftor`, `text`) 
+    $sql= "INSERT INTO `otziv_nout` (`id`, `name`, `Aftor`, `text`) VALUES ('$id','$marka','$Aftor','$message')";
       mysqli_query($link,$sql);
-   
-   }
+    }
    if(mysqli_error($link)){
       die(mysqli_error($link));
 }
-header("Location:../public_html/product.php?id=$id");
+//header("Location:../public_html/product.php?id=$id");
 }
 ?>

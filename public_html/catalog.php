@@ -5,7 +5,30 @@ $title="Каталог";
 $h1="Каталог";
 $h2="Написать отзыв";
 ?>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
     <head>
+    <script type="text/javascript">
+
+$("document").ready(function(){
+
+$("#send").click(function(){
+  var dannie=$("form").serialize();
+
+  $.ajax({
+      url:'test.php',
+      type:'POST',
+      data:dannie,
+      success:function(data){
+        alert(data);
+      }
+  });
+});
+});
+
+</script>
+
+
     <style>
  #templatemo_body{
 background: url(img/templatemo_body.jpg) repeat;
