@@ -5,7 +5,7 @@ if(isset($user['user_login'])){
     require_once("../templates/dataClear.php"); 
     require_once("../templates/dataNull.php"); 
     if(isset($_GET['delete']) && isset($_GET['id'])){
-        mysqli_query($link,"DELETE FROM `basket` where `id_product`=$arg1" );
+        mysqli_query($link,"DELETE FROM `basket` where `id_product`=$arg1 and `id_user`=".$_SESSION['user_id']."");
       // echo $arg1;
        header('Location:../public_html/basket.php');
     }
@@ -15,6 +15,7 @@ if(isset($user['user_login'])){
         {
             
             $massiv=mysqli_query($link,"select * from `product` where `number`>='$arg2' and `id`='$arg1'");
+         //  echo $arg1.",".$arg2;
             $count_save=mysqli_num_rows($massiv);
            echo $count_save;
                 if($count_save===0)
@@ -28,23 +29,23 @@ if(isset($user['user_login'])){
                     while ($one= mysqli_fetch_array($massiv))
                     {
                         $name=$one['name'];
-                        $row=mysqli_query($link,"select * from `basket` where `name`='$name'");
+                        $row=mysqli_query($link,"select * from `basket` where `id_product`='$arg1' and `id_user`=".$_SESSION['user_id']."");
                         $count_basket=mysqli_num_rows($row);
                         if($count_basket===0)
                         {
                           
                            $user_id=$_SESSION["user_id"];
                            
-                           $name=$one["name"];
+                          // $name=$one["name"];
                            
-                           insert_basket($link,$_SESSION['user_id'],$one['name'],$arg2,$arg1);
+                           insert_basket($link,$arg1,$user_id,$arg2);
                         
                         }
                         else
                         {
                             //$price_basket=$one["price"] * $arg2;
-                            mysqli_query($link ,"UPDATE `basket` SET  `count`='$arg2' where `name`='$name'");
-                        echo 2;
+                            mysqli_query($link ,"UPDATE `basket` SET  `count`='$arg2' where `id_product`='$arg1' and id_user=".$_SESSION['user_id']."");
+                       
                         }
                     }
                     header('Location:../public_html/basket.php');
@@ -60,7 +61,7 @@ if(isset($user['user_login'])){
 }
 else{
 
-   header('Location:../public_html/autorization.php');
+  header('Location:../public_html/autorization.php');
 }
 ?>
 

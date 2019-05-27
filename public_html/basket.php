@@ -10,7 +10,10 @@ $title="Корзина";
 $arg2=0;
 
 $sql1="select product.src as `src`,basket.* 
-,product.price as `price`,product.text as `text`, `basket`.count * `product`.price as `result` from `basket` left join `product` on `basket`.id_product=`product`.id";
+,product.price as `price`,product.text as `text`,
+`product`.name, `basket`.count * `product`.price as `result`
+ from `basket` left join
+ `product` on `product`.id=`basket`.id_product where `basket`.id_user=".$_SESSION['user_id']."";
 
     $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
     ?>
