@@ -6,26 +6,33 @@ $h1="Каталог";
 $h2="Написать отзыв";
 ?>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
+
+
     <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript">
 
+
+/////////////////////////////////////
 $("document").ready(function(){
+    $('#info').load("comment.php"); 
 
-$("#send").click(function(){
-  var dannie=$("form").serialize();
-
-  $.ajax({
-      url:'test.php',
-      type:'POST',
-      data:dannie,
-      success:function(data){
-        alert(data);
-      }
-  });
+    $("#send").click(function(){
+     var dannie=$("form").serialize();
+     $('#send').prop('disabled',true);
+    $.ajax({
+          url:'past_comment_catalog.php',
+          type:'POST',
+          data:dannie,
+          success:function(data){
+                 $('#info').load("comment.php");
+                 document.forms[0].reset();
+                 $('#send').prop('disabled',false);
+        }
+    });
 });
 });
-
 </script>
 
 
@@ -63,15 +70,18 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     <center><h1><?=$h2?></h1></center>
 <?php
          require_once "../templates/catalog/catalog_basket.php";
-         require_once "../templates/catalog/comment_catalog.php";
+
+       //  require_once "../templates/catalog/comment_catalog.php";
 ?>
-          <hr>
+         
                     <h2 style="margin:0 auto;"><?=$h2;?></h2>
+                    <div id="info"></div>
             <?php 
             require_once "../templates/catalog/form_catalog.php";
             ?>
 </div>
     </div>
+  
 </body>
 </html>
 
