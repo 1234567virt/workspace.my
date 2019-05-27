@@ -11,7 +11,30 @@ $result='';
 
 ?>
     <head>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+
+$("document").ready(function(){
+
+$("#send").click(function(){
+  var dannie=$("form").serialize();
+
+  $.ajax({
+      url:'result.php',
+      type:'POST',
+      data:dannie,
+      success:function(data){
+      var res=document.getElementById('res');
+     res.innerHTML=data;
+      }
+  });
+});
+});
+
+</script>
     <style>
+   
+  
      #templatemo_body{
 background: url(img/templatemo_body.jpg) repeat;
 }
@@ -41,9 +64,11 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     <body id='templatemo_body' >
     <?php require_once('../templates/header.php');?>
     <center style="margin-top:5px;"><h1>Калькулятор</h1></center>
-    <?php require_once('../templates/calculator/calc_form.php');?>
+    <?php require_once('../templates/calculator/calc_form.php');
+   ?>
+   <div id='res'></div>
 <?php
-require_once('../templates/calculator/calc_result.php');
+require_once('./result.php');
     ?>
     </div>
     </div>
