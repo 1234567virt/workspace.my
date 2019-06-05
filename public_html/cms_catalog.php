@@ -2,21 +2,87 @@
 <html lang="ru">
 <?php
  require_once '../engine/init.php';
+ require_once '../engine/cms_autoload.php';
  if($user['role']=='admin'){
-$h1="Купите у нас хоть что-нибудь!!!!";
+ $h1="Купите у нас хоть что-нибудь!!!!";
 
 $title="Корзина";
 require_once "../templates/dataNull.php"; 
 $error='';
 $arg2=0;
-//
-$sql="SELECT * FROM `product`";
-$result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
-//
+
 ?>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    
 <meta charset="UTF-8">
+<style>
+    #insert{
+        width:400px;
+        height:400px;
+        border:1px solid black;
+        padding-left:15px;
+      
+    }
+    ul{
+        list-style-type:none;
+    }
+</style>
     <script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>
+    <script type="text/javascript">
+      
+ function insert(){
+var insert=document.getElementById('insertbutton');
+     var form=document.getElementById('insert');
+     var forminsert=document.getElementById('insertform');
+     if(form.style.display=='block'){
+         form.style.display='none';
+         insert.value='Вставить';
+
+     }
+     else{
+         form.style.display='block';
+         insert.value='Скрыть';
+         
+        
+     }
+
+ }
+ function checks(val){
+    if(document.forms[1].name.value=='' || document.forms[1].number.value=='' || document.forms[1].price.value=='' || document.forms[1].text.value==''){
+         val.innerHTML='<b>Вы незаполнили все поля</b>';
+          }  
+          else{
+                $.post('action.php',{ name:$("input[name='name']").val(),
+                                number:$("input[name='number']").val(),
+                                price:$("input[name='price']").val(),
+                            
+                                filename:$("input[name='filename']").val(),
+                                text:$("textarea[name='text']").val(),
+                                action:'insert'},
+                 function(){ $("#table").load('cmsbody.php');  alert('Добавлен товар'); });
+            }
+ }
+ function delet(id){
+     $.ajax({
+         url:'action.php',
+         method:'GET',
+         data:{id:id,
+         action:$('input[name="delete"]').val()},
+         success:function(data){
+             $("#table").load('cmsbody.php');
+         }
+     });
+ }
+ $("document").ready(function(){
+    $('#table').load('cmsbody.php');
+    $('#submit_call').click(function(){
+    checks(document.getElementById('error'));
+    
+   });
+ });
+    </script>
+   
     <title><?php echo $title ?></title>
     <style>
         #templatemo_body{
@@ -46,38 +112,36 @@ $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)
 <body id='templatemo_body' >
 <?php require_once('../templates/header.php');?>
                 <center>  <h1>CMS</h1></center>
+              
                 <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
-               <table width="680px" cellspacing="0" cellpadding="5">
-                    <tr bgcolor="#ddd">
-                        <th width="220" align="left">Изображение</th> 
-                        <th width="180" align="left">Название </th> 
-                       	<th width="100" align="center">Количество </th> 
-                        <th width="60" align="right">Цена </th> 
-                        <th width="60" align="right">Счетчик</th> 
-                        <th width="90"> </th>
-                    </tr>
-<?php while ($row = mysqli_fetch_array($result)) { 
+                <input type="button" name='insert' id='insertbutton' value='Вставить' onclick="insert()">
+                <div id='table'>
+                </div>
 
-    ?>
-      <form action ='../templates/cms_controler.php' method="GET">
-     <tr>
-        <td><img src='<?=$row['src']?>' width="40%"/></td> 
-        <td><?=$row['name']?></td> 
-        <td align="center"><?= $row['number']?></td>
-        <td align="right"><?=$row['price']?> $</td> 
-        <input type="hidden" name="id" value="<?=$row['id']?>" id='select'  />
-        <td align="right"><?=$row['count']?> </td>
-        <td align="center">
-        <button type="submit"  name='update' value='update'> <img src='img/update.png'></button>
-        <button type="submit" name='delete' value='delete'><img src='img/rm.png'  style='width:17px;height:17px'></button>
-        <button type="submit"  name='insert' value='insert'> <img src='img/basket.png'></button>
-        </td>
-    </tr>
-</form>
+        <div id='insert' style='display:none'>
+        <span id='error'></span>
+        <form method="post"id='form2' enctype="multipart/form-data">
+            <ul>
+                <li><label>Название</label></li>
+                <li>    <input type="text" placeholder="Название" value="<?=$name ?>" name="name" required /></li>
+                <li><label>Количество</label></li>
+                <li>    <input type="number" placeholder="Количество" value="<?=$number?>" name="number" required  /></li>
+                <li><label>Цена</label></li>
+                <li>   <input type="number" placeholder="Цена" value="<?=$price?>" name="price" required  />
+                <input type="hidden" value="<?=$id?>" name="id"/></li>
+                <input type="hidden" value="300000" name="MAX_FILE_SIZE" /></li>
+                <li><label>Описание</label></li>
+                <li>    <textarea  name="text" cols='25' rows='15'  placeholder="Описание" ><?=$text?>
+                  </textarea>     
+                </li>
+            </ul>
+            <input name="filename" type="file"/>
+            <input name="ok" type="button" value='Отправить' id='submit_call'/>
+           
+        </form>
 
-  <?php 
- } ?>
-            </table>		
+            <br>
+    </div>
 <?php } 
 else {
     echo "Не хуй сюда лезть";
