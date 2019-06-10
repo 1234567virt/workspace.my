@@ -17,6 +17,7 @@ $arg2=0;
     
 <meta charset="UTF-8">
 <style>
+
     #insert{
         width:400px;
         height:400px;
@@ -60,31 +61,39 @@ var insert=document.getElementById('insertbutton');
                                 filename:$("input[name='filename']").val(),
                                 text:$("textarea[name='text']").val(),
                                 action:'insert'},
-                 function(){ $("#table").load('cmsbody.php');  alert('Добавлен товар'); });
+                 function(){ $("#table").load('cmsbody.php');   });
             }
  }
  function delet(id){
+    // $("#loader-identity").fadeIn(400); 
      $.ajax({
          url:'action.php',
          method:'GET',
-         data:{id:id,
-         action:$('input[name="delete"]').val()},
+         data:{id:id, action:$('input[name="delete"]').val()},
+     
          success:function(data){
+            $("#loader-identity").fadeIn(400); 
              $("#table").load('cmsbody.php');
+             $("#loader-identity").fadeOut(500);
          }
+        
      });
  }
  $("document").ready(function(){
+    $("#loader-identity").fadeIn(400); 
     $('#table').load('cmsbody.php');
+    $("#loader-identity").fadeOut(500);
     $('#submit_call').click(function(){
+       
     checks(document.getElementById('error'));
-    
+    $("#loader-identity").fadeOut(500); 
    });
  });
     </script>
    
     <title><?php echo $title ?></title>
     <style>
+ 
         #templatemo_body{
             background: url(img/templatemo_body.jpg) repeat;
         }
@@ -106,19 +115,24 @@ var insert=document.getElementById('insertbutton');
         }
     </style>
     <link rel="stylesheet" href="./css/menu.css">
+     <link rel="stylesheet" href="./css/loader.css">
     <link rel="stylesheet" href="./css/header.css"> 
     <link rel="stylesheet" href="./css/basket.css"> 
 </head>
 <body id='templatemo_body' >
+
 <?php require_once('../templates/header.php');?>
+<div id="loader-identity"></div>
                 <center>  <h1>CMS</h1></center>
               
                 <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
                 <input type="button" name='insert' id='insertbutton' value='Вставить' onclick="insert()">
+               
                 <div id='table'>
                 </div>
-
+               
         <div id='insert' style='display:none'>
+        
         <span id='error'></span>
         <form method="post"id='form2' enctype="multipart/form-data">
             <ul>

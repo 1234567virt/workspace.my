@@ -1,12 +1,12 @@
 <?php
 function rewiev($link,$Aftor,$Message){
-   $date=date('Y-m-d',time());
+   $date=date('Y-m-d');
       if(isset($Aftor) && isset($Message)){
          $Aftor=clear($link,$Aftor);
          $message =clear($link,$Message);
        
        //  $date=date('Y-m-d',time());
-         $sql="INSERT INTO  `otziv` (`Aftor`, `text`, `date`) VALUES ('$Aftor','$message','2018-04-19')";
+         $sql="INSERT INTO  `otziv` (`Aftor`, `text`, `date`) VALUES ('$Aftor','$message','$date')";
         mysqli_query($link,$sql);
       }
       if(mysqli_error($link)){

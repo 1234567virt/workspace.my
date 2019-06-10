@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
-
 $title="Создание";
 require_once('../engine/init.php');
 require_once('../engine/cms_autoload.php');
@@ -27,8 +26,7 @@ require_once('../templates/cms/selectProduct.php');
 #templatemo_main {
     background: url(img/templatemo_main_bg.png) repeat-y;
 }
-
-    </style>
+ </style>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>
         <link rel="stylesheet" href="./css/menu.css">
@@ -40,13 +38,9 @@ require_once('../templates/cms/selectProduct.php');
     <?php require_once('../templates/header.php');?>
     </div>
     <center style="margin-top:5px;"><?php echo $h1 ?></center>
-    
- <div id="contact_form">
-       
-       <form method="post" enctype="multipart/form-data" class="contact_form" action="../public_html/insert_cms.php">
-    
-
-           <ul>
+    <div id="contact_form">
+        <form method="post" enctype="multipart/form-data" class="contact_form" action="../public_html/insert_cms.php">
+            <ul>
                 <li><label>Название</label></li>
                 <li>    <input type="text" placeholder="Название" value="<?=$name ?>" name="name" required /></li>
                 <li><label>Количество</label></li>
@@ -63,7 +57,6 @@ require_once('../templates/cms/selectProduct.php');
             <input name="filename" type="file"/>
             <input name="ok" type="submit" value='Отправить' class='submit_call'/>
         </form>
-
             <br>
     </div>
     </div>

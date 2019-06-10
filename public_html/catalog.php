@@ -25,10 +25,18 @@ $("document").ready(function(){
           url:'past_comment_catalog.php',
           type:'POST',
           data:dannie,
+          beforeSend:function(){
+            $("#loader-identity").fadeIn(400);  
+          },
+         timeout:(900),
           success:function(data){
                  $('#info').load("comment.php");
-                 document.forms[0].reset();
+               
+        },
+        complete:function(){
+            document.forms[0].reset();
                  $('#send').prop('disabled',false);
+                 $("#loader-identity").fadeOut(500);
         }
     });
 });
@@ -63,6 +71,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
         <title><?php echo $title ?></title>
         <link rel="stylesheet" href="./css/menu.css">
         <link rel="stylesheet" href="./css/catalog.css">
+        <link rel="stylesheet" href="./css/loader.css">
                   <link rel="stylesheet" href="./css/header.css"> 
     </head>
     <body id='templatemo_body' >
@@ -73,7 +82,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
 
        //  require_once "../templates/catalog/comment_catalog.php";
 ?>
-         
+          <div id="loader-identity"></div>
                     <h2 style="margin:0 auto;"><?=$h2;?></h2>
                     <div id="info"></div>
             <?php 

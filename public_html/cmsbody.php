@@ -1,13 +1,5 @@
 <?php
  require_once '../engine/init.php';
-
-// $h1="Купите у нас хоть что-нибудь!!!!";
-
-// $title="Корзина";
-// require_once "../templates/dataNull.php"; 
-// $error='';
-// $arg2=0;
-//
 $sql="SELECT * FROM `product`";
 $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)); 
 ?>
@@ -23,7 +15,6 @@ $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)
 </tr>
 <form  method="GET">  
 <?php   while ($row = mysqli_fetch_array($result)) { 
-
 ?>
 <tr>
 <td><img src='<?=$row['src']?>' width="40%"/></td> 
@@ -34,17 +25,11 @@ $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link)
 <td align="right"><?=$row['count']?> </td>
 <td align="center">
 <button type="submit"  name='update' value='update' onclick="updat('<?=$row['id']?>')"> <img src='img/update.png'></button>
-<input type="button" name='delete' value='delete' onclick="delet('<?=$row['id']?>')"><img src='img/rm.png'  style='width:17px;height:17px'>
-
-
+<input type="button"  name='delete' value='delete' onclick="delet('<?=$row['id']?>')"><img src='img/rm.png'  style='width:17px;height:17px'>
 </td>
 </tr>
-
-
 <?php 
 } 
 ?>
-
-
 </table>
 </form>	
