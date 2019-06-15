@@ -7,22 +7,21 @@ $year=date("Y");
 ?>
     <head>
     <style>
-   
-   #templatemo_body{
-background: url(img/templatemo_body.jpg) repeat;
-}
-#templatemo_body_wrapper {
-background: url(img/templatemo_body_top.jpg) repeat-x top
-}
-#templatemo_header {
-background: url(img/templatemo_header_bg.png) no-repeat bottom; 
-}
-#templatemo_menubar {
-background: url(img/templatemo_menubar.png) no-repeat;
-}
-#templatemo_main {
-background: url(img/templatemo_main_bg.png) repeat-y;
-}
+    #templatemo_body{
+        background: url(img/templatemo_body.jpg) repeat;
+    }
+    #templatemo_body_wrapper {
+        background: url(img/templatemo_body_top.jpg) repeat-x top
+    }
+    #templatemo_header {
+        background: url(img/templatemo_header_bg.png) no-repeat bottom; 
+    }
+    #templatemo_menubar {
+        background: url(img/templatemo_menubar.png) no-repeat;
+    }
+    #templatemo_main {
+        background: url(img/templatemo_main_bg.png) repeat-y;
+    }
     </style>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>

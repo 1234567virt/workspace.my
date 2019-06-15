@@ -29,4 +29,5 @@ function review_nout($link,$Aftor,$Message,$id,$marka){
 }
 //header("Location:../public_html/product.php?id=$id");
 }
+
 ?>

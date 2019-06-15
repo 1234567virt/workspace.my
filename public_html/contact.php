@@ -58,7 +58,6 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     }
    document.write(result);
 }
-
 </script>
         <form action="mail.php" method="POST"  class="contact_form" name='form'>
              <label>Тема:</label><input type="text" min='6'><br>

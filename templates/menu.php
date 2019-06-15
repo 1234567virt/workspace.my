@@ -22,10 +22,8 @@
                      }
 
    ?> 
-   
-      <a href='basket.php' style='text-decaration:none;font-size:14px;color:blue'>Личный кабинет</a><br>
+   <a href='basket.php' style='text-decaration:none;font-size:14px;color:blue'>Личный кабинет</a><br>
       <a href='/engine/exit.php' style='text-decaration:none;font-size:14px;color:blue'>Выйти</a>
-                  
  <?php
 }
                   else{

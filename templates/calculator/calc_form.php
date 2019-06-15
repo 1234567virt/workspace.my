@@ -1,5 +1,4 @@
 <div id="contact_form">
-      
       <form method="post" id="formH">
           <input type="text"  name="numberTwo" required class="required input_field" />
               <select name="hero" id="select" >

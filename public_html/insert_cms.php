@@ -7,6 +7,7 @@ require_once('../engine/cms_autoload.php');
 require_once('../templates/cms/data.php');
 require_once('../templates/cms/controller.php');
 require_once('../templates/cms/selectProduct.php');
+$CMS=new CMS();
 ?>
     <head>
     <style>

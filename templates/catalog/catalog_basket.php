@@ -1,7 +1,7 @@
 <?php
  require_once '../engine/init.php';
- //$id=(int)$_GET['id'];
-   $product= getRequestsProduct($link);
+ $obj=new ProductCatalog();
+ $product=$obj->getRequestsProduct();
    ?>
    <div style="margin-left:100px">
    <?php

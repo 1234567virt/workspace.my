@@ -8,7 +8,6 @@ $year=date("Y");
 ?>
     <head>
     <style>
-
 #templatemo_body{
     background: url(img/templatemo_body.jpg) repeat;
 }
@@ -43,8 +42,7 @@ $year=date("Y");
                         </li>
                             <label for="login">Login:</label>
                             <input type="email" max='30' name="login" placeholder="Логин" required />
-                        
-                        </li>
+                         </li>
                         <li>
                             <label for="password">Password</label>
                             <input type="password" min='6' name="password" placeholder="Пароль" required />

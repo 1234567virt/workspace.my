@@ -9,9 +9,7 @@ require_once('../engine/basket_funcs.php');
       $year=date("Y");
       $id=clear($link,$_GET['id']);
       $id=$_GET['id'];
-      
-  
-    $result= getSelectProducts($link,$id);
+      $result= getSelectProducts($link,$id);
        ?>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     
