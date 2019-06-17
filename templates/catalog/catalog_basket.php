@@ -1,6 +1,6 @@
 <?php
  require_once '../engine/init.php';
- $obj=new ProductCatalog();
+ $obj=new Requests();
  $product=$obj->getRequestsProduct();
    ?>
    <div style="margin-left:100px">
