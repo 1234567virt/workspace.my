@@ -5,15 +5,10 @@ $title="Каталог";
 $h1="Каталог";
 $h2="Написать отзыв";
 ?>
-
-
-
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript">
-
-
 /////////////////////////////////////
 $("document").ready(function(){
     $('#info').load("comment.php"); 
@@ -42,9 +37,7 @@ $("document").ready(function(){
 });
 });
 </script>
-
-
-    <style>
+  <style>
  #templatemo_body{
 background: url(img/templatemo_body.jpg) repeat;
 }
@@ -64,9 +57,7 @@ background: url(img/templatemo_menubar.png) no-repeat;
 #templatemo_main {
 background: url(img/templatemo_main_bg.png) repeat-y;
 }
-
-
-    </style>
+ </style>
         <meta charset="UTF-8">
         <title><?php echo $title ?></title>
         <link rel="stylesheet" href="./css/menu.css">
@@ -79,8 +70,6 @@ background: url(img/templatemo_main_bg.png) repeat-y;
     <center><h1><?=$h2?></h1></center>
 <?php
          require_once "../templates/catalog/catalog_basket.php";
-
-       //  require_once "../templates/catalog/comment_catalog.php";
 ?>
           <div id="loader-identity"></div>
                     <h2 style="margin:0 auto;"><?=$h2;?></h2>

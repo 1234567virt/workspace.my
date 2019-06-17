@@ -22,7 +22,7 @@ $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link
                
     while ($row = mysqli_fetch_array($result))
     {
-        //require_once('../templates/basket/basket_form.php');
+ 
         ?>
    
    

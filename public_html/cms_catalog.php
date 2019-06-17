@@ -5,19 +5,15 @@
  require_once '../engine/cms_autoload.php';
  if($user['role']=='admin'){
  $h1="Купите у нас хоть что-нибудь!!!!";
-
 $title="Корзина";
 require_once "../templates/dataNull.php"; 
 $error='';
 $arg2=0;
-
 ?>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    
 <meta charset="UTF-8">
 <style>
-
     #insert{
         width:400px;
         height:400px;
@@ -31,24 +27,19 @@ $arg2=0;
 </style>
     <script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>
     <script type="text/javascript">
-      
- function insert(){
-var insert=document.getElementById('insertbutton');
-     var form=document.getElementById('insert');
-     var forminsert=document.getElementById('insertform');
-     if(form.style.display=='block'){
-         form.style.display='none';
-         insert.value='Вставить';
-
-     }
-     else{
-         form.style.display='block';
-         insert.value='Скрыть';
-         
-        
-     }
-
- }
+      function insert(){
+        var insert=document.getElementById('insertbutton');
+        var form=document.getElementById('insert');
+        var forminsert=document.getElementById('insertform');
+        if(form.style.display=='block'){
+            form.style.display='none';
+            insert.value='Вставить';
+        }
+        else{
+            form.style.display='block';
+            insert.value='Скрыть';
+        }
+       }
  function checks(val){
     if(document.forms[1].name.value=='' || document.forms[1].number.value=='' || document.forms[1].price.value=='' || document.forms[1].text.value==''){
          val.innerHTML='<b>Вы незаполнили все поля</b>';
@@ -65,8 +56,7 @@ var insert=document.getElementById('insertbutton');
             }
  }
  function delet(id){
-    // $("#loader-identity").fadeIn(400); 
-     $.ajax({
+    $.ajax({
          url:'action.php',
          method:'GET',
          data:{id:id, action:$('input[name="delete"]').val()},
@@ -76,15 +66,13 @@ var insert=document.getElementById('insertbutton');
              $("#table").load('cmsbody.php');
              $("#loader-identity").fadeOut(500);
          }
-        
-     });
+    });
  }
  $("document").ready(function(){
     $("#loader-identity").fadeIn(400); 
     $('#table').load('cmsbody.php');
     $("#loader-identity").fadeOut(500);
     $('#submit_call').click(function(){
-       
     checks(document.getElementById('error'));
     $("#loader-identity").fadeOut(500); 
    });
@@ -120,19 +108,14 @@ var insert=document.getElementById('insertbutton');
     <link rel="stylesheet" href="./css/basket.css"> 
 </head>
 <body id='templatemo_body' >
-
 <?php require_once('../templates/header.php');?>
 <div id="loader-identity"></div>
                 <center>  <h1>CMS</h1></center>
-              
                 <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
                 <input type="button" name='insert' id='insertbutton' value='Вставить' onclick="insert()">
-               
                 <div id='table'>
                 </div>
-               
         <div id='insert' style='display:none'>
-        
         <span id='error'></span>
         <form method="post"id='form2' enctype="multipart/form-data">
             <ul>
@@ -151,10 +134,8 @@ var insert=document.getElementById('insertbutton');
             </ul>
             <input name="filename" type="file"/>
             <input name="ok" type="button" value='Отправить' id='submit_call'/>
-           
-        </form>
-
-            <br>
+     </form>
+     <br>
     </div>
 <?php } 
 else {
