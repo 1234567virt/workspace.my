@@ -1,14 +1,13 @@
 <?php 
 require_once '../engine/init.php';
-$sql="SELECT * FROM `otziv`";
-$massiv=mysqli_query($link,$sql);
+$comment=new Comment();
+$massiv=$comment->Comments_catalog();
 echo "<br>";
-while($rower = mysqli_fetch_array($massiv)){
-      echo "<hr>";
-      echo "Дата:".$rower['date']."<br>";
-      echo "Автор:".$rower['Aftor']."<br>";
-      echo "Текст:".$rower['text']."<br>";
-     
+foreach($massiv as $key=>$val){
+   echo "<hr>";
+   echo "Дата:".$val['date']."<br>";
+   echo "Автор:".$val['Aftor']."<br>";
+   echo "Текст:".$val['text']."<br>";
 }
 
 ?>

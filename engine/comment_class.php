@@ -21,5 +21,21 @@ class Comment extends Connect {
       ('$this->id','$this->marka','$this->Aftor','$this->message')";   
       $obj->query($sql);
    }
+   function Comments_catalog(){
+      $sql="SELECT * FROM `otziv`";
+      $obj=self::connecting();
+      $massiv=$obj->query($sql)->fetchAll();
+       return $massiv;
+   }
+   function Comments_product($id){
+      $this->id=self::clear($id);
+      $sql="SELECT `otziv_nout`.* FROM `product` left join
+      `otziv_nout` on `otziv_nout`.`name`=`product`.`name` where `product`.id='$$this->id'";
+      $obj=self::connecting();
+      $result=$obj->query($sql)->fetchAll();
+      return $result;
+
+   }
 }
+
 ?>
