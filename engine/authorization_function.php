@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../engine/requests.php');
+require_once('../engine/requests_class.php');
 require_once('../engine/db_connect.php');
 require_once('../engine/funcs.php');
 $login=isset($_POST['log'])?  $_POST['log'] : '';

@@ -4,7 +4,6 @@ require_once('../engine/init.php');
 if(isset($user['user_login'])){
     require_once("../templates/dataClear.php"); 
     require_once("../templates/dataNull.php"); 
-   //require_once("../engine/basket_funcs.php"); 
     $obj=new Basket();
     if(isset($_GET['delete']) && isset($_GET['id'])){
         mysqli_query($link,"DELETE FROM `basket` where `id_product`=$arg1 and `id_user`=".$_SESSION['user_id']."");

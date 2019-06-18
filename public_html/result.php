@@ -1,5 +1,4 @@
 <?php
-require_once('../engine/calc_function.php');
 require_once('../engine/init.php');
 if(isset($_POST['hero']) && isset($_POST['numberOne']) && isset($_POST['numberTwo'])){
     $calc=new MathO();
