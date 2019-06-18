@@ -4,3 +4,5 @@
 [Mon May 27 22:37:32.245908 2019] [php7:error] [pid 27571] [client 127.0.0.1:38864] script '/opt/lampp/htdocs/workspace.my/public_html/time.php' not found or unable to stat, referer: http://workspace.my/public_html/catalog.php
 [Tue May 28 00:39:23.728612 2019] [php7:error] [pid 20113] [client 127.0.0.1:40412] script '/opt/lampp/htdocs/workspace.my/public_html/test.php' not found or unable to stat, referer: http://workspace.my/public_html/product.php?id=%224%22
 [Mon Jun 03 21:51:25.259092 2019] [php7:error] [pid 11320] [client 127.0.0.1:59076] script '/opt/lampp/htdocs/workspace.my/public_html/fontscmsbody.php' not found or unable to stat, referer: http://workspace.my/public_html/cms_catalog.php
+[Tue Jun 18 22:36:02.685102 2019] [php7:error] [pid 13142] [client 127.0.0.1:52542] script '/opt/lampp/htdocs/workspace.my/engine/captcha.php' not found or unable to stat, referer: http://workspace.my/public_html/logout.php
+[Tue Jun 18 22:55:02.131745 2019] [php7:error] [pid 4310] [client 127.0.0.1:52870] script '/opt/lampp/htdocs/workspace.my/engine/captcha.php' not found or unable to stat, referer: http://workspace.my/public_html/logout.php
