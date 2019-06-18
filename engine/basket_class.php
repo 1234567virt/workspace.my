@@ -19,12 +19,11 @@ class Basket extends Connect {
     $obj=self::connecting();
     $obj->query($sql);
   }
-  public function getSelectProducts($id){
-    $this->id=self::clear($id);
-    $sql="SELECT * FROM `product` where `id`='$this->id'";
+  public function getSelectProduct($id){
+    $this->id=$id;
+    $sql="SELECT * FROM `product` where `id`=$this->id";
     $obj=self::connecting();
-    
-    $result=$obj->query($sql);
+    $result=$obj->query($sql)->fetchAll();
     return $result;
   }
 }

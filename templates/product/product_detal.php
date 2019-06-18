@@ -1,9 +1,9 @@
-<img src='<?=$row['src']?>' width='600'  id='img'>
-          <?php counts($row['count'],$id,$link,"product");?>
-            <div id='title' ><?=$row['name']?></div>
-            <div id='long_text' id=''><span id='title_text'> Описание:</span>:<?=$row['text']?></div>
+<img src='<?php echo $val['src']?>' width='600'  id='img'>
+          <?php  counts($val['count'],$id,$link,"product");?>
+            <div id='title' ><?php echo $val['name']?></div>
+            <div id='long_text' id=''><span id='title_text'> Описание:</span>:<?php echo $val['text']?></div>
             <div id='count'>
             <center>
-            <h4><?=$row['count']?></h4>
+            <h4><?php echo $val['count']?></h4>
             </center></div>
             

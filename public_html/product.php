@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<?php require_once('../engine/init.php');
-require_once('../engine/basket_funcs.php');
+<?php
+ require_once('../engine/init.php');
 ?>
 <html lang="ru">
     <head>
     <?php
+   $product=new Basket();
      $title="Каталог";
       $year=date("Y");
-      $id=clear($link,$_GET['id']);
-      $id=$_GET['id'];
-      $result= getSelectProducts($link,$id);
-       ?>
+     // $id=clear($link,$_GET['id']);
+    ?>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     
        <script type="text/javascript">
 $("document").ready(function(){
-    $('#info').load("comment_product.php",{id:<?php echo $id;?>}); 
+    $('#info').load("comment_product.php",{id:<?php echo $_GET['id'];?>}); 
     $("#send").click(function(){
      var dannie=$("form").serialize();
      if($('input[name="Aftor"]').val()==''){
@@ -59,11 +58,16 @@ $("document").ready(function(){
     </head>
     <body>
     <div class='container'>
-    
-       <?php while ($row = mysqli_fetch_array($result)){?>
+    <?php 
+    $result=$product->getSelectProduct($_GET['id']);
+   // var_dump($result);
+    ?>
+       <?php foreach ($result as $key=>$val){?>
       <?php $marka=$row['name'];
-         require_once "../templates/product/product_detal.php";
+        require_once "../templates/product/product_detal.php";
+      // echo $marka;
             } ?>
+           
        <div id="loader-identity"></div>
      <div style="margin-top:100px" id='info'></div>
      
