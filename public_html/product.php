@@ -8,15 +8,17 @@
    $product=new Basket();
      $title="Каталог";
       $year=date("Y");
-     // $id=clear($link,$_GET['id']);
+     $id=clear($link,$_GET['id']);
     ?>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     
        <script type="text/javascript">
 $("document").ready(function(){
-    $('#info').load("comment_product.php",{id:<?php echo $_GET['id'];?>}); 
+    $('#info').load("comment_product.php",{id:<?php echo  $_GET['id'];?>}); 
+    /////////////////////////
     $("#send").click(function(){
      var dannie=$("form").serialize();
+     ////////////////
      if($('input[name="Aftor"]').val()==''){
         $('#error1').html("Заполните поле");
 }
@@ -27,6 +29,7 @@ $("document").ready(function(){
         $('#error1').html("");
         $('#error2').html("");
         $('#send').prop('disabled',true);
+        /////////////////////////
         $.ajax({
             url:'past_comment_catalog.php',
            method:'POST',
@@ -36,7 +39,7 @@ $("document").ready(function(){
             },
             data:dannie,
             success:function(data){
-                    $('#info').load("comment_product.php",{id:<?php echo $id; ?>}); 
+                    $('#info').load("comment_product.php",{id:<?php echo $_GET['id']; ?>}); 
           
             },
             complete:function(){
@@ -45,8 +48,11 @@ $("document").ready(function(){
                   $('#loader-identity').fadeOut(150);
             }
         });
+        //////////////////////////////////
     }
+    /////////
 });
+/////////////
 });
 
        </script>
@@ -63,10 +69,10 @@ $("document").ready(function(){
    // var_dump($result);
     ?>
        <?php foreach ($result as $key=>$val){?>
-      <?php $marka=$row['name'];
+      <?php $marka=$val['name'];
+      //echo $marka;
         require_once "../templates/product/product_detal.php";
-      // echo $marka;
-            } ?>
+     } ?>
            
        <div id="loader-identity"></div>
      <div style="margin-top:100px" id='info'></div>
