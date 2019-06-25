@@ -22,11 +22,8 @@ $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link
                
     while ($row = mysqli_fetch_array($result))
     {
- 
-        ?>
-   
-   
-  <tr>
+  ?>
+   <tr>
         <td><img src='<?=$row['src']?>' width="40%"/></td> 
         <td><?=$row['name']?></td> 
         <td align="center"><input type="number" name="count" onchange="savebasket(<?=$row['id_product']?>,this.value)" value='<?=$row['count']?>'  min='0' max='15'

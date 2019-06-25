@@ -12,5 +12,6 @@ class Connect{
         $value=htmlspecialchars(strip_tags($val));
         return $value;
     }
+
 }
 ?>

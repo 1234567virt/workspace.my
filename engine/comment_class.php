@@ -6,7 +6,7 @@ class Comment extends Connect {
       $obj=self::connecting();
       $this->Aftor=self::clear($Aftor);
       $this->Message=self::clear($Message);
-      $date=date('Y-m-d');
+      $this->date=date('Y-m-d');
       $sql="INSERT INTO  `otziv` (`Aftor`, `text`, `date`) VALUES
       ('$this->Aftor','$this->Message','$this->date')";
       $obj->query($sql);
@@ -33,6 +33,7 @@ class Comment extends Connect {
       `otziv_nout` on `otziv_nout`.`name`=`product`.`name` where `product`.id=$this->id";
       $obj=self::connecting();
       $result=$obj->query($sql)->fetchAll();
+      
       return $result;
 
    }

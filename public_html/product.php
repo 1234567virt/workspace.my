@@ -66,12 +66,10 @@ $("document").ready(function(){
     <div class='container'>
     <?php 
     $result=$product->getSelectProduct($_GET['id']);
-   // var_dump($result);
     ?>
        <?php foreach ($result as $key=>$val){?>
       <?php $marka=$val['name'];
-      //echo $marka;
-        require_once "../templates/product/product_detal.php";
+      require_once "../templates/product/product_detal.php";
      } ?>
            
        <div id="loader-identity"></div>

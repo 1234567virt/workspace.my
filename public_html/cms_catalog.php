@@ -27,6 +27,14 @@ $arg2=0;
 </style>
     <script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>
     <script type="text/javascript">
+      function blockinsert(insert,insertbutton){
+        document.forms[1].reset();
+        var blockinsert=document.getElementById(insert);
+        var insertbutons=document.getElementById(insertbutton);
+        blockinsert.style.display='none';
+        insertbutons.value='Вставить';
+      }
+
       function insert(){
         var insert=document.getElementById('insertbutton');
         var form=document.getElementById('insert');
@@ -34,10 +42,12 @@ $arg2=0;
         if(form.style.display=='block'){
             form.style.display='none';
             insert.value='Вставить';
+           
         }
         else{
             form.style.display='block';
             insert.value='Скрыть';
+          
         }
        }
  function checks(val){
@@ -53,7 +63,10 @@ $arg2=0;
                                 text:$("textarea[name='text']").val(),
                                 action:'insert'},
                  function(){ $("#table").load('cmsbody.php');   });
+                 
             }
+        
+blockinsert('insert','insertbutton');
  }
  function delet(id){
     $.ajax({
@@ -67,6 +80,8 @@ $arg2=0;
              $("#loader-identity").fadeOut(500);
          }
     });
+    blockinsert('insert','insertbutton');
+   
  }
  $("document").ready(function(){
     $("#loader-identity").fadeIn(400); 
@@ -74,6 +89,8 @@ $arg2=0;
     $("#loader-identity").fadeOut(500);
     $('#submit_call').click(function(){
     checks(document.getElementById('error'));
+    //document.forms[1].reset();
+
     $("#loader-identity").fadeOut(500); 
    });
  });
@@ -117,7 +134,7 @@ $arg2=0;
                 </div>
         <div id='insert' style='display:none'>
         <span id='error'></span>
-        <form method="post"id='form2' enctype="multipart/form-data">
+        <form method="post" id='form2' enctype="multipart/form-data">
             <ul>
                 <li><label>Название</label></li>
                 <li>    <input type="text" placeholder="Название" value="<?=$name ?>" name="name" required /></li>

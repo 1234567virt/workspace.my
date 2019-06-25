@@ -1,8 +1,7 @@
 <?php
  require_once '../engine/init.php';
  $obj=new Requests();
- $product=$obj->getRequestsProduct();
-   ?>
+ $product=$obj->getCatalogProducts()?>
    <div style="margin-left:100px">
    <?php
   foreach($product as $key=>$val){?>

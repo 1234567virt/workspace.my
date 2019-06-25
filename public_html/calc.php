@@ -15,7 +15,6 @@ $result='';
     <script type="text/javascript">
 
 $("document").ready(function(){
-
 $("#send").click(function(){
   var dannie=$("form").serialize();
 

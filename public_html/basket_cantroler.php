@@ -6,9 +6,7 @@ if(isset($user['user_login'])){
     require_once("../templates/dataNull.php"); 
     $obj=new Basket();
     if(isset($_GET['delete']) && isset($_GET['id'])){
-        mysqli_query($link,"DELETE FROM `basket` where `id_product`=$arg1 and `id_user`=".$_SESSION['user_id']."");
-      // echo $arg1;
-     // $obj->delete_basket($_GET['id'],$_SESSION['user_id']);
+    $obj->delete_basket($_GET['id'],$_SESSION['user_id']);
        header('Location:../public_html/basket.php');
     }
     else
@@ -16,12 +14,12 @@ if(isset($user['user_login'])){
         if(isset($_GET['id']) && isset($_GET['count']))
         {
               $massiv=mysqli_query($link,"select * from `product` where `number`>='$arg2' and `id`='$arg1'");
-        //   echo $arg1.",".$arg2;
+        
             $count_save=mysqli_num_rows($massiv);
                 if($count_save===0)
                 {
                    echo 'Нехватает продукции';
-                   // header('Location:../public_html/basket.php');
+                    header('Location:../public_html/basket.php');
                   die;
                 }
                 else
@@ -39,8 +37,8 @@ if(isset($user['user_login'])){
                         }
                         else
                         {
-                            mysqli_query($link ,"UPDATE `basket` SET  `count`='$arg2' where `id_product`='$arg1' and id_user=".$_SESSION['user_id']."");
-                        }
+                         $obj->update_basket($_SESSION['user_id'],$arg1,$arg2);
+                    }
                     }
                     header('Location:../public_html/basket.php');
                 }

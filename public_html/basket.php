@@ -7,6 +7,7 @@ $h1="Купите у нас хоть что-нибудь!!!!";
 $year=date("Y");
 $title="Корзина";
 $arg2=0;
+$id=$_GET['id'];
 ?>
     <head>
         <meta charset="UTF-8">
@@ -70,7 +71,7 @@ $arg2=0;
     <?php require_once('../templates/header.php');?>
                  <center>  <h1><?=$title?></h1></center>
                  <div id="loader-identity"></div>
-             <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
+             <h3 style='margin:30px'> </span> <?=$h1?></h3>
         <?php
 }
  else {

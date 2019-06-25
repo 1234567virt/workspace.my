@@ -1,5 +1,6 @@
 <img src='<?php echo $val['src']?>' width='600'  id='img'>
-          <?php  counts($val['count'],$id,$link,"product");?>
+          <?php  $product->reiting($_GET['id']);
+          ?>
             <div id='title' ><?php echo $val['name']?></div>
             <div id='long_text' id=''><span id='title_text'> Описание:</span>:<?php echo $val['text']?></div>
             <div id='count'>

@@ -1,5 +1,5 @@
 <?php 
-
+require_once('../engine/connect.php');
  function translite($text) {
   $alfavit=[
   "а" => 'a','б' => 'b','в'=> 'v',
@@ -52,10 +52,7 @@ function one($path){
          }
 }
 
-function counts($row,$id,$link,$bd){
-    $sql="UPDATE $bd SET `count`=count+1 WHERE `id`='$id'";
-    $result=mysqli_query($link,$sql);
-}
+
 
 function clear($link,$value){
     $value= mysqli_real_escape_string($link,  
@@ -63,23 +60,4 @@ function clear($link,$value){
     strip_tags($value)));
     return $value;
 }
-
-function registration($link,$login,$password,$name,$call){
-    if(isset($login) && isset($password) && isset($name) && isset($call)){
-      $login=clear($link,$login);
-      $password=clear($link,$password);
-      $name=clear($link,$name);
-      $call=clear($link,$call);
-      $password=password_hash ($password, PASSWORD_BCRYPT);
-      mysqli_query($link ,"INSERT INTO `user`(`role`, `user_name`, `user_login`, `user_password`, `u_call`) VALUES
-            ('user','$name','$login','$password','$call')");
-            
-    }
-    else{
-      echo "Ошибка пустые данные";
-  
-    }
-  }
-
-
-  ?>
+?>
