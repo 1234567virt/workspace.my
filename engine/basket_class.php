@@ -46,5 +46,22 @@ class Basket extends Connect {
     $obj=self::connecting();
     $obj->query($sql);  
    }
+
+   public function basket_catalog($user_id){
+     $this->id_user=self::clear($user_id);
+     $obj=self::connecting();
+     $sql="select product.src as `src`,basket.* 
+     ,product.price as `price`,product.text as `text`,
+     `product`.name, `basket`.count * `product`.price as `result`
+      from `basket` left join
+      `product` on `product`.id=`basket`.id_product where `basket`.id_user='$this->id_user'";
+      if($obj->query("select COUNT(*) from `basket` left join `product` on `product`.id=`basket`.id_product where `basket`.id_user='$this->id_user'")->fetchColumn()===0){
+        return false;
+      }
+      else{
+         $result=$obj->query($sql)->fetchAll(); 
+         return $result;
+      }
+  }
 }
 ?>  

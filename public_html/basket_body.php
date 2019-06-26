@@ -1,12 +1,7 @@
 <?php
 require_once '../engine/init.php';
-$sql1="select product.src as `src`,basket.* 
-,product.price as `price`,product.text as `text`,
-`product`.name, `basket`.count * `product`.price as `result`
- from `basket` left join
- `product` on `product`.id=`basket`.id_product where `basket`.id_user=".$_SESSION['user_id']."";
-$result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
-    
+  $basket=new Basket();
+   $result=$basket->basket_catalog($_SESSION['user_id']); 
 ?>
          <table width="680px" cellspacing="0" cellpadding="5">
                        	  <tr bgcolor="#ddd">
@@ -20,7 +15,7 @@ $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link
                         <form>
                <?php
                
-    while ($row = mysqli_fetch_array($result))
+   foreach ($result as $key=>$row)
     {
   ?>
    <tr>
