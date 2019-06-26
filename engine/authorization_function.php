@@ -1,33 +1,13 @@
 <?php
 session_start();
-require_once('../engine/requests_class.php');
-require_once('../engine/db_connect.php');
-require_once('../engine/funcs.php');
+require_once('../engine/init.php');
 $login=isset($_POST['log'])?  $_POST['log'] : '';
 $password=isset($_POST['pas'])?  $_POST['pas'] : '';
-$error='';
-if(isset($login) && isset($password)){
-        $login=$_POST['log'];
-        $password=$_POST['pas'];
-        $user=getUserEmail($link,$login);
-      
-        if($user){
-
-             if(password_verify($password,$user['user_password'])){
-                
-               $_SESSION['user_id']=$user['id_user'];
-               $_SESSION['success_message']='Успешная авторизация';
-               header('Location:../public_html/basket.php');
-              }
-             else{
-               $error="INVALID PASSWORD";
-            echo $error;
-            }
-            }
-             else {
-                 echo "Неверный пользователь или пароль!!!";
-        }
-}
-
-
+      if(isset($login) && isset($password)){
+         $reg=new Registration();
+         $reg->open_basket($_POST['log'],$_POST['pas']);
+      }
+      else{
+         header('Location:/');
+      }
   ?>

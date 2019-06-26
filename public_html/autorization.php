@@ -57,7 +57,7 @@ background: url(img/templatemo_main_bg.png) repeat-y;
         </ul>
     </form>
 </div>
-    </div>
+    </div>  
 </body>
 </html>
 
