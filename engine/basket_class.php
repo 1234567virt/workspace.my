@@ -63,5 +63,27 @@ class Basket extends Connect {
          return $result;
       }
   }
+  public function basket_cantroler1($count,$id_product){
+    $this->id=self::clear($id_product);
+    $this->countx=self::clear($count);
+    $obj=self::connecting();
+    $sql="select * from `product` where `number`>=$this->countx and `id`=$this->id";
+     if($obj->query("select COUNT(*) from `product`  where `number`>=$this->countx and `id`=$this->id")->fetchColumn()===0){
+       return 0 ;
+     }
+       else{
+      $result=$obj->query($sql)->fetchAll(); 
+      return $result;
+     }
+  }
+
+  public function basket_cantroler2($id_product,$id_user){
+    $this->idproduct=$id_product;
+    $this->iduser=$id_user;
+    $obj=self::connecting();
+    $sql="select COUNT(*) from `basket`  where `id_product`=$this->idproduct and `id_user`=$this->iduser";
+  $result=$obj->query($sql)->fetchColumn();
+      return $result;
+     }
 }
 ?>  
