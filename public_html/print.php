@@ -6,17 +6,8 @@ require_once '../engine/init.php';
 $h1="Купить!!!!";
 $year=date("Y");
 $title="Распечатать";
-    $sql1="select product.src as `src`,basket.* 
-    ,product.price as `price`,product.text as `text`, `basket`.count * `product`.price as `result` from `basket` 
-    left join `product` on `basket`.id_product=`product`.id where `basket`.id_user=".$_SESSION['user_id']."";
-   // $sql1=";
-    $result = mysqli_query($link, $sql1) or die("Ошибка " . mysqli_error($link)); 
-  //  $headers='From:vitte@gmail.ru'."\r\n".
-  //   'Replay-To:vitte@bk.com'."\r\n".
-  //   'X-Mailer:PHP/'.phpversion();
-  // $message="Номер вашего заказа ";
-  //   mail($login,"Ваш заказ ",$message);
-  
+$print=new Basket();
+$result=$print->basket_catalog($_SESSION['user_id']);
   ?>
     <head>
         <meta charset="UTF-8">
@@ -49,13 +40,25 @@ $title="Распечатать";
                         	<th width="90"> </th>
                         </tr>
                <?php
-    while ($row = mysqli_fetch_array($result))
+               
+    foreach ($result as $key=>$row)
     {
-    require_once('../templates/basket/basket_print.php');
-  ?>
+       // require_once('../templates/basket/basket_print.php'); 
+        ?>
+  
+   <tr>
+        <td><img src='<?=$row['src']?>' width="40%"/></td> 
+        <td><?=$row['name']?></td> 
+        <td align="center"><input type="number" name="count" value='<?=$row['count']?>'  placeholder='0' id='select'  disabled /> </td>
+      <td align="right"><?=$row['result']?>$ </td>
+       <td align="center">
+    </td>
+        </tr>
+        <?php
+}
 
-<?php } ?>
-
+    
+    ?>
 </table>		
                     	
          </div>

@@ -15,8 +15,7 @@ require_once('../engine/connect.php');
 $users=new  Registration();
 $user=null;
 if(isset($_SESSION['user_id'])){
-    
-    $user=$users->getUserId($_SESSION['user_id']); 
-
+     $user=$users->getUserId($_SESSION['user_id']); 
+//echo $_SESSION['user_id'];
 }
 ?>

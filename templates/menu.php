@@ -20,11 +20,13 @@
                      if($user['role']=='admin'){
                         echo  "<li><a href='cms_catalog.php'>CMS</a></li>";
                      }
-
+                     if(isset($_SESSION['user_id'])){
+    echo 1;
    ?> 
    <a href='basket.php' style='text-decaration:none;font-size:14px;color:blue'>Личный кабинет</a><br>
       <a href='/engine/exit.php' style='text-decaration:none;font-size:14px;color:blue'>Выйти</a>
  <?php
+                     }
 }
                   else{
                      ?>

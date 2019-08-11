@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require_once('../engine/init.php');
 if(isset($_POST['ok'])){
     $reg=new Registration();  

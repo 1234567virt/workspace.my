@@ -44,16 +44,10 @@ class Registration extends Connect {
         $this->password=$password;
         $user=$this->getUserEmail($this->login);
     
-        if($user){
-            if(password_verify($this->password,$user['user_password'])){
-               $_SESSION['user_id']=$user['id_user'];
-               $_SESSION['success_message']='Успешная авторизация';
-               header('Location:../public_html/basket.php');
-               }
-            else{
-                echo "INVALID PASSWORD";
-                }
-               }
+     $_SESSION['user_id']=$user['id_user'];
+     $_SESSION['success_message']='успешно';
+return $_SESSION['user_id'];
+header('Location:../public_html/basket.php');
       }
     }   
 ?>
