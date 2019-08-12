@@ -1,12 +1,12 @@
 <?php
  require_once ('../engine/menu_builder.php');
- require_once ('../engine/init.php');
+ 
                 foreach($menu as $url=>$key){
                    
                    echo  "<li><a href='".$url."'>".$key."</a></li>";
 }
 
-                  if($user){
+                  if(isset($user)){
                      ?>
               <style>
               .ddsmoothmenu ul li:nth-child(5){
@@ -21,22 +21,14 @@
                         echo  "<li><a href='cms_catalog.php'>CMS</a></li>";
                      }
                      if(isset($_SESSION['user_id'])){
-    echo 1;
-   ?> 
-   <a href='basket.php' style='text-decaration:none;font-size:14px;color:blue'>Личный кабинет</a><br>
-      <a href='/engine/exit.php' style='text-decaration:none;font-size:14px;color:blue'>Выйти</a>
- <?php
-                     }
+                        echo  " <a href='basket.php' style='text-decaration:none;font-size:14px;color:blue'>Личный кабинет</a><br>";
+                        echo " <a href='/engine/exit.php' style='text-decaration:none;font-size:14px;color:blue'>Выйти</a>";
+                      }
 }
-                  else{
-                     ?>
-     
-                  <?php
+ else{
+    echo 1;
  }
- if(isset( $_SESSION['success_message'])){
- echo "<li>".$_SESSION['success_message']."</li>";
- unset($_SESSION['success_message']);
- }
+
 ?>
 
 

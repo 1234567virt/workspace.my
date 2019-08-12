@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
+require_once('../engine/init.php');
 $title="Каталог";
 $h1="Каталог";
 $h2="Написать отзыв";

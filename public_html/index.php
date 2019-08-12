@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <?php
+require_once ('../engine/init.php');
 $title="Главная";
 $h1="Санрайс";
 $year=date("Y");

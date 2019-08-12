@@ -39,15 +39,6 @@ class Registration extends Connect {
         }
       }
 
-      public function open_basket($login,$password){
-        $this->login=$login;
-        $this->password=$password;
-        $user=$this->getUserEmail($this->login);
-    
-     $_SESSION['user_id']=$user['id_user'];
-     $_SESSION['success_message']='успешно';
-return $_SESSION['user_id'];
-header('Location:../public_html/basket.php');
-      }
+
     }   
 ?>
