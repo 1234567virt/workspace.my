@@ -1,5 +1,4 @@
 <?php
-require_once('../engine/connect.php');
 require_once('../engine/init.php');
  class Requests extends Connect {
     public function __construct () {

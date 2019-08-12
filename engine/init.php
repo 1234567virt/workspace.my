@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once('../engine/pass.php');
 require_once('../engine/menu_builder.php');
 require_once('../engine/funcs.php');
 require_once('../engine/calcfunc_class.php');

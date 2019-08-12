@@ -7,8 +7,6 @@ $h1="Купите у нас хоть что-нибудь!!!!";
 $year=date("Y");
 $title="Корзина";
 $arg2=0;
-//$id=$_GET['id'];
-//echo $_SESSION['user_id'];
 ?>
     <head>
         <meta charset="UTF-8">
