@@ -17,15 +17,5 @@ require_once('../engine/init.php');
             return $result;
         }
     } 
-    // public function getUserEmail($login){
-    //     $this->login=self::clear($login);
-    //     $sql="Select * from `user` where `user_login`='$this->login' limit 1";
-    //     $obj=self::connecting();
-    //     $result=$obj->query($sql)->fetch();
-    //     return $result;
-      
-    //   }
-  }
-
- 
- ?>
+}
+?>
