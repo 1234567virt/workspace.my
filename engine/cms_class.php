@@ -4,6 +4,7 @@ require_once('../engine/connect.php');
     function __construct( ){
      
     }
+
     public function delet($id){
         $this->id=self::clear($id);
         $obj=self::connecting();
@@ -31,7 +32,18 @@ require_once('../engine/connect.php');
          $sql="INSERT INTO `product` (`src`, `name`, `text`, `count`, `number`, `price`)
          VALUES ('$src','$name','$text','0','$number','$price')";
      }
-
+    function cmsCatalogProducts(){
+        $sql="SELECT * FROM `product`";
+        $obj=self::connecting();
+        $result=$obj->query($sql)->fetchAll();
+        if($obj->query('SELECT COUNT(*) FROM `product` ')->fetchColumn()===0)
+        {
+            return false;
+        }
+        else{
+            return $result;
+        }
+    } 
  }
 
 ?>

@@ -2,7 +2,7 @@
 <html lang="ru">
 <?php
  require_once '../engine/init.php';
- require_once '../engine/cms_autoload.php';
+// require_once '../engine/cms_autoload.php';
  if($user['role']=='admin'){
  $h1="Купите у нас хоть что-нибудь!!!!";
 $title="Корзина";
@@ -137,15 +137,15 @@ blockinsert('insert','insertbutton');
         <form method="post" id='form2' enctype="multipart/form-data">
             <ul>
                 <li><label>Название</label></li>
-                <li>    <input type="text" placeholder="Название" value="<?=$name ?>" name="name" required /></li>
+                <li>    <input type="text" placeholder="Название" value="" name="name" required /></li>
                 <li><label>Количество</label></li>
-                <li>    <input type="number" placeholder="Количество" value="<?=$number?>" name="number" required  /></li>
+                <li>    <input type="number" placeholder="Количество" value="" name="number" required  /></li>
                 <li><label>Цена</label></li>
-                <li>   <input type="number" placeholder="Цена" value="<?=$price?>" name="price" required  />
+                <li>   <input type="number" placeholder="Цена" value="" name="price" required  />
                 <input type="hidden" value="<?=$id?>" name="id"/></li>
                 <input type="hidden" value="300000" name="MAX_FILE_SIZE" /></li>
                 <li><label>Описание</label></li>
-                <li>    <textarea  name="text" cols='25' rows='15'  placeholder="Описание" ><?=$text?>
+                <li>    <textarea  name="text" cols='25' rows='15'  placeholder="Описание" >
                   </textarea>     
                 </li>
             </ul>
