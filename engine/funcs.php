@@ -54,10 +54,9 @@ function one($path){
 
 
 
-function clear($link,$value){
-    $value= mysqli_real_escape_string($link,  
-    htmlspecialchars(
-    strip_tags($value)));
+function clear($value){
+    $value= htmlspecialchars(
+    strip_tags($value));
     return $value;
 }
 ?>
