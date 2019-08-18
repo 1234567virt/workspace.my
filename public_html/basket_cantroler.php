@@ -28,17 +28,19 @@ if(isset($user['user_login'])){
                         $name=$one['name'];
                       
                        $count_basket=$obj->basket_cantroler2($arg1,$_SESSION['user_id']);
-                   
+                      
+                        
                         if($count_basket==0)
                         {
                       
                            $user_id=$_SESSION["user_id"];
                            $name=$one["name"];
                            $obj->insert_basket($arg1,$user_id,$arg2);
+                        
                         }
                         else
                         {
-                         $obj->update_basket($_SESSION['user_id'],$arg1,$arg2);
+                           $obj->update_basket($_SESSION['user_id'],$arg1,$arg2);
                      
                         }
                     }
