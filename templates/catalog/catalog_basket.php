@@ -1,7 +1,8 @@
 <?php
  require_once '../engine/init.php';
  $obj=new Requests();
- $product=$obj->getCatalogProducts()?>
+   $product=$obj-> getCatalogProducts();
+   ?>
    <div style="margin-left:100px">
    <?php
   foreach($product as $key=>$val){?>
@@ -10,8 +11,15 @@
     <a href='product.php?id="<?=$val['id']?>"' target='_blank'>
     <img src='<?=$val['src']?>' width='40%' class='catalog' ></a>
     <h4 class="price" ><?=$val['price']?>$</h4>
+    <?php if($val['number']>0){?>
     <a href="basket_cantroler.php?id=<?=$val['id']?>&count=1"><input type='button' class='basket' value="Корзина"></a>
-    <a href='product.php?id="<?=$val['id']?>"'><input type='button' class='basket' value="Подробней"></a>
+    <?php 
+    }
+    else{
+      ?>
+      <a href="basket_cantroler.php?id=<?=$val['id']?>&count=1"><input type='button' class='basket' value="Отсутствует" disabled style="color:red;"></a> 
+    <?php } ?>
+    <a href='product.php?id="<?=$val['id']?>"'><input type='button' class='basket'value="Подробней"></a>
 </div>
 <?php }  ?>
 </div>

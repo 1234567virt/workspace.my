@@ -43,7 +43,7 @@ $result=$print->basket_catalog($_SESSION['user_id']);
                
     foreach ($result as $key=>$row)
     {
-       // require_once('../templates/basket/basket_print.php'); 
+       
         ?>
   
    <tr>
