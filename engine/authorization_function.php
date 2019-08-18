@@ -10,10 +10,15 @@ require_once('../engine/init.php');
         header('Location:/public_html/basket.php');
         }
          else{
+            
              echo 'error password';
-         }
+            ?>
+           <meta http-equiv='refresh' content=5;URL='/public_html/autorization.php'/>
+            <?php 
+            }
         }
        else{
+    
            header('Location:/');
        }
   ?>

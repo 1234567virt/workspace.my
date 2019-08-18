@@ -1,5 +1,4 @@
 <?php
-//session_start();
 require_once('../engine/init.php');
 if(isset($_POST['ok'])){
     $reg=new Registration();  
@@ -9,11 +8,15 @@ if(isset($_POST['ok'])){
     }
     else{
         echo "ошибка в данных";
+        ?>
+        <meta http-equiv='refresh' content=5;URL='/public_html/logout.php'/><?php
+       
     }
 }
 else
 {
     echo "ошибка";
+    sleep();
     header('Location:../public_html/logout.php');
 }
  ?>
