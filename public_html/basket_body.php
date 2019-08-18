@@ -3,7 +3,7 @@ require_once '../engine/init.php';
 
   $basket=new Basket();
    $result=$basket->basket_catalog($_SESSION['user_id']); 
-
+   $itog=$basket->basket_count_itog($_SESSION['user_id']); 
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <form>
