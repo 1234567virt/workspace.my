@@ -16,30 +16,23 @@ require_once '../engine/init.php';
                         	<th width="60" align="right" id="filter">Всего </th> 
                         	<th width="90"> </th>
                         </tr>
-                        <form>
-               <?php
-          
-   foreach ($result as $key=>$row)
+                      
+  <?php
+  foreach ($result as $key=>$row)
     {
- 
   ?>
    <tr>
         <td><img src='<?=$row['src']?>' width="40%"/></td> 
         <td><?=$row['name']?></td> 
         <td align="center"><input type="number" name="count" onchange="savebasket(<?=$row['id_product']?>,this.value)" value='<?=$row['count']?>'  min='0' max='15'
-placeholder='0' id='select'  /> </td>
-       
+        placeholder='0' id='select'  /> </td>
         <input type="hidden" name="n" value='<?=$row['name']?>' readonly placeholder='0' id='select'  />
         <td align="right"><?=$row['price']?> $</td> 
-        
-     
         <td align="right" class='summa'><?=$row['result']?> $</td>
-       <td align="center">
-     
-<input type="button" id="delete" name='delete' onclick="del(<?=$row['id_product']?>)" value='delete'><img src='img/rm.png'  style='width:17px;height:17px'>
-    </td>
+        <td align="center">
+          <img src='img/rm.png'  style='width:17px;height:17px' id="delete"  onclick="del(<?=$row['id_product']?>)">
+        </td>
         </tr>
-  
   <?php
   } 
 ?>
