@@ -30,7 +30,7 @@ require_once '../engine/init.php';
         <td align="right"><?=$row['price']?> $</td> 
         <td align="right" class='summa'><?=$row['result']?> $</td>
         <td align="center">
-          <img src='img/rm.png'  style='width:17px;height:17px' id="delete"  onclick="del(<?=$row['id_product']?>)">
+          <img src='img/rm.png'  style='width:17px;height:17px' title="del" id="delete"  onclick="del(<?=$row['id_product']?>)">
         </td>
         </tr>
   <?php
