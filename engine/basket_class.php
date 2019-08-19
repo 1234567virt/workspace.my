@@ -27,8 +27,13 @@ class Basket extends Connect {
     $this->id=$id;
     $sql="SELECT * FROM `product` where `id`=$this->id";
     $obj=self::connecting();
-    $result=$obj->query($sql)->fetchAll();
-  return $result;
+    if($obj->query("SELECT COUNT(*) FROM `product` where `id`=$this->id")->fetchColumn()===0){
+      return false;
+    }
+    else{
+      $result=$obj->query($sql)->fetchAll();
+      return $result;
+    }
   }
 
   public function update_basket($id_user,$id_product,$count){
@@ -85,13 +90,19 @@ class Basket extends Connect {
   $result=$obj->query($sql)->fetchColumn();
       return $result;
      }
+     
   public function basket_count_itog($id_user){
     $this->iduser=$id_user;
     $obj=self::connecting();
     $sql="select SUM(basket.count) as `count` , SUM(`basket`.count * product.price) as `sum` from `basket` left join 
       `product` on `basket`.id_product=`product`.id where `basket`.id_user=$this->iduser";
-    $result=$obj->query($sql)->fetchAll();
-    return $result;
-       }
+    if($obj->query("select COUNT(*) from `basket`  where id_user=$this->iduser")->fetchColumn()===0){
+      return false;
+    }
+    else{
+      $result=$obj->query($sql)->fetchAll();
+      return $result;
+    }  
+}
 }
 ?>  

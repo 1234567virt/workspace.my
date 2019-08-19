@@ -8,7 +8,7 @@
    $product=new Basket();
      $title="Каталог";
       $year=date("Y");
-     $id=clear($link,$_GET['id']);
+     $id=clear($_GET['id']);
     ?>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     

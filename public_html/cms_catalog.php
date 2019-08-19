@@ -72,7 +72,7 @@ blockinsert('insert','insertbutton');
     $.ajax({
          url:'action.php',
          method:'GET',
-         data:{id:id, action:$('input[name="delete"]').val()},
+         data:{id:id, action:'delete'},
      
          success:function(data){
             $("#loader-identity").fadeIn(400); 
