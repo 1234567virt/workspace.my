@@ -11,14 +11,13 @@ class Comment extends Connect {
       ('$this->Aftor','$this->Message','$this->date')";
       $obj->query($sql);
     }
-   function review_nout($Aftor,$Message,$id,$marka){
+   function review_nout($Aftor,$Message,$marka){
       $obj=self::connecting();
       $this->Aftor=self::clear($Aftor);
       $this->Message=self::clear($Message);
-      $this->id=self::clear($id);
       $this->marka=self::clear($marka);
-      $sql= "INSERT INTO `otziv_nout` (`id`, `name`, `Aftor`, `text`) VALUES 
-      ('$this->id','$this->marka','$this->Aftor','$this->Message')";   
+      $sql= "INSERT INTO `otziv_nout` ( `name`, `Aftor`, `text`) VALUES 
+      ('$this->marka','$this->Aftor','$this->Message')";   
       $obj->query($sql);
    }
    function Comments_catalog_old(){
@@ -37,6 +36,7 @@ class Comment extends Connect {
       return $result;
 
    }
+
    function Comments_catalog($value){
       $obj=self::connecting();
       $this->value=self::clear($value);

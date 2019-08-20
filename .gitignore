@@ -1,0 +1,5 @@
+*.log
+*.log
+access.log
+error.log
+/logs/*
