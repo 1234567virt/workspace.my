@@ -21,7 +21,7 @@ class Comment extends Connect {
       ('$this->id','$this->marka','$this->Aftor','$this->Message')";   
       $obj->query($sql);
    }
-   function Comments_catalog(){
+   function Comments_catalog_old(){
       $sql="SELECT * FROM `otziv`";
       $obj=self::connecting();
       $massiv=$obj->query($sql)->fetchAll();
@@ -36,6 +36,20 @@ class Comment extends Connect {
       
       return $result;
 
+   }
+   function Comments_catalog($value){
+      $obj=self::connecting();
+      $this->value=self::clear($value);
+      $sql="SELECT * FROM `otziv` limit $this->value , 5";
+       if($obj->query("SELECT COUNT(*) FROM `otziv` limit $this->value , 5 ")->fetchColumn()===0)
+       {
+           return false;
+       }
+      else
+      {
+         $result=$obj->query($sql)->fetchAll();
+         return $result;
+      }
    }
 }
 

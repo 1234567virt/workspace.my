@@ -11,9 +11,14 @@ $h2="Написать отзыв";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript">
 /////////////////////////////////////
-$("document").ready(function(){
-    $('#info').load("comment.php"); 
 
+$("document").ready(function(){
+    var lim=0;
+    $('#info').load("comment.php",{limit:lim}); 
+$('#limcoment').click(function(){
+    lim=lim+5;
+    $('#info').load("comment.php",{limit:lim});  
+})
     $("#send").click(function(){
      var dannie=$("form").serialize();
      $('#send').prop('disabled',true);
@@ -26,7 +31,7 @@ $("document").ready(function(){
           },
          timeout:(900),
           success:function(data){
-                 $('#info').load("comment.php");
+                 $('#info').load("comment.php",{limit:lim});
                
         },
         complete:function(){
@@ -75,9 +80,10 @@ background: url(img/templatemo_main_bg.png) repeat-y;
           <div id="loader-identity"></div>
                     <h2 style="margin:0 auto;"><?=$h2;?></h2>
                     <div id="info"></div>
-            <?php 
-            require_once "../templates/catalog/form_catalog.php";
-            ?>
+            <img src='img/update.png' id='limcoment' style='width:18px;height:18px;' >
+ <?php 
+             require_once "../templates/catalog/form_catalog.php";
+             ?>
 </div>
     </div>
   
