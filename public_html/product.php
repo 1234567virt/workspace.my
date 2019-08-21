@@ -58,8 +58,9 @@ $("document").ready(function(){
        </script>
         <meta charset="UTF-8">
         <title><?=$title;?></title>
-        <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/product.css">
+        <link rel="stylesheet" href="./css/style.css">
+      
         <link rel="stylesheet" href="./css/loader.css">
     </head>
     <body>
@@ -73,7 +74,7 @@ $("document").ready(function(){
      } ?>
            
        <div id="loader-identity"></div>
-     <div style="margin-top:100px" id='info'></div>
+     <div style=" width:65%;margin:3% 15%" id='info'></div>
      
     <?php
      require_once "../templates/product/form_product.php";

@@ -222,11 +222,7 @@ textarea:focus{
     text-transform: capitalize;
 }
 
- #contact input[type="button"]{
-    width: 70px;
-    height: 23px;
-    border-radius: 5px;
-}
+
 
 input[type='submit']{
     border:0 solid transparent;
@@ -256,23 +252,7 @@ input[value="Купить"]{
 input[value="Купить"]:hover{
     background:grey;
   }
-
-input[type='reset']:hover{
-   background:red;
-   font-weight: 700;
-}
-
-input[type='reset']{
-    border:0 solid transparent;
-    border-radius:5px;
-    background:green;
-     width: 140px;
-    height: 40px;
-    color:white;
-
- }
- 
- #otz textarea{
+#otz textarea{
      margin-top:15px;
      border:1px solid green;
      border-radius:10px;
@@ -286,6 +266,7 @@ input[type='reset']{
      border-radius: 5px;
      border:1px solid blue;    
 }
+
 .ime:hover{
     background:yellowgreen;
     color:grey;
@@ -303,4 +284,27 @@ input[type='reset']{
    color:grey;
    
    }
-     
+
+.submit_call{
+    margin:0 auto;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 0px solid transparent;
+    margin-top: 10px;
+    margin-left: 45px;
+    border-color: aqua;
+    background: burlywood;
+
+}
+
+.submit_call:hover {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 0px solid transparent;
+    margin-top: 10px;
+    margin-left: 40px;
+    border-color: black;
+    background: grey;
+}

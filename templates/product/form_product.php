@@ -6,6 +6,6 @@
           </label><br><span id='error2'></span><br>
           <input type="hidden" name='id' value='<?php echo $id;?>'>
           <input type="hidden" name='marka' value='<?php echo $marka;?>'>
-          <input type="button" id='send' value="Отправить">
-          <input type="reset" value="Сбросить">
+          <input type="button" id='send' class="submit_call" value="Отправить">
+          <input type="reset" class="submit_call" value="Сбросить">
 </form>
