@@ -8,7 +8,6 @@ require_once('../engine/init.php');
 $arg2=isset($_POST['numberTwo'])?  $_POST['numberTwo'] : '';
 $arg1=isset($_POST['numberOne'])? $_POST['numberOne'] : ''; 
 $result='';
-
 ?>
     <head>
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -32,22 +31,20 @@ $("#send").click(function(){
 
 </script>
     <style>
-   
-  
-     #templatemo_body{
-background: url(img/templatemo_body.jpg) repeat;
+ #templatemo_body{
+    background: url(img/templatemo_body.jpg) repeat;
 }
-#templatemo_body_wrapper {
 
-background: url(img/templatemo_body_top.jpg) repeat-x top
+#templatemo_body_wrapper {
+    background: url(img/templatemo_body_top.jpg) repeat-x top
 }
+
 #templatemo_header {
-background: url(img/templatemo_header_bg.png) no-repeat bottom; 
+    background: url(img/templatemo_header_bg.png) no-repeat bottom; 
 }
 
 #templatemo_menubar {
-
-background: url(img/templatemo_menubar.png) no-repeat;
+    background: url(img/templatemo_menubar.png) no-repeat;
 }
 
 #templatemo_main {

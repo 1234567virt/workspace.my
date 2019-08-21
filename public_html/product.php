@@ -73,13 +73,14 @@ $("document").ready(function(){
       require_once "../templates/product/product_detal.php";
      } ?>
            
-       <div id="loader-identity"></div>
+         <div id="loader-identity"></div>
      <div style=" width:65%;margin:3% 15%" id='info'></div>
      
-    <?php
+     <?php
      require_once "../templates/product/form_product.php";
     ?>
-    </div>
+    
+</div>
     <div>
 </body>
   </html>

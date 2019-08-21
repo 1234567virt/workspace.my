@@ -10,23 +10,21 @@ $year=date("Y");
     <style>
 
    #templatemo_body{
-background: url(img/templatemo_body.jpg) repeat;
+         background: url(img/templatemo_body.jpg) repeat;
 }
-#templatemo_body_wrapper {
-
-background: url(img/templatemo_body_top.jpg) repeat-x top
+    #templatemo_body_wrapper {
+        background: url(img/templatemo_body_top.jpg) repeat-x top
 }
-#templatemo_header {
-background: url(img/templatemo_header_bg.png) no-repeat bottom; 
-}
-
-#templatemo_menubar {
-
-background: url(img/templatemo_menubar.png) no-repeat;
+    #templatemo_header {
+        background: url(img/templatemo_header_bg.png) no-repeat bottom; 
 }
 
-#templatemo_main {
-background: url(img/templatemo_main_bg.png) repeat-y;
+    #templatemo_menubar {
+        background: url(img/templatemo_menubar.png) no-repeat;
+}
+
+    #templatemo_main {
+        background: url(img/templatemo_main_bg.png) repeat-y;
 }
      </style>
         <meta charset="UTF-8">

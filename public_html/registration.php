@@ -10,7 +10,6 @@ if(isset($_POST['ok'])){
         echo "ошибка в данных";
         ?>
         <meta http-equiv='refresh' content=5;URL='/public_html/logout.php'/><?php
-       
     }
 }
 else
