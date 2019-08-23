@@ -18,7 +18,7 @@ if(isset($user['user_login'])){
                 if($result===0)
                 {
                    echo 'Нехватает продукции';?>
-                   <meta http-equiv='refresh' content=5;URL='/public_html/basket.php'/><?php
+<meta http-equiv='refresh' content=5;URL='/public_html/basket.php' /><?php
                   //  header('Location:../public_html/basket.php');
                 
                 }

@@ -8,15 +8,16 @@
 
                   if(isset($user)){
                      ?>
-              <style>
-              .ddsmoothmenu ul li:nth-child(5){
-                  display:none;
-              }
-              .ddsmoothmenu ul li:nth-child(6){
-                  display:none;
-              }
-              </style>
-                     <?php
+<style>
+.ddsmoothmenu ul li:nth-child(5) {
+    display: none;
+}
+
+.ddsmoothmenu ul li:nth-child(6) {
+    display: none;
+}
+</style>
+<?php
                      if($user['role']=='admin'){
                         echo  "<li><a href='cms_catalog.php'>CMS</a></li>";
                      }
@@ -30,7 +31,3 @@
  }
 
 ?>
-
-
-        
-                

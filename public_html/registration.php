@@ -9,7 +9,7 @@ if(isset($_POST['ok'])){
     else{
         echo "ошибка в данных";
         ?>
-        <meta http-equiv='refresh' content=5;URL='/public_html/logout.php'/><?php
+<meta http-equiv='refresh' content=5;URL='/public_html/logout.php' /><?php
     }
 }
 else
