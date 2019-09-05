@@ -64,9 +64,10 @@ $result='';
         </center>
         <?php require_once('../templates/calculator/calc_form.php');
    ?>
-        <div id='res'></div>
+        <div id='res'>  </div>
         <?php
 require_once('./result.php');
+$a=10;
     ?>
         </div>
         </div>

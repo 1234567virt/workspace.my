@@ -14,5 +14,6 @@ $obj=new CMS();
   }
   else{
    echo 'ошибка';
+
   }
 ?>

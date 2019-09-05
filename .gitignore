@@ -1,6 +1,6 @@
 *.log
-*.log
 access.log
 error.log
-/logs/*
-.vscode/*
+/logs
+/.vscode
+/vendor

@@ -40,7 +40,9 @@ $result=$sql->cmsCatalogProducts();
             <input type="hidden" name="id" value="<?=$val['id']?>" id='select' />
             <td align="right"><?=$val['count']?> </td>
             <td align="center">
-                <img src='img/update.png' id='update' style='width:18px;height:18px' onclick="updat('<?=$val['id']?>')">
+             
+            <a href='#openModal'><img src='img/update.png' id='update' style='width:18px;height:18px'> </a> 
+
                 <img src='img/rm.png' id='delete' style='width:18px;height:18px' onclick="delet('<?=$val['id']?>')">
             </td>
         </tr>
@@ -49,3 +51,4 @@ $result=$sql->cmsCatalogProducts();
 ?>
 </table>
 </form>
+<?php require_once "./cmsupdate.php"; ?>
