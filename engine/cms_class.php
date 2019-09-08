@@ -23,15 +23,18 @@ require_once('../engine/connect.php');
         $obj->query($sql);
 
      }
-     public function update($src,$name,$text,$number,$price){
+     public function update($id,$count,$src,$name,$text,$number,$price){
+        $this->id=self::clear($id);
         $this->src=self::clear($src);
+        $this->count=self::clear($count);
         $this->name=self::clear($name);
         $this->text=self::clear($text);
         $this->number=self::clear($number);
         $this->price=self::clear($price);
-         $sql="INSERT INTO `product` (`src`, `name`, `text`, `count`, `number`, `price`)
-         VALUES ('$src','$name','$text','0','$number','$price')";
-     }
+         $sql=" UPDATE `product` SET  `name`='$name' ,`count`='$count',`text`='$text',`number`=$number,`price`=$price WHERE id=$id ";
+         $obj=self::connecting();
+         $obj->query($sql);
+        }
     function cmsCatalogProducts(){
         $sql="SELECT * FROM `product`";
         $obj=self::connecting();

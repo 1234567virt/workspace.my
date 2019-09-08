@@ -2,13 +2,11 @@
 <html lang="ru">
     <?php
  require_once '../engine/init.php';
-// require_once '../engine/cms_autoload.php';
- if($user['role']=='admin'){
+if($user['role']=='admin'){
  $h1="Купите у нас хоть что-нибудь!!!!";
 $title="Корзина";
 require_once "../templates/dataNull.php"; 
 $error='';
-
 ?>
 
     <head>
@@ -27,15 +25,24 @@ $error='';
             list-style-type: none;
         }
         </style>
-        <script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>
+        <script type="text/javascript" src="https://use.fontawesome.com/452826394c.js"></script>        
         <script type="text/javascript">
+        /*
+ Функция для открытия блока создания нового товара       
+         */
+
         function blockinsert(insert, insertbutton) {
+
             document.forms[1].reset();
             var blockinsert = document.getElementById(insert);
             var insertbutons = document.getElementById(insertbutton);
             blockinsert.style.display = 'none';
             insertbutons.value = 'Вставить';
         }
+
+/*
+Изменения названия кнопки сверху 
+*/
 
         function insert() {
             var insert = document.getElementById('insertbutton');
@@ -51,29 +58,37 @@ $error='';
 
             }
         }
-        
-        function checks(val) {
-            if (document.forms[1].name.value == '' || document.forms[1].number.value == '' || document.forms[1].price
-                .value == '' || document.forms[1].text.value == '') {
-                val.innerHTML = '<b>Вы незаполнили все поля</b>';
-            } else {
-                $.post('action.php', {
-                        name: $("input[name='name']").val(),
-                        number: $("input[name='number']").val(),
-                        price: $("input[name='price']").val(),
 
-                        filename: $("input[name='filename']").val(),
-                        text: $("textarea[name='text']").val(),
+ /*
+ function вставить в СУБД новый товар
+ */   
+
+         function checks(index,eror,id) {
+             if (document.forms[index].name.value == '' || document.forms[index].number.value == '' || document.forms[index].price
+                 .value == '' || document.forms[index].text.value == '') {
+                eror.innerHTML = '<b>Вы незаполнили все поля</b>';
+            } 
+     
+             else {
+                 $.post('action.php', {
+                         name: $(""+id+" input[name='name']").val(),
+                         number: $(""+id+" input[name='number']").val(),
+                        price: $(""+id+" input[name='price']").val(),
+                         filename: $(""+id+" file[name='filename']").val(),
+                        text: $(""+id+" textarea[name='text']").val(),
                         action: 'insert'
                     },
                     function() {
                         $("#table").load('cmsbody.php');
+                         blockinsert('insert', 'insertbutton');
                     });
 
             }
+          }
 
-            blockinsert('insert', 'insertbutton');
-        }
+/*
+Удаления из СУБД 
+ */
 
         function delet(id) {
             $.ajax({
@@ -90,28 +105,32 @@ $error='';
                     $("#loader-identity").fadeOut(500);
                 }
             });
-            blockinsert('insert', 'insertbutton');
+            blockinsert(2,'insert', 'insertbutton');
 
         }
+/*
+
+ */
+/*
+Активный механизм аякс
+ */
+
         $("document").ready(function() {
             $("#loader-identity").fadeIn(400);
             $('#table').load('cmsbody.php');
             $("#loader-identity").fadeOut(500);
-            $('#submit_call').click(function() {
-                checks(document.getElementById('error'));
-                //document.forms[1].reset();
-
-                $("#loader-identity").fadeOut(500);
+           $('#submit_call').click(function() {
+               checks(1,document.getElementById('error'),'#form2');
+               $("#loader-identity").fadeOut(500);
             });
+          
+
         });
-        // function update(){
-        //  $(".ModalDialog:target").css("display","block");
-        // }
-        </script>
+ </script>
 
         <title><?php echo $title ?></title>
         <style>
-      	.modalDialog {
+      	 .modalDialog {
 		position: fixed;
 		font-family: Arial, Helvetica, sans-serif;
 		top: 0;
@@ -142,9 +161,9 @@ $error='';
 		background: -moz-linear-gradient(#fff, #999);
 		background: -webkit-linear-gradient(#fff, #999);
 		background: -o-linear-gradient(#fff, #999);
-	}
+	} 
 
-	.close {
+	 .close {
 		background: #606061;
 		color: #FFFFFF;
 		line-height: 25px;
@@ -161,7 +180,7 @@ $error='';
 		-moz-box-shadow: 1px 1px 3px #000;
 		-webkit-box-shadow: 1px 1px 3px #000;
 		box-shadow: 1px 1px 3px #000;
-	}
+	} 
 
 	.close:hover { background: #00d9ff; }
 
@@ -199,7 +218,7 @@ $error='';
             <h1>CMS</h1>
         </center>
       
-   
+
         <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
         <input type="button" name='insert' id='insertbutton' value='Вставить' onclick="insert()">
         <div id='table'>
@@ -226,7 +245,7 @@ $error='';
             </form>
             <br>
         </div>
-   
+       
         <?php } 
 else {
     echo "Не хуй сюда лезть";

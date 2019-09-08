@@ -1,9 +1,18 @@
 <?php
  require_once '../engine/init.php';
+ ?>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+ <script type="text/javascript">
+ function updateId(id){
+$('#openModal').load('cmsupdate.php',{ ids:id });
+}
+ </script>
+ <?php
 $sql=new CMS();
 $result=$sql->cmsCatalogProducts();
 ?>
 <style>
+ 	
 #cmscatalog tr:nth-child(even) {
     background: #709FFF;
 }
@@ -41,7 +50,7 @@ $result=$sql->cmsCatalogProducts();
             <td align="right"><?=$val['count']?> </td>
             <td align="center">
              
-            <a href='#openModal'><img src='img/update.png' id='update' style='width:18px;height:18px'> </a> 
+            <a href='#openModal' onclick="updateId('<?=$val['id']?>')"><img src='img/update.png' id='update'   style='width:18px;height:18px'> </a> 
 
                 <img src='img/rm.png' id='delete' style='width:18px;height:18px' onclick="delet('<?=$val['id']?>')">
             </td>
@@ -50,5 +59,7 @@ $result=$sql->cmsCatalogProducts();
 } 
 ?>
 </table>
+
 </form>
-<?php require_once "./cmsupdate.php"; ?>
+<div id="openModal" class="modalDialog"></div>
+<?php ?>
