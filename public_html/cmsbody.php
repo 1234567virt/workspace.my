@@ -44,10 +44,10 @@ $result=$sql->cmsCatalogProducts();
         <tr>
             <td><img src='<?=$val['src']?>' style="margin-left:10px" width="40%" /></td>
             <td><?=$val['name']?></td>
-            <td align="center"><?= $val['number']?></td>
+            <td align="center"><?= $val['count']?></td>
             <td align="right"><?=$val['price']?> $</td>
             <input type="hidden" name="id" value="<?=$val['id']?>" id='select' />
-            <td align="right"><?=$val['count']?> </td>
+            <td align="right"><?=$val['number']?> </td>
             <td align="center">
              
             <a href='#openModal' onclick="updateId('<?=$val['id']?>')"><img src='img/update.png' id='update'   style='width:18px;height:18px'> </a> 

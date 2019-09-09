@@ -12,13 +12,13 @@ require_once('../engine/connect.php');
         $obj->query($sql);
        
     }
-     public function insert($src,$name,$text,$number,$price){
+     public function insert($src,$name,$text,$count,$price){
         $this->src=self::clear($src);
         $this->name=self::clear($name);
         $this->text=self::clear($text);
-        $this->number=self::clear($number);
+        $this->count=self::clear($count);
         $this->price=self::clear($price);
-       $sql= "INSERT INTO `product` (`src`, `name`, `text`, `count`, `number`, `price`) VALUES ('$this->src','$this->name','$this->text','0','$this->number','$this->price')";
+       $sql= "INSERT INTO `product` (`src`, `name`, `text`, `count`, `number`, `price`) VALUES ('$this->src','$this->name','$this->text','$this->count','0','$this->price')";
         $obj=self::connecting();
         $obj->query($sql);
 

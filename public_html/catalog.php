@@ -10,8 +10,17 @@ $h2="Написать отзыв";
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+       <style>
+       #limcoment{
+           border:0px;
+       }
+          #limcoment:hover{
+              border:0px;
+          }
+       </style>
         <script type="text/javascript">
         /////////////////////////////////////
+
         $("document").ready(function() {
             var lim = 0;
             $('#info').load("comment.php", {
@@ -89,7 +98,7 @@ $h2="Написать отзыв";
         <div id="loader-identity"></div>
         <h2 style="margin:5% 35% 1% 40%"><?=$h2;?></h2>
         <div id="info" style='margin-left:15%; width:70%'></div>
-        <img src='img/update.png' id='limcoment' style='width:18px;height:18px;'>
+        <img src='img/arrow-right.png' id='limcoment' style='margin-left:75px;width:45px;height:45px;'>
         <?php 
              require_once "../templates/catalog/form_catalog.php";
              ?>

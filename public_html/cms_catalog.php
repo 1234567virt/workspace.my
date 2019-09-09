@@ -64,7 +64,7 @@ $error='';
  */   
 
          function checks(index,eror,id) {
-             if (document.forms[index].name.value == '' || document.forms[index].number.value == '' || document.forms[index].price
+             if (document.forms[index].name.value == '' || document.forms[index].count.value == '' || document.forms[index].price
                  .value == '' || document.forms[index].text.value == '') {
                 eror.innerHTML = '<b>Вы незаполнили все поля</b>';
             } 
@@ -72,7 +72,7 @@ $error='';
              else {
                  $.post('action.php', {
                          name: $(""+id+" input[name='name']").val(),
-                         number: $(""+id+" input[name='number']").val(),
+                         count: $(""+id+" input[name='count']").val(),
                         price: $(""+id+" input[name='price']").val(),
                          filename: $(""+id+" file[name='filename']").val(),
                         text: $(""+id+" textarea[name='text']").val(),
@@ -230,7 +230,7 @@ $error='';
                     <li><label>Название</label></li>
                     <li> <input type="text" placeholder="Название" value="" name="name" required /></li>
                     <li><label>Количество</label></li>
-                    <li> <input type="number" placeholder="Количество" value="" name="number" required /></li>
+                    <li> <input type="number" placeholder="Количество" value="" name="count" required /></li>
                     <li><label>Цена</label></li>
                     <li> <input type="number" placeholder="Цена" value="" name="price" required />
                  

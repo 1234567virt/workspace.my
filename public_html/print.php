@@ -7,12 +7,16 @@ $year=date("Y");
 $title="Распечатать";
 $print=new Basket();
 $result=$print->basket_catalog($_SESSION['user_id']);
+
   ?>
 
     <head>
     <script src="https://use.fontawesome.com/452826394c.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        
         <meta charset="UTF-8">
        <title><?php echo $title ?></title>
+       
         <style>
         #templatemo_body {
             background: url(img/templatemo_body.jpg) repeat;
@@ -25,6 +29,13 @@ $result=$print->basket_catalog($_SESSION['user_id']);
     </head>
 
     <body id='templatemo_body'>
+    <script type="text/javascript">
+   function one(){
+    window.print()
+    <?php $print->result_basket($_SESSION['user_id']);?>
+    
+}
+    </script>
         <center>
             <h1><?=$title?></h1>
         </center>
@@ -58,7 +69,7 @@ $result=$print->basket_catalog($_SESSION['user_id']);
  ?>
         </table>
         </div>
-        <a href="#" onclick="window.print()"><i style="display:block;margin-left:50%;margin-top:1%" class="fa fa-3x fa-shopping-basket"></i></a>
+        <a href="#" id='print' onclick="one()"><i style="display:block;margin-left:50%;margin-top:1%" class="fa fa-3x fa-shopping-basket"></i></a>
         </div>
         <br>
         <center><?=$year?> г.</center>

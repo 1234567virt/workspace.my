@@ -47,7 +47,7 @@ class Basket extends Connect {
 
  public function reiting($id_product){
     $this->id_product=$id_product;
-    $sql="UPDATE `product` SET `count`=1+`count` WHERE `id`=$this->id_product";
+    $sql="UPDATE `product` SET `number`=1+`number` WHERE `id`=$this->id_product";
     $obj=self::connecting();
     $obj->query($sql);  
    }
@@ -72,8 +72,8 @@ class Basket extends Connect {
     $this->id=self::clear($id_product);
     $this->countx=self::clear($count);
     $obj=self::connecting();
-    $sql="select * from `product` where `number`>=$this->countx and `id`=$this->id";
-     if($obj->query("select COUNT(*) from `product`  where `number`>=$this->countx and `id`=$this->id")->fetchColumn()===0){
+    $sql="select * from `product` where `count`>=$this->countx and `id`=$this->id";
+     if($obj->query("select COUNT(*) from `product`  where `count`>=$this->countx and `id`=$this->id")->fetchColumn()===0){
        return 0 ;
      }
        else{
@@ -104,5 +104,14 @@ class Basket extends Connect {
       return $result;
     }  
 }
+  function result_basket($id_user){
+    $this->id=$id_user;
+    $obj=self::connecting();
+    $sql="UPDATE product INNER JOIN basket ON product.`id` =basket.`id_product` SET product.`count` = product.`count` - basket.`count` WHERE basket.`id_user` = $id_user";
+    $sql2=" DELETE from `basket` WHERE basket.`id_user` = $id_user";
+    $obj->query($sql);
+    $obj->query($sql2);
+    header("Location:../public_html/cms_catalog.php");
+  }
 }
 ?>  

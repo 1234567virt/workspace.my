@@ -6,7 +6,7 @@ $destination=21;
       $obj->delet($_GET['id']);
      }
    elseif (isset($_POST['action']) and $_POST['action']=='insert'){
-    $obj->insert($destination,$_POST['name'],$_POST['text'],$_POST['number'],$_POST['price']);
+    $obj->insert($destination,$_POST['name'],$_POST['text'],$_POST['count'],$_POST['price']);
   
       }
    elseif (isset($_POST['action']) and $_POST['action']=='update'){

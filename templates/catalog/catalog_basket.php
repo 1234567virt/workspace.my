@@ -22,7 +22,7 @@
     <a href='product.php?id="<?=$val['id']?>"' target='_blank'>
     <img src='<?=$val['src']?>' width='40%' class='catalog' ></a>
     <h4 class="price" ><?=$val['price']?>$</h4>
-    <?php if($val['number']>0){?>
+    <?php if($val['count']>0){?>
     <a href="basket_cantroler.php?id=<?=$val['id']?>&count=1"><input type='button' class='basket' value="Корзина" ></a>
     <?php 
     }

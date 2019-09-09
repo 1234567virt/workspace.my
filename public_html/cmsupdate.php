@@ -13,12 +13,12 @@
             <li><label>Название</label></li>
             <li> <input type="text" placeholder="Название" value="<?= $val['name']?>" name="nameupdate" required /></li>
             <li><label>Количество</label></li>
-            <li> <input type="number" placeholder="Количество" value="<?= $val['number']?>" name="numberupdate"
+            <li> <input type="number" placeholder="Количество" value="<?= $val['count']?>" name="countupdate"
                     required /></li>
             <li><label>Цена</label></li>
             <li> <input type="number" placeholder="Цена" value="<?= $val['price']?>" name="priceupdate" required /></li>
             <li><label>Счетчик</label></li>
-            <li> <input type="text" placeholder="Счетчик" value="<?= $val['count']?>" name="countupdate" required />
+            <li> <input type="text" placeholder="Счетчик" value="<?= $val['number']?>" name="numberupdate" required />
             </li>
             <input type="hidden" value="<?=$val['id']?>" name="idupdate" /></li>
             <input type="hidden" value="update" name="action" /></li>
