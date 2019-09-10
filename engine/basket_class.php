@@ -111,7 +111,6 @@ class Basket extends Connect {
     $sql2=" DELETE from `basket` WHERE basket.`id_user` = $id_user";
     $obj->query($sql);
     $obj->query($sql2);
-    header("Location:../public_html/cms_catalog.php");
   }
 }
 ?>  

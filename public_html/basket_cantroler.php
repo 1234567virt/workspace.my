@@ -55,6 +55,6 @@ if(isset($user['user_login'])){
      }
 }
 else{
- header('Location:../public_html/autorization.php');
+   header('Location:../public_html/autorization.php');
 }
 ?>

@@ -31,9 +31,9 @@ $result=$print->basket_catalog($_SESSION['user_id']);
     <body id='templatemo_body'>
     <script type="text/javascript">
    function one(){
-    window.print()
+  
     <?php $print->result_basket($_SESSION['user_id']);?>
-    
+    window.print();
 }
     </script>
         <center>
@@ -69,7 +69,7 @@ $result=$print->basket_catalog($_SESSION['user_id']);
  ?>
         </table>
         </div>
-        <a href="#" id='print' onclick="one()"><i style="display:block;margin-left:50%;margin-top:1%" class="fa fa-3x fa-shopping-basket"></i></a>
+             <a href="./catalog.php" id='print' onclick="one()"><i style="display:block;margin-left:50%;margin-top:1%" class="fa fa-3x fa-shopping-basket"></i></a>
         </div>
         <br>
         <center><?=$year?> г.</center>
