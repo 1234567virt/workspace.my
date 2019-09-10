@@ -28,7 +28,7 @@
                     required><?=$val['text']?></textarea>
             </li>
         </ul>
-        <input name="filename" type="file" /><br>
+        <input name="file" type="file" onchange="LoadImg('#formup')" /><br>
         <input type='submit' name="okupate" value='Изменить' />
         <? }
             ?>

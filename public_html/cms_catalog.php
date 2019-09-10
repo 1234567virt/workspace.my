@@ -74,7 +74,7 @@ $error='';
                          name: $(""+id+" input[name='name']").val(),
                          count: $(""+id+" input[name='count']").val(),
                         price: $(""+id+" input[name='price']").val(),
-                         filename: $(""+id+" file[name='filename']").val(),
+                         file: $(""+id+" file[name='file']").val(),
                         text: $(""+id+" textarea[name='text']").val(),
                         action: 'insert'
                     },
@@ -109,9 +109,25 @@ $error='';
 
         }
 /*
-
+обработчик изображений
  */
+function LoadImg(idForm){
+     var formData = new FormData($(idForm)[0]);
+     $.ajax({
+        url: 'upload.php',
+        data: formData,
+        dataType: "json",
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        success: function (data){
+             alert(data.filelink);
+            }
+        });
+
+}
 /*
+
 Активный механизм аякс
  */
 
@@ -240,7 +256,8 @@ $error='';
                   </textarea>
                     </li>
                 </ul>
-                <input name="filename" type="file" />
+                <input name="file" type="file" onchange="LoadImg('#form2')" /><span id='erorImj'></span>
+                
                 <input name="ok" type="button" value='Отправить' id='submit_call' />
             </form>
             <br>

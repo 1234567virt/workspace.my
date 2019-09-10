@@ -31,7 +31,7 @@ require_once('../engine/connect.php');
         $this->text=self::clear($text);
         $this->number=self::clear($number);
         $this->price=self::clear($price);
-         $sql=" UPDATE `product` SET  `name`='$name' ,`count`='$count',`text`='$text',`number`=$number,`price`=$price WHERE id=$id ";
+         $sql=" UPDATE `product` SET  `src`='$src', `name`='$name' ,`count`='$count',`text`='$text',`number`=$number,`price`=$price WHERE id=$id ";
          $obj=self::connecting();
          $obj->query($sql);
         }

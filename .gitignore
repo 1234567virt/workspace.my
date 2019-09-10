@@ -4,3 +4,6 @@ error.log
 /logs
 /.vscode
 /vendor
+/img
+/public_html/img
+/img
