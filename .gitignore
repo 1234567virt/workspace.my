@@ -6,5 +6,4 @@ error.log
 /vendor
 /img
 /public_html/img
-/img
 /public_html/img/*.jpg

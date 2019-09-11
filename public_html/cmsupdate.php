@@ -6,7 +6,7 @@
 ?>
 <div>
     <a href="#close" title="Закрыть" class="close">X</a>
-    <span id='errorupdate'></span>
+    
     <form method="post" id='formup' action='./action.php' enctype="multipart/form-data">
     <?php foreach($result as $key=>$val){ ?>
         <ul>
@@ -28,8 +28,8 @@
                     required><?=$val['text']?></textarea>
             </li>
         </ul>
-        <input name="file" type="file" onchange="LoadImg('#formup')" /><br>
-        <input type='submit' name="okupate" value='Изменить' />
+        <input name="file" type="file" onchange="LoadImg('#formup','errorupdate','#okupdate')" value="<?=$val['src']?>" /><span id='errorupdate'></span><br>
+        <input type='submit' name="okupate" id='okupdate' value='Изменить' />
         <? }
             ?>
     </form>

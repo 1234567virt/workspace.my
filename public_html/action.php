@@ -7,7 +7,8 @@
      }
    elseif (isset($_POST['action']) and $_POST['action']=='insert')
       {
-    $obj->insert($_SESSION['file'],$_POST['name'],$_POST['text'],$_POST['count'],$_POST['price']);
+  $result= $obj->insert($_SESSION['file'],$_POST['name'],$_POST['text'],$_POST['count'],$_POST['price']);
+ 
       }
    elseif (isset($_POST['action']) and $_POST['action']=='update')
       {

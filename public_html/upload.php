@@ -1,3 +1,4 @@
+
 <?php
  require_once '../engine/init.php';
  if(isset($_FILES['file'])){
@@ -12,12 +13,12 @@
       $_SESSION['file'] ='/public_html/img/'.$filename;
       $file=$_SERVER['DOCUMENT_ROOT'].$_SESSION['file'];
       move_uploaded_file($_FILES["file"]["tmp_name"],$file);
-      $array = array( "filelink" => $file );
+      $array = array( "filelink" => 'ok' );
       echo stripslashes(json_encode($array));
      }
     else
      {
-       $array = array( "filelink" => "не тот формат" );
+       $array = array( "filelink" => "error-type" );
        echo stripslashes(json_encode($array));
       }
   }

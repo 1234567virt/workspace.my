@@ -18,10 +18,14 @@ require_once('../engine/connect.php');
         $this->text=self::clear($text);
         $this->count=self::clear($count);
         $this->price=self::clear($price);
-       $sql= "INSERT INTO `product` (`src`, `name`, `text`, `count`, `number`, `price`) VALUES ('$this->src','$this->name','$this->text','$this->count','0','$this->price')";
         $obj=self::connecting();
-        $obj->query($sql);
-
+        if($obj->query("SELECT COUNT(*) FROM `product` where `name`='$this->name'")->fetchColumn()==0){
+           $sql= "INSERT INTO `product` (`src`, `name`, `text`, `count`, `number`, `price`) VALUES ('$this->src','$this->name','$this->text','$this->count','0','$this->price')";
+           $obj->query($sql);
+        }
+        else{
+            return 'error';
+        }
      }
      public function update($id,$count,$src,$name,$text,$number,$price){
         $this->id=self::clear($id);

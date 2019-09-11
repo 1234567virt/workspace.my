@@ -111,7 +111,8 @@ $error='';
 /*
 обработчик изображений
  */
-function LoadImg(idForm){
+function LoadImg(idForm,error,buttonId){
+    var errorSpan=document.getElementById(error);
      var formData = new FormData($(idForm)[0]);
      $.ajax({
         url: 'upload.php',
@@ -121,10 +122,16 @@ function LoadImg(idForm){
         contentType: false,
         processData: false,
         success: function (data){
-             alert(data.filelink);
+                  if(data.filelink=='ok'){
+                    errorSpan.innerHTML='<b>'+data.filelink+'</b>';
+                    $(buttonId).attr('disabled', false);
+                  }
+                  else{
+                    errorSpan.innerHTML='<b>'+data.filelink+'</b>';
+                    $(buttonId).attr('disabled', true);
+                  }
             }
         });
-
 }
 /*
 
@@ -256,7 +263,7 @@ function LoadImg(idForm){
                   </textarea>
                     </li>
                 </ul>
-                <input name="file" type="file" onchange="LoadImg('#form2')" /><span id='erorImj'></span>
+                <input name="file" type="file" onchange="LoadImg('#form2','erorImj','#submit_call')" /><span id='erorImj'></span>
                 
                 <input name="ok" type="button" value='Отправить' id='submit_call' />
             </form>
