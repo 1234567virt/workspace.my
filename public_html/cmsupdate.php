@@ -7,7 +7,7 @@
 <div>
     <a href="#close" title="Закрыть" class="close">X</a>
     
-    <form method="post" id='formup' action='./action.php' enctype="multipart/form-data">
+    <form method="post" id='formup' action='../controller/action.php' enctype="multipart/form-data">
     <?php foreach($result as $key=>$val){ ?>
         <ul>
             <li><label>Название</label></li>

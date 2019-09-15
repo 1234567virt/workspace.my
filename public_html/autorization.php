@@ -7,6 +7,36 @@ $year=date("Y");
 ?>
 
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script>
+           $(document).ready(function(){
+            /*
+               Проверка
+            */
+              $(".submit_call").click(function(){
+                  login=$("input[name='log']").val();
+                  passwd=$("input[name='pas']").val();
+                  error=document.getElementById("errorPas");
+                  $.ajax({
+                      url:'/engine/authorization_function.php',
+                      type:'POST',
+                      dataType: "json",
+                      data:{ login:login, password:passwd },
+                       success:function(result)
+                       {
+                           if(result.data=="error"){
+                           error.innerHTML='<b>Ошибка</b>';
+                           }
+                           else{
+                            location.replace(result.data);
+                           }
+                           
+                       }
+                   });
+              });
+            ////////////////////////////////////
+           })
+        </script>
         <style>
         #templatemo_body {
             background: url(img/templatemo_body.jpg) repeat;
@@ -40,7 +70,8 @@ $year=date("Y");
         <center style="margin-top:15px;">
             <h1><?php echo $h1 ?></h1>
         </center>
-        <form class="contact_form" action="../engine/authorization_function.php" method="post">
+        <span id="errorPas"></span>
+        <form class="contact_form">
             <ul>
                 <li>
                 </li>
@@ -52,7 +83,8 @@ $year=date("Y");
                     <input type="password" name='pas' placeholder="Пароль" style='margin-top:15px' required />
                 </li>
                 <li>
-                    <button class="submit_call" style="margin-left:170px" type="submit">Отправить</button>
+                <input class="submit_call" style="margin-left:170px" type="button" value='Отправить'>
+
                 </li>
             </ul>
         </form>

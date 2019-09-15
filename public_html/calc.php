@@ -18,7 +18,7 @@ $result='';
                 var dannie = $("form").serialize();
 
                 $.ajax({
-                    url: 'result.php',
+                    url: '/controller/result.php',
                     type: 'POST',
                     data: dannie,
                     success: function(data) {
@@ -66,7 +66,7 @@ $result='';
    ?>
         <div id='res'>  </div>
         <?php
-require_once('./result.php');
+require_once('../controller/result.php');
 $a=10;
     ?>
         </div>

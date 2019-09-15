@@ -70,7 +70,7 @@ $error='';
             } 
      
              else {
-                 $.post('action.php', {
+                 $.post('/controller/action.php', {
                          name: $(""+id+" input[name='name']").val(),
                          count: $(""+id+" input[name='count']").val(),
                         price: $(""+id+" input[name='price']").val(),
@@ -92,7 +92,7 @@ $error='';
 
         function delet(id) {
             $.ajax({
-                url: 'action.php',
+                url: '/controller/action.php',
                 method: 'GET',
                 data: {
                     id: id,

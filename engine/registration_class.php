@@ -6,11 +6,17 @@ class Registration extends Connect {
            $this->password=self::clear($password);
            $this->name=self::clear($name);
            $this->call=self::clear($call);
-           $this->password=password_hash ($this->password, PASSWORD_BCRYPT);
-           $sql="INSERT INTO `user`(`role`, `user_name`, `user_login`, `user_password`, `u_call`) VALUES
-        ('user','$this->name','$this->login','$this->password','$this->call')";
            $obj=self::connecting();
-           $obj->query($sql);
+           if($obj->query("SELECT COUNT(*) FROM `user` where `user_login`='$this->login'")->fetchColumn()==0){
+              $this->password=password_hash ($this->password, PASSWORD_BCRYPT);
+              $sql="INSERT INTO `user`(`role`, `user_name`, `user_login`, `user_password`, `u_call`) VALUES
+                 ('user','$this->name','$this->login','$this->password','$this->call')";
+              $obj->query($sql);
+           }
+           else
+           {
+            return 'Найден этот email';
+           }
      }
 
      public function getUserEmail($login){

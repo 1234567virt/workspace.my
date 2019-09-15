@@ -43,7 +43,7 @@ $year=date("Y");
         <center>
             <h1><?=$h1?></h1>
         </center>
-        <form class="contact_form" action="./registration.php" method="post">
+        <form class="contact_form" action="/controller/registration.php" method="post">
             <ul>
                 </li>
                 <label for="login">Login:</label>
@@ -63,7 +63,7 @@ $year=date("Y");
                     <input type="number" name="call" min='10' placeholder="Телефон" required />
                 <li>
 
-                    <button class="submit_call" type="submit" name='ok'>Зарегестрироваться</button>
+                    <button class="submit_call" style="margin-left:170px" type="submit" name='ok'>Зарегестрироваться</button>
                 </li>
             </ul>
         </form>

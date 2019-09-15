@@ -32,7 +32,7 @@
                     $('#send').prop('disabled', true);
                     /////////////////////////
                     $.ajax({
-                        url: 'past_comment_catalog.php',
+                        url: '/controller/past_comment_catalog.php',
                         method: 'POST',
                         cache: false,
                         beforeSend: function() {

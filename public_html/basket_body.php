@@ -6,7 +6,7 @@ require_once '../engine/init.php';
    $itog=$basket->basket_count_itog($_SESSION['user_id']); 
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<form>
+<form style='margin-left:150px'>
     <table id='ttt' width="680px" cellspacing="0" cellpadding="5">
         <tr bgcolor="#ddd">
             <th width="220" align="left">Изображение</th>

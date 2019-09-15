@@ -23,12 +23,12 @@ $h2="Написать отзыв";
 
         $("document").ready(function() {
             var lim = 0;
-            $('#info').load("comment.php", {
+            $('#info').load("/templates/comment.php", {
                 limit: lim
             });
             $('#limcoment').click(function() {
                 lim = lim + 5;
-                $('#info').load("comment.php", {
+                $('#info').load("/templates/comment.php", {
                     limit: lim
                 });
             })
@@ -36,7 +36,7 @@ $h2="Написать отзыв";
                 var dannie = $("form").serialize();
                 $('#send').prop('disabled', true);
                 $.ajax({
-                    url: 'past_comment_catalog.php',
+                    url: '/controller/past_comment_catalog.php',
                     type: 'POST',
                     data: dannie,
                     beforeSend: function() {
@@ -44,7 +44,7 @@ $h2="Написать отзыв";
                     },
                     timeout: (900),
                     success: function(data) {
-                        $('#info').load("comment.php", {
+                        $('#info').load("/templates/comment.php", {
                             limit: lim
                         });
 
