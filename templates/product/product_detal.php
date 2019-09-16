@@ -5,6 +5,6 @@
 <div id='long_text' id=''><span id='title_text'> Описание:</span>:<?php echo $val['text']?></div>
 <div id='count'>
     <center>
-        <h4><?php echo $val['count']?></h4>
+        <h4><?php echo $val['number']?></h4>
     </center>
 </div>

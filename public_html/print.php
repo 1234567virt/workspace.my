@@ -7,11 +7,14 @@ $year=date("Y");
 $title="Распечатать";
 $print=new Basket();
 $result=$print->basket_catalog($_SESSION['user_id']);
-
+if(isset($_POST['ok'])){
+    $print->result_basket($_SESSION['user_id']);
+    header('Location:/');
+}
   ?>
 
     <head>
-    <script src="https://use.fontawesome.com/452826394c.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         
         <meta charset="UTF-8">
@@ -29,12 +32,13 @@ $result=$print->basket_catalog($_SESSION['user_id']);
     </head>
 
     <body id='templatemo_body'>
+    <script src="https://use.fontawesome.com/452826394c.js"></script>
     <script type="text/javascript">
-   function one(){
-  
-    <?php $print->result_basket($_SESSION['user_id']);?>
+  function redirect(){
+    
     window.print();
-}
+       }
+ 
     </script>
         <center>
             <h1><?=$title?></h1>
@@ -69,7 +73,10 @@ $result=$print->basket_catalog($_SESSION['user_id']);
  ?>
         </table>
         </div>
-             <a href="./catalog.php" id='print' onclick="one()"><i style="display:block;margin-left:50%;margin-top:1%" class="fa fa-3x fa-shopping-basket"></i></a>
+      <form method="POST" action='print.php' >
+       <button name='ok' type='input' value='Купить'  style="display:block;margin-left:50%;margin-top:1% " >
+       <i  class="fa fa-3x fa-shopping-basket"></i>
+       </button>
         </div>
         <br>
         <center><?=$year?> г.</center>

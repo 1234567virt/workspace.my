@@ -15,9 +15,9 @@
 
         <script type="text/javascript">
         $("document").ready(function() {
-            $('#info').load("comment_product.php", {
-                id: <?php echo  $_GET['id'];?>
-            });
+            $('#info').load("/templates/comment_product.php", {
+                id: <?php echo $_GET['id'];?>,
+             });
             /////////////////////////
             $("#send").click(function() {
                 var dannie = $("form").serialize();
@@ -40,8 +40,9 @@
                         },
                         data: dannie,
                         success: function(data) {
-                            $('#info').load("comment_product.php", {
-                                id: <?php echo $_GET['id']; ?>
+                            $('#info').load("/templates/comment_product.php", {
+                                id: <?php echo $_GET['id']; ?>,
+                                
                             });
 
                         },
@@ -57,6 +58,9 @@
             });
             /////////////
         });
+     
+       
+    
         </script>
         <meta charset="UTF-8">
         <title><?=$title;?></title>
@@ -78,7 +82,8 @@
 
             <div id="loader-identity"></div>
             <div style=" width:65%;margin:3% 15%" id='info'></div>
-
+            <img src='img/arrow-right.png' id='limcoment' style='margin-left:75px;width:45px;height:45px;'> 
+       
             <?php
      require_once "../templates/product/form_product.php";
     ?>

@@ -6,6 +6,15 @@ require_once '../engine/init.php';
    $itog=$basket->basket_count_itog($_SESSION['user_id']); 
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+    function count_result(id){
+        idError=document.getElementById('ttt');
+        idCheck=document.getElementById(id);
+        idCheck.style.display='none';
+        idError.innerHTML='Корзина пуста';
+        
+    }
+</script>
 <form style='margin-left:150px'>
     <table id='ttt' width="680px" cellspacing="0" cellpadding="5">
         <tr bgcolor="#ddd">
@@ -18,8 +27,13 @@ require_once '../engine/init.php';
         </tr>
 
         <?php
+        if(is_null($itog[0]['count'])){
+?><script> count_result('check')</script><?php
+        }
+        else{
   foreach ($result as $key=>$row)
     {
+    
   ?>
         <tr>
             <td><img src='<?=$row['src']?>' width="40%" /></td>
@@ -44,4 +58,5 @@ require_once '../engine/init.php';
             <td align='right' colspan='3' style='width:30%'> <?php print $itog[0]['sum']?> $</td>
         </tr>
     </table>
+    <?php }?>
 </form>
