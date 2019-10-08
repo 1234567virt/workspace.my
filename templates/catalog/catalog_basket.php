@@ -17,13 +17,13 @@
 </style>
    <?php
   foreach($product as $key=>$val){?>
-  <div class='gal'>
-    <h4 class='name'><a href='product.php?id=<?=$val['id'] ?>'><?=$val['name']?></a></h4>
+  <div class='gal'><!--Описания товара в каталоге-->
+    <h4 class='name'><a href='product.php?id=<?=$val['id'] ?>'><?=$val['name']?></a></h4><!--Имя-->
     <a href='product.php?id="<?=$val['id']?>"' target='_blank'>
-    <img src='<?=$val['src']?>' width='40%' class='catalog' ></a>
-    <h4 class="price" ><?=$val['price']?>$</h4>
-    <?php if($val['count']>0){?>
-    <a href="basket_cantroler.php?id=<?=$val['id']?>&count=1"><input type='button' class='basket' value="Корзина" ></a>
+    <img src='<?=$val['src']?>' width='40%' class='catalog' ></a><!--Картинка-->
+    <h4 class="price" ><?=$val['price']?>$</h4><!--Цена-->
+    <?php if($val['count']>0){ ?>
+    <a href="basket_cantroler.php?id=<?=$val['id']?>&count=1"><input type='button' class='basket' value="Корзина" ></a><!--Корзина-->
     <?php 
     }
     else{
@@ -32,7 +32,7 @@
       disabled style="color:red; width:75px;
     height:20px; background:white;box-shadow: 3px 5px 16px rgba(9,9,6,.5);border:1px"></a> 
     <?php } ?>
-    <a href='product.php?id="<?=$val['id']?>"'><input type='button' class='basket'value="Подробней" ></a>
-</div>
+    <a href='product.php?id="<?=$val['id']?>"'><input type='button' class='basket'value="Подробней" ></a><!--Кнопка подробн-->
+</div><!--Конец-->
 <?php }  ?>
 </div>

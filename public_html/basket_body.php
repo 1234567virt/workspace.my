@@ -4,7 +4,7 @@ require_once '../engine/init.php';
   $basket=new Basket();
    $result=$basket->basket_catalog($_SESSION['user_id']); 
    $itog=$basket->basket_count_itog($_SESSION['user_id']); 
-?>
+//Класс из которого берутся данные?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script>
     function count_result(id){
@@ -15,6 +15,7 @@ require_once '../engine/init.php';
         
     }
 </script>
+<!-- Форма вывод корзины-->
 <form style='margin-left:150px'>
     <table id='ttt' width="680px" cellspacing="0" cellpadding="5">
         <tr bgcolor="#ddd">
@@ -36,17 +37,17 @@ require_once '../engine/init.php';
     
   ?>
         <tr>
-            <td><img src='<?=$row['src']?>' width="40%" /></td>
-            <td><?=$row['name']?></td>
+            <td><img src='<?=$row['src']?>' width="40%" /></td><!--Вывод изображения -->
+            <td><?=$row['name']?></td><!--- Имени товара -->
             <td align="center"><input type="number" name="count"
                     onchange="savebasket(<?=$row['id_product']?>,this.value)" value='<?=$row['count']?>' min='0'
                     max='15' placeholder='0' id='select' /> </td>
             <input type="hidden" name="n" value='<?=$row['name']?>' readonly placeholder='0' id='select' />
-            <td align="right"><?=$row['price']?> $</td>
-            <td align="right" class='summa'><?=$row['result']?> $</td>
+            <td align="right"><?=$row['price']?> $</td><!--Цена -->
+            <td align="right" class='summa'><?=$row['result']?> $</td><!-- Сумма-->
             <td align="center">
                 <img src='img/rm.png' style='width:17px;height:17px' title="del" id="delete"
-                    onclick="del(<?=$row['id_product']?>)">
+                    onclick="del(<?=$row['id_product']?>)"><!-- Кнопка удаления товара -->
             </td>
         </tr>
         <?php
@@ -54,9 +55,10 @@ require_once '../engine/init.php';
 ?>
         <tr>
             <td colspan='2'>Сумма</td>
-            <td id='itog' align='center' style='width:50px'><?=$itog[0]['count']?></td>
-            <td align='right' colspan='3' style='width:30%'> <?php print $itog[0]['sum']?> $</td>
+            <td id='itog' align='center' style='width:50px'><?=$itog[0]['count']?></td><!-- Итог -->
+            <td align='right' colspan='3' style='width:30%'> <?php print $itog[0]['sum']?> $</td><!-- Итог -->
         </tr>
     </table>
     <?php }?>
 </form>
+<!--Конец таблицы вывода данных -->

@@ -17,9 +17,9 @@ $arg2=0;
         function shows() {
             $('#loader-identity').fadeIn();
             $("h3").load('basket_body.php');
-            
+            //Загрузка вывода данных таблицы привязана к тегу h3
         }
-
+//Функция добавления товара
         function savebasket(id, count) {
             $.get('basket_cantroler.php', {
                 count: count,
@@ -29,7 +29,7 @@ $arg2=0;
             });
             shows();
         }
-
+//Функция удаления товара
         function del(id) {
             $.get('basket_cantroler.php', {
                 delete: 'delete',
@@ -39,6 +39,7 @@ $arg2=0;
             });
             shows();
         }
+        //обработчик события при работе с функцией savebasket
         $("document").ready(function() {
             shows();
             $('#loader-identity').fadeOut(150);
@@ -53,7 +54,7 @@ $arg2=0;
         </script>
         <title><?php echo $title ?></title>
         <style>
-        #templatemo_body {
+        #emplatemo_body {
             background: url(img/templatemo_body.jpg) repeat;
         }
 
@@ -81,7 +82,7 @@ $arg2=0;
     </head>
 
     <body id='templatemo_body'>
-        <?php require_once('../templates/header.php');?>
+        <?php require_once('../templates/header.php'); //Шапка?>
         <center>
             <h1><?=$title?></h1>
         </center>
@@ -96,7 +97,7 @@ $arg2=0;
         </div>
         <a id='check' href="print.php"
             style=" margin-top:15px; display:inline-block; margin-left:150px;width:250px;height:30px;font-weight:bold;color:white;background:red;border-radius:7px;border:0px solid transparent;padding-top:10px; text-align:center">Нажми
-            меня,я хочу тебя</a>
+            меня,я хочу тебя</a><!--кнопка-->
         </div>
         </div>
     </body>

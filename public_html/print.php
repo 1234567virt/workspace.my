@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
     <?php
+    //Страница распечатки
 require_once '../engine/init.php';
 $h1="Купить!!!!";
 $year=date("Y");
@@ -34,6 +35,7 @@ if(isset($_POST['ok'])){
     <body id='templatemo_body'>
     <script src="https://use.fontawesome.com/452826394c.js"></script>
     <script type="text/javascript">
+    //Отвечает за распечатку
   function redirect(){
     
     window.print();
@@ -43,8 +45,8 @@ if(isset($_POST['ok'])){
         <center>
             <h1><?=$title?></h1>
         </center>
-        <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
-        <table width="680px" style="margin:auto;color:white" cellspacing="0" cellpadding="5">
+        <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3><!--Загл-->
+        <table width="680px" style="margin:auto;color:white" cellspacing="0" cellpadding="5"><!--Данные баскета-->
             <tr bgcolor="#ddd">
                 <th width="220" align="left">Изображение</th>
                 <th width="180" align="left">Название </th>
