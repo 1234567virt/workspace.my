@@ -41,6 +41,7 @@ $year=date("Y");
             <h1><?php echo $h1; ?></h1>
         </center>
         <script>
+        //Проверка
         function form_val() {
             cls = document.forms[0].elements;
             for (var i = 0; i < class.length; i++) {
@@ -85,7 +86,7 @@ $year=date("Y");
             <b>E-mail-</b>mail@mail.ru;<br>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.554539976067!2d37.53667275097145!3d55.74886849966814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54bdd017303b9%3A0xd1f63f945a2450c2!2z0JzQvtGB0LrQstCwINCh0LjRgtC4!5e0!3m2!1sru!2sru!4v1540320878071"
-                width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><!--Карта--->
         </p>
         </div>
         </div>
