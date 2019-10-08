@@ -4,7 +4,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
  <script type="text/javascript">
  function updateId(id){
-$('#openModal').load('cmsupdate.php',{ ids:id });
+$('#openModal').load('cmsupdate.php',{ ids:id });//Загрузка формы обновления товара
 }
  </script>
  <?php
@@ -29,7 +29,7 @@ $result=$sql->cmsCatalogProducts();
     font:
 }
 </style>
-<table width="680px" id='cmscatalog' cellspacing="0" cellpadding="5">
+<table width="680px" id='cmscatalog' cellspacing="0" cellpadding="5"><?php  //блок ввыда данных cms?>
     <tr bgcolor="#ddd">
         <th width="220" align="left">Изображение</th>
         <th width="180" align="left">Название </th>
@@ -61,5 +61,5 @@ $result=$sql->cmsCatalogProducts();
 </table>
 
 </form>
-<div id="openModal" class="modalDialog"></div>
+<div id="openModal" class="modalDialog"></div><!--Ззагружаеться модальное окно-->
 <?php ?>

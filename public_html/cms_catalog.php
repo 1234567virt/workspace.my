@@ -243,11 +243,11 @@ function LoadImg(idForm,error,buttonId){
       
 
         <h3 style='margin:30px'><?=$user['user_name']?> </span> <?=$h1?></h3>
-        <input type="button" name='insert' id='insertbutton' value='Вставить' onclick="insert()">
+        <input type="button" name='insert' id='insertbutton' value='Вставить' onclick="insert()"><!--Кнопка вставить-->
         <div id='table'>
         </div>
-        <div id='insert' style='display:none'>
-            <span id='error'></span>
+        <div id='insert' style='display:none'><!--Блок вставки товара-->
+            <span id='error'></span><!--Вывод Ошибки-->
             <form method="post" id='form2' enctype="multipart/form-data">
                 <ul>
                     <li><label>Название</label></li>

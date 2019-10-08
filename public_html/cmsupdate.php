@@ -4,7 +4,7 @@
  $result=$obj->getSelectProduct($_POST['ids']);
 
 ?>
-<div>
+<div>Б<?php //Модальное окно можно переделать?>
     <a href="#close" title="Закрыть" class="close">X</a>
     
     <form method="post" id='formup' action='../controller/action.php' enctype="multipart/form-data">
@@ -28,10 +28,11 @@
                     required><?=$val['text']?></textarea>
             </li>
         </ul>
-        <input name="file" type="file" onchange="LoadImg('#formup','errorupdate','#okupdate')" value="<?=$val['src']?>" /><span id='errorupdate'></span><br>
+        <input name="file" type="file" onchange="LoadImg('#formup','errorupdate','#okupdate')" value="<?=$val['src']?>" /><span id='errorupdate'></span><!--Вывод ошибки--><br>
         <input type='submit' name="okupate" id='okupdate' value='Изменить' />
         <? }
             ?>
     </form>
+    
     <br>
 </div>
