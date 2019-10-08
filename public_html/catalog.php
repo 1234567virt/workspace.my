@@ -25,12 +25,12 @@ $h2="Написать отзыв";
             var lim = 0;
             $('#info').load("/templates/comment.php", {
                 limit: lim
-            });
+            });//Загрузка комментов привязан к id info 
             $('#limcoment').click(function() {
                 lim = lim + 5;
                 $('#info').load("/templates/comment.php", {
                     limit: lim
-                });
+                });//Загрузка коментов по 5 при щелчке
             })
             $("#send").click(function() {
                 var dannie = $("form").serialize();
@@ -56,7 +56,7 @@ $h2="Написать отзыв";
                     }
                 });
             });
-        });
+        });//объект ajax делает кучу ерунды лучше поговорим при встречи о нем
         </script>
         <style>
         #templatemo_body {
@@ -93,14 +93,14 @@ $h2="Написать отзыв";
             <h1><?=$h1?></h1>
         </center>
         <?php
-         require_once "../templates/catalog/catalog_basket.php";
+         require_once "../templates/catalog/catalog_basket.php";//Подключения файла вывода  товаров
 ?>
-        <div id="loader-identity"></div>
+        <div id="loader-identity"></div><!-- блок который отвечает за красоту которая двигаеться -->
         <h2 style="margin:5% 35% 1% 40%"><?=$h2;?></h2>
-        <div id="info" style='margin-left:15%; width:70%'></div>
+        <div id="info" style='margin-left:15%; width:70%'></div><!-- комменты -->
         <img src='img/arrow-right.png' id='limcoment' style='margin-left:75px;width:45px;height:45px;'>
         <?php 
-             require_once "../templates/catalog/form_catalog.php";
+             require_once "../templates/catalog/form_catalog.php";//Подключения файла формы коментариев
              ?>
         </div>
         </div>

@@ -1,4 +1,5 @@
 <?php 
+//Вывод коментов в каталог
 require_once '../engine/init.php';
 $comment=new Comment();
 $massiv=$comment->Comments_catalog($_POST['limit']);
