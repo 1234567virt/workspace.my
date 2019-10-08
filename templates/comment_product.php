@@ -1,4 +1,5 @@
 <?php
+//Вывод комментов в продукт
 require_once '../engine/init.php'; 
 $id=$_POST['id'];
 $lim=0;

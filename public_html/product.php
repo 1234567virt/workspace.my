@@ -77,15 +77,15 @@
     ?>
             <?php foreach ($result as $key=>$val){?>
             <?php $marka=$val['name'];
-      require_once "../templates/product/product_detal.php";
+      require_once "../templates/product/product_detal.php";//Динамическая загрузка товара
      } ?>
 
             <div id="loader-identity"></div>
             <div style=" width:65%;margin:3% 15%" id='info'></div>
-            <img src='img/arrow-right.png' id='limcoment' style='margin-left:75px;width:45px;height:45px;'> 
+            <img src='img/arrow-right.png' id='limcoment' style='margin-left:75px;width:45px;height:45px;'> <!--Кнопка-->
        
             <?php
-     require_once "../templates/product/form_product.php";
+     require_once "../templates/product/form_product.php";//Форма
     ?>
 
         </div>
