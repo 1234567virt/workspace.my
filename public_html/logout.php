@@ -4,7 +4,7 @@
 $title="Регистрация";
 $h1="Зарегистрироваться";
 $year=date("Y");
-
+//Страница регистрации
 ?>
 
     <head>
@@ -43,7 +43,7 @@ $year=date("Y");
         <center>
             <h1><?=$h1?></h1>
         </center>
-        <form class="contact_form" action="/controller/registration.php" method="post">
+        <form class="contact_form" action="/controller/registration.php" method="post"><!--Форма-->
             <ul>
                 </li>
                 <label for="login">Login:</label>
