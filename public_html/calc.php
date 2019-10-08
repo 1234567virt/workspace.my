@@ -62,11 +62,11 @@ $result='';
         <center style="margin-top:5px;">
             <h1>Калькулятор</h1>
         </center>
-        <?php require_once('../templates/calculator/calc_form.php');
+        <?php require_once('../templates/calculator/calc_form.php'); //Форма
    ?>
         <div id='res'>  </div>
         <?php
-require_once('../controller/result.php');
+require_once('../controller/result.php');//Результат
 $a=10;
     ?>
         </div>
