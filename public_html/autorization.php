@@ -66,12 +66,12 @@ $year=date("Y");
     </head>
 
     <body id='templatemo_body'>
-        <?php require_once('../templates/header.php');?>
+        <?php require_once('../templates/header.php'); //Подключения шапки сайта?>
         <center style="margin-top:15px;">
             <h1><?php echo $h1 ?></h1>
         </center>
-        <span id="errorPas"></span>
-        <form class="contact_form">
+        <span id="errorPas"></span><!-- js сюда кидает сообщения о ошибке -->
+        <form class="contact_form"><!--  Форма авторизации-->
             <ul>
                 <li>
                 </li>
@@ -88,6 +88,7 @@ $year=date("Y");
                 </li>
             </ul>
         </form>
+        <!-- конец формы авторизации-->
         </div>
         </div>
     </body>
